@@ -4,6 +4,7 @@ import 'package:fashion_shoping/core/widgets/buttons/core_flat_button.dart';
 import 'package:fashion_shoping/core/widgets/core_textField.dart';
 import 'package:fashion_shoping/features/login/presentation/pages/forgot_password.dart';
 import 'package:fashion_shoping/features/login/presentation/pages/signup_screen.dart';
+import 'package:fashion_shoping/features/main/main_screen.dart';
 import 'package:flutter/material.dart';
 
 class SignInScreen extends StatelessWidget {
@@ -82,7 +83,13 @@ class SignInScreen extends StatelessWidget {
                     height: 10,
                   ),
                   CoreFlatButton(
-                    onPressed: (){},
+                    onPressed: (){
+                      Navigator.of(context).pushReplacement(
+                        MaterialPageRoute(
+                          builder: (context) => const MainScreen(),
+                        ),
+                      );
+                    },
                     text: "SIGN IN",
                     isGradientBg: true,
                   ),

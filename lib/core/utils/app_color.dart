@@ -16,6 +16,8 @@ const Color whiteColor = Colors.white;
 
 const primaryTextColor = Color(0xFF222222);
 
+const Color primaryColor = Color(0xFFDB3022);
+
 const Color buttonPrimaryColor = Color(0xFFDB3022);
 
 const Color gradientStartColor = Color(0xFFDB3022);
