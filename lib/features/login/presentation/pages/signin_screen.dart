@@ -4,7 +4,7 @@ import 'package:fashion_shoping/core/widgets/buttons/core_flat_button.dart';
 import 'package:fashion_shoping/core/widgets/core_textField.dart';
 import 'package:fashion_shoping/features/login/presentation/pages/forgot_password.dart';
 import 'package:fashion_shoping/features/login/presentation/pages/signup_screen.dart';
-import 'package:fashion_shoping/features/main/main_screen.dart';
+import 'package:fashion_shoping/features/main/pages/main_screen.dart';
 import 'package:flutter/material.dart';
 
 class SignInScreen extends StatelessWidget {
@@ -22,7 +22,7 @@ class SignInScreen extends StatelessWidget {
         builder: (context, orientation) {
           return SingleChildScrollView(
             child: Padding(
-              padding: const EdgeInsets.all(10.0),
+              padding: const EdgeInsets.all(defaultPadding),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [

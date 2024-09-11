@@ -1,4 +1,6 @@
 import 'package:fashion_shoping/features/login/presentation/pages/signin_screen.dart';
+import 'package:fashion_shoping/features/main/pages/main_screen.dart';
+import 'package:fashion_shoping/features/profile/presentation/pages/orders/my_orders_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {

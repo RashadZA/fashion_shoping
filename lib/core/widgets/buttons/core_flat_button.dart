@@ -77,7 +77,7 @@ class CoreFlatButton extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               if (isLoading)
-                defaultLoader(color: loaderColor ?? whiteColor)
+                defaultLoaderOfCupertinoActivity(color: loaderColor ?? whiteColor)
               else ...[
                 if (prefixIcon != null)
                   Padding(
