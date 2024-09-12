@@ -1,16 +1,18 @@
+import 'package:fashion_shoping/core/routes/app_pages.dart';
 import 'package:fashion_shoping/core/utils/design_utils.dart';
 import 'package:fashion_shoping/core/widgets/buttons/core_button.dart';
+import 'package:fashion_shoping/features/profile/controllers/orders/my_orders_screen_controller.dart';
 import 'package:fashion_shoping/features/profile/data/models/oder_model.dart';
-import 'package:fashion_shoping/features/profile/presentation/pages/orders/order_details_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
-class OrderCard extends StatelessWidget {
+class OrderCard extends GetWidget<MyOrdersScreenController> {
   final OrderModel orderModel;
   const OrderCard({super.key, required this.orderModel});
 
   @override
   Widget build(BuildContext context) {
-    final double cardWidth = MediaQuery.of(context).size.width - 60;
+    final double cardWidth = Get.width - 60;
     return Column(
       children: [
         Column(
@@ -30,7 +32,7 @@ class OrderCard extends StatelessWidget {
                 SizedBox(
                   width: cardWidth * .3,
                   child: Text(
-                    orderModel.orderDate,
+                    orderModel.orderDate ?? "",
                     textAlign: TextAlign.end,
                     style: AppTextTheme.text16
                         .copyWith(color: secondaryTextColor),
@@ -100,13 +102,11 @@ class OrderCard extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 CoreButton(
-                  onPressed: () {
-                    Navigator.of(context).push(
-                      MaterialPageRoute(
-                        builder: (context) => OrderDetailsScreen(orderModel: orderModel),
-                      ),
-                    );
-                  },
+                  // onPressed: () => controller.myOrderCardOnPressed(orderModel: orderModel),
+                  onPressed: () => Get.toNamed(
+                    Routes.orderDetailsScreen,
+                    arguments: orderModel,
+                  ),
                   child: Container(
                     width: 98,
                     height: 36,
@@ -122,7 +122,7 @@ class OrderCard extends StatelessWidget {
                   ),
                 ),
                 Text(
-                  orderModel.orderStatus,
+                  orderModel.orderStatus ?? "",
                   style: AppTextTheme.text18.copyWith(
                       color: orderModel.orderStatus == delivered
                           ? greenColor

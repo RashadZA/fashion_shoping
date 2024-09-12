@@ -2,17 +2,12 @@ import 'package:fashion_shoping/core/utils/design_utils.dart';
 import 'package:fashion_shoping/core/widgets/buttons/core_button.dart';
 import 'package:fashion_shoping/core/widgets/buttons/core_flat_button.dart';
 import 'package:fashion_shoping/core/widgets/core_textField.dart';
-import 'package:fashion_shoping/features/login/presentation/pages/forgot_password.dart';
-import 'package:fashion_shoping/features/login/presentation/pages/signup_screen.dart';
-import 'package:fashion_shoping/features/main/pages/main_screen.dart';
+import 'package:fashion_shoping/features/auth/controllers/signout_screen_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
-class SignInScreen extends StatelessWidget {
-  SignInScreen({super.key});
-
-  final TextEditingController emailTextEditController = TextEditingController();
-  final TextEditingController passwordTextEditController =
-      TextEditingController();
+class SignUpScreen extends GetWidget<SignUpScreenController> {
+  const SignUpScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -36,40 +31,42 @@ class SignInScreen extends StatelessWidget {
                   const SizedBox(
                     height: 10,
                   ),
-                  const Text("Sign In"),
+                  const Text("Sign Up"),
                   const SizedBox(
                     height: 20,
                   ),
                   CoreTextField(
+                    hintText: "Name",
                     keyboardType: TextInputType.text,
-                    controller: emailTextEditController,
-                    prefixIcon: Icons.email_rounded,
+                    controller: controller.nameTextEditController,
                   ),
                   const SizedBox(
                     height: 10,
                   ),
                   CoreTextField(
+                    hintText: "Email",
+                    keyboardType: TextInputType.text,
+                    controller: controller.emailTextEditController,
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  CoreTextField(
+                    hintText: "Password",
                     keyboardType: TextInputType.text,
                     textInputAction: TextInputAction.done,
-                    controller: passwordTextEditController,
-                    prefixIcon: Icons.password_outlined,
+                    controller: controller.passwordTextEditController,
                   ),
                   const SizedBox(
                     height: 10,
                   ),
                   CoreButton(
-                    onPressed: () {
-                      Navigator.of(context).push(
-                        MaterialPageRoute(
-                          builder: (context) => ForgotPasswordScreen(),
-                        ),
-                      );
-                    },
+                    onPressed: () => controller.alreadyHaveAnAccountOnPressedMethod(),
                     child: const Row(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
                         Text(
-                          "Forgot your password?",
+                          "Already have an account",
                           style: TextStyle(color: primaryTextColor),
                         ),
                         Icon(
@@ -83,40 +80,9 @@ class SignInScreen extends StatelessWidget {
                     height: 10,
                   ),
                   CoreFlatButton(
-                    onPressed: (){
-                      Navigator.of(context).pushReplacement(
-                        MaterialPageRoute(
-                          builder: (context) => const MainScreen(),
-                        ),
-                      );
-                    },
-                    text: "SIGN IN",
+                    onPressed: ()=> controller.signUpOnPressedMethod(),
+                    text: "SIGN UP",
                     isGradientBg: true,
-                  ),
-                  const SizedBox(
-                    height: 10,
-                  ),
-                  CoreButton(
-                    onPressed: () {
-                      Navigator.of(context).pushReplacement(
-                        MaterialPageRoute(
-                          builder: (context) => SignUpScreen(),
-                        ),
-                      );
-                    },
-                    child: const Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        Text(
-                          "Create account",
-                          style: TextStyle(color: primaryTextColor),
-                        ),
-                        Icon(
-                          Icons.arrow_right_alt,
-                          color: redAccentColor,
-                        )
-                      ],
-                    ),
                   ),
                   const SizedBox(
                     height: 100,
@@ -129,6 +95,7 @@ class SignInScreen extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       CoreButton(
+                        onPressed: (){},
                         child: Container(
                           height: 64,
                           width: 92,
@@ -146,6 +113,7 @@ class SignInScreen extends StatelessWidget {
                         width: 15,
                       ),
                       CoreButton(
+                        onPressed: (){},
                         child: Container(
                           height: 64,
                           width: 92,

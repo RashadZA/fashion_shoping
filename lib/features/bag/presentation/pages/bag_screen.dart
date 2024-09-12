@@ -1,12 +1,26 @@
 import 'package:fashion_shoping/core/utils/design_utils.dart';
 import 'package:fashion_shoping/core/widgets/buttons/core_flat_button.dart';
 import 'package:fashion_shoping/core/widgets/core_textField.dart';
+import 'package:fashion_shoping/features/bag/controllers/bag_screen_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
-class BagScreen extends StatelessWidget {
-  BagScreen({super.key});
-  final TextEditingController promoCodeTextEditController =
-      TextEditingController();
+class BagScreen extends StatefulWidget {
+  const BagScreen({super.key});
+
+  @override
+  State<BagScreen> createState() => _BagScreenState();
+}
+
+class _BagScreenState extends State<BagScreen> {
+
+  final BagScreenController controller = Get.find<BagScreenController>();
+
+  @override
+  void initState(){
+    super.initState();
+    controller.init();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -22,10 +36,10 @@ class BagScreen extends StatelessWidget {
           children: [
             Row(
               children: [
-                Spacer(),
+                const Spacer(),
                 IconButton(
                   onPressed: () {},
-                  icon: Icon(Icons.search),
+                  icon: const Icon(Icons.search),
                 ),
               ],
             ),
@@ -77,12 +91,12 @@ class BagScreen extends StatelessWidget {
               hintText: "Enter your promo code",
               keyboardType: TextInputType.text,
               textInputAction: TextInputAction.done,
-              controller: promoCodeTextEditController,
+              controller: controller.promoCodeTextEditController,
             ),
             const SizedBox(
               height: 30,
             ),
-            Row(
+            const Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text("Tota amount:"),

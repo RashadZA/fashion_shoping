@@ -1,6 +1,7 @@
 import 'package:fashion_shoping/core/utils/design_utils.dart';
 import 'package:fashion_shoping/features/profile/data/models/order_item_model.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class OrderItemCard extends StatelessWidget {
   final OrderItemModel orderItemModel;
@@ -8,7 +9,7 @@ class OrderItemCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final double deviceWidth = MediaQuery.of(context).size.width - 10;
+    final double deviceWidth = Get.width - 10;
     return SizedBox(
       height: 126,
       width: deviceWidth,
@@ -36,7 +37,7 @@ class OrderItemCard extends StatelessWidget {
                   bottomStart: Radius.circular(defaultBorderRadius),
                 ),
                 // fit:BoxFit.cover,
-                imageUrl: orderItemModel.orderImageUrl,
+                imageUrl: orderItemModel.orderImageUrl ?? "",
               ),
             ),
           ),
@@ -52,14 +53,14 @@ class OrderItemCard extends StatelessWidget {
                 SizedBox(
                   width: deviceWidth - 166,
                   child: Text(
-                      orderItemModel.orderItemDescription,
+                      orderItemModel.orderItemDescription ?? "",
                     style: AppTextTheme.text18,
                   ),
                 ),
                 SizedBox(
                   width: deviceWidth - 166,
                   child: Text(
-                      orderItemModel.orderItemName,
+                      orderItemModel.orderItemName ?? "",
                     style: AppTextTheme.text14.copyWith(
                         color: secondaryTextColor,
                     ),
@@ -88,7 +89,7 @@ class OrderItemCard extends StatelessWidget {
                       SizedBox(
                         width: deviceWidth - 216,
                         child: Text(
-                          orderItemModel.orderItemColor,
+                          orderItemModel.orderItemColor ?? "" ,
                           style: AppTextTheme.text14,
                         ),
                       )
@@ -118,7 +119,7 @@ class OrderItemCard extends StatelessWidget {
                       SizedBox(
                         width: deviceWidth - 216,
                         child: Text(
-                          orderItemModel.orderItemSize,
+                          orderItemModel.orderItemSize ?? "",
                           style: AppTextTheme.text14,
                         ),
                       )
@@ -154,7 +155,7 @@ class OrderItemCard extends StatelessWidget {
                             SizedBox(
                               width: (deviceWidth - 240) * 0.7,
                               child: Text(
-                                orderItemModel.orderItemColor,
+                                orderItemModel.orderItemColor ?? "",
                                 style: AppTextTheme.text14,
                               ),
                             )
@@ -164,7 +165,7 @@ class OrderItemCard extends StatelessWidget {
                       SizedBox(
                         width: (deviceWidth - 166) * 0.3,
                         child: Text(
-                          orderItemModel.orderItemTotalPrice,
+                          orderItemModel.orderItemTotalPrice ?? "",
                           textAlign: TextAlign.end,
                           style: AppTextTheme.text14,
                         ),

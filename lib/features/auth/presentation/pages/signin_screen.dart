@@ -2,16 +2,12 @@ import 'package:fashion_shoping/core/utils/design_utils.dart';
 import 'package:fashion_shoping/core/widgets/buttons/core_button.dart';
 import 'package:fashion_shoping/core/widgets/buttons/core_flat_button.dart';
 import 'package:fashion_shoping/core/widgets/core_textField.dart';
-import 'package:fashion_shoping/features/login/presentation/pages/signin_screen.dart';
+import 'package:fashion_shoping/features/auth/controllers/signin_screen_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
-class SignUpScreen extends StatelessWidget {
-  SignUpScreen({super.key});
-
-  final TextEditingController nameTextEditController = TextEditingController();
-  final TextEditingController emailTextEditController = TextEditingController();
-  final TextEditingController passwordTextEditController =
-  TextEditingController();
+class SignInScreen extends GetWidget<SignInScreenController> {
+  const SignInScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -35,48 +31,34 @@ class SignUpScreen extends StatelessWidget {
                   const SizedBox(
                     height: 10,
                   ),
-                  const Text("Sign Up"),
+                  const Text("Sign In"),
                   const SizedBox(
                     height: 20,
                   ),
                   CoreTextField(
-                    hintText: "Name",
                     keyboardType: TextInputType.text,
-                    controller: nameTextEditController,
+                    controller: controller.emailTextEditController,
+                    prefixIcon: Icons.email_rounded,
                   ),
                   const SizedBox(
                     height: 10,
                   ),
                   CoreTextField(
-                    hintText: "Email",
-                    keyboardType: TextInputType.text,
-                    controller: emailTextEditController,
-                  ),
-                  const SizedBox(
-                    height: 10,
-                  ),
-                  CoreTextField(
-                    hintText: "Password",
                     keyboardType: TextInputType.text,
                     textInputAction: TextInputAction.done,
-                    controller: passwordTextEditController,
+                    controller: controller.passwordTextEditController,
+                    prefixIcon: Icons.password_outlined,
                   ),
                   const SizedBox(
                     height: 10,
                   ),
                   CoreButton(
-                    onPressed: () {
-                      Navigator.of(context).pushReplacement(
-                        MaterialPageRoute(
-                          builder: (context) => SignInScreen(),
-                        ),
-                      );
-                    },
+                    onPressed: () => controller.forgotPasswordOnPressedMethod(),
                     child: const Row(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
                         Text(
-                          "Already have an account",
+                          "Forgot your password?",
                           style: TextStyle(color: primaryTextColor),
                         ),
                         Icon(
@@ -90,9 +72,28 @@ class SignUpScreen extends StatelessWidget {
                     height: 10,
                   ),
                   CoreFlatButton(
-                    onPressed: (){},
-                    text: "SIGN UP",
+                    onPressed: () => controller.signInOnPressedMethod(),
+                    text: "SIGN IN",
                     isGradientBg: true,
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  CoreButton(
+                    onPressed: () => controller.createAccountOnPressedMethod(),
+                    child: const Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        Text(
+                          "Create account",
+                          style: TextStyle(color: primaryTextColor),
+                        ),
+                        Icon(
+                          Icons.arrow_right_alt,
+                          color: redAccentColor,
+                        )
+                      ],
+                    ),
                   ),
                   const SizedBox(
                     height: 100,

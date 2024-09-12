@@ -1,11 +1,13 @@
 import 'package:fashion_shoping/core/utils/design_utils.dart';
 import 'package:fashion_shoping/core/widgets/buttons/core_flat_button.dart';
 import 'package:fashion_shoping/core/widgets/core_textField.dart';
+import 'package:fashion_shoping/features/auth/controllers/forgot_password_screen_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
-class ForgotPasswordScreen extends StatelessWidget {
-  ForgotPasswordScreen({super.key});
-  final TextEditingController emailTextEditController = TextEditingController();
+class ForgotPasswordScreen extends GetWidget<ForgotPasswordScreenController> {
+  const ForgotPasswordScreen({super.key});
+
 
   @override
   Widget build(BuildContext context) {
@@ -51,13 +53,13 @@ class ForgotPasswordScreen extends StatelessWidget {
                   hintText: "Email",
                   keyboardType: TextInputType.text,
                   textInputAction: TextInputAction.done,
-                  controller: emailTextEditController,
+                  controller: controller.emailTextEditController,
                 ),
                 const SizedBox(
                   height: 10,
                 ),
                 CoreFlatButton(
-                  onPressed: () => Navigator.of(context).pop(),
+                  onPressed: () => Get.back(),
                   text: "SEND",
                   isGradientBg: true,
                 ),

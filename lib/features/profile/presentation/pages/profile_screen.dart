@@ -1,11 +1,25 @@
 import 'package:fashion_shoping/core/utils/design_utils.dart';
 import 'package:fashion_shoping/core/widgets/buttons/core_button.dart';
-import 'package:fashion_shoping/features/profile/presentation/pages/orders/my_orders_screen.dart';
+import 'package:fashion_shoping/features/profile/controllers/profile_screen_controller.dart';
 import 'package:fashion_shoping/features/profile/presentation/widgets/profile_card_button.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
-class ProfileScreen extends StatelessWidget {
+class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
+
+  @override
+  State<ProfileScreen> createState() => _ProfileScreenState();
+}
+
+class _ProfileScreenState extends State<ProfileScreen> {
+  final ProfileScreenController controller = Get.find<ProfileScreenController>();
+
+  @override
+  void initState(){
+    super.initState();
+    controller.init();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -63,13 +77,7 @@ class ProfileScreen extends StatelessWidget {
               height: 20,
             ),
             CoreButton(
-              onPressed: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (context) => const MyOrdersScreen(),
-                  ),
-                );
-              },
+              onPressed: () => controller.myOrderCardOnPressed(),
               child: const ProfileCardButton(
                 buttonTitle: "My Orders",
                 buttonSubTitle: "Already have 12 orders",

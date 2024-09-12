@@ -4,6 +4,8 @@ const Color scaffoldBackgroundColor = Color(0xFFF9F9F9);
 
 const Color transparentColor = Colors.transparent;
 
+const Color cardColor = Colors.white;
+
 const Color coreTextFieldBackgroundColor = Colors.white;
 
 const Color coreTextFieldShadowColor = Color(0xFFF1F1F1);
@@ -19,6 +21,8 @@ const primaryTextColor = Color(0xFF222222);
 const secondaryTextColor = Color(0xFF9B9B9B);
 
 const Color primaryColor = Color(0xFFDB3022);
+
+Color primaryShadowColor = primaryColor.withOpacity(0.3);
 
 const Color buttonPrimaryColor = Color(0xFFDB3022);
 

@@ -36,7 +36,7 @@ part of 'design_utils.dart';
  List<Widget> screensList = [
  const HomeScreen(),
  const ShopScreen(),
- BagScreen(),
+ const BagScreen(),
  const FavoritesScreen(),
- const ProfileScreen()
+  const ProfileScreen()
 ];
