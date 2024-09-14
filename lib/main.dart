@@ -22,14 +22,5 @@ class MyApp extends StatelessWidget {
       theme: AppTheme.lightTheme,
       unknownRoute: AppPages.unknownRoute,
     );
-    // return MaterialApp(
-    //   title: 'Fashion Shopping',
-    //   debugShowCheckedModeBanner: false,
-    //   theme: ThemeData(
-    //     colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-    //     useMaterial3: true,
-    //   ),
-    //   home: SignInScreen(),
-    // );
   }
 }

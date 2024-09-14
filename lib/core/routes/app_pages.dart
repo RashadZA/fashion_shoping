@@ -1,3 +1,4 @@
+import 'package:fashion_shoping/features/auth/controllers/forgot_password_screen_controller.dart';
 import 'package:fashion_shoping/features/auth/controllers/signin_screen_controller.dart';
 import 'package:fashion_shoping/features/auth/controllers/signout_screen_controller.dart';
 import 'package:fashion_shoping/features/auth/presentation/pages/forgot_password.dart';
@@ -14,9 +15,11 @@ import 'package:fashion_shoping/features/main/presentation/pages/main_screen.dar
 import 'package:fashion_shoping/features/profile/controllers/orders/my_orders_screen_controller.dart';
 import 'package:fashion_shoping/features/profile/controllers/orders/order_details_screen_controller.dart';
 import 'package:fashion_shoping/features/profile/controllers/profile_screen_controller.dart';
+import 'package:fashion_shoping/features/profile/controllers/setting/setting_screen_controller.dart';
 import 'package:fashion_shoping/features/profile/presentation/pages/orders/my_orders_screen.dart';
 import 'package:fashion_shoping/features/profile/presentation/pages/orders/order_details_screen.dart';
 import 'package:fashion_shoping/features/profile/presentation/pages/profile_screen.dart';
+import 'package:fashion_shoping/features/profile/presentation/pages/setting/setting_screen.dart';
 import 'package:fashion_shoping/features/shop/controllers/shop_screen_controller.dart';
 import 'package:fashion_shoping/features/shop/presentation/pages/shop_screen.dart';
 import 'package:fashion_shoping/features/startUp/splash/splash_screen.dart';
@@ -46,15 +49,13 @@ class AppPages {
       binding: BindingsBuilder(
             () => Get.lazyPut<SignInScreenController>(() => SignInScreenController()),
       ),
-      children: [
-        GetPage(
-          name: Routes.forgotScreen,
-          page: () => const ForgotPasswordScreen(),
-          binding: BindingsBuilder(
-                () => Get.lazyPut<MyOrdersScreenController>(() => MyOrdersScreenController()),
-          ),
-        ),
-      ],
+    ),
+    GetPage(
+      name: Routes.forgotScreen,
+      page: () => const ForgotPasswordScreen(),
+      binding: BindingsBuilder(
+            () => Get.lazyPut<ForgotPasswordScreenController>(() => ForgotPasswordScreenController()),
+      ),
     ),
     GetPage(
       name: Routes.signUpScreen,
@@ -117,6 +118,13 @@ class AppPages {
       page: () => const OrderDetailsScreen(),
       binding: BindingsBuilder(
             () => Get.lazyPut<OrderDetailsScreenController>(() => OrderDetailsScreenController()),
+      ),
+    ),
+    GetPage(
+      name: Routes.settingScreen,
+      page: () => const SettingScreen(),
+      binding: BindingsBuilder(
+            () => Get.lazyPut<SettingScreenController>(() => SettingScreenController()),
       ),
     ),
   ];

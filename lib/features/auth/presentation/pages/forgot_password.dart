@@ -15,9 +15,9 @@ class ForgotPasswordScreen extends GetWidget<ForgotPasswordScreenController> {
       backgroundColor: scaffoldBackgroundColor,
       appBar: AppBar(
         backgroundColor: scaffoldBackgroundColor,
-        title: const Text(
+        title: Text(
           "Forgot Password",
-          style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+          style: AppTextTheme.text24,
         ),
         centerTitle: true,
       ),

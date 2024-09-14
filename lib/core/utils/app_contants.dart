@@ -55,6 +55,48 @@ extension WidgetExtension on Widget{
 
 }
 
+extension StringExtension on String {
+  dynamic errorSnackBar() {
+    Get
+      ..closeAllSnackbars()
+      ..snackbar(
+        'Error !',
+        this,
+        backgroundColor: Colors.red.shade300,
+        colorText: whiteColor,
+        snackPosition: SnackPosition.TOP,
+        margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+      );
+  }
+
+  dynamic successSnackBar({void Function(GetSnackBar)? onTap}) {
+    Get
+      ..closeAllSnackbars()
+      ..snackbar(
+        'Success !',
+        this,
+        onTap: onTap,
+        backgroundColor: Colors.green.shade300,
+        colorText: whiteColor,
+        snackPosition: SnackPosition.TOP,
+        margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+      );
+  }
+
+  dynamic infoSnackBar() {
+    Get
+      ..closeAllSnackbars()
+      ..snackbar(
+        'Info !',
+        this,
+        colorText: blackColor,
+        backgroundColor: Colors.white38,
+        snackPosition: SnackPosition.TOP,
+        margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+      );
+  }
+}
+
 List<BoxShadow> get containerShadow => const [
   BoxShadow(
     blurRadius: 10,

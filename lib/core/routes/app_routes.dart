@@ -5,7 +5,7 @@ abstract class Routes {
   static const unknown404 = _Paths.unknown404;
   static const splashScreen = _Paths.splashScreen;
   static const signInScreen = _Paths.signInScreen;
-  static const forgotScreen = _Paths.signInScreen + _Paths.forgotScreen;
+  static const forgotScreen = _Paths.forgotScreen;
   static const signUpScreen = _Paths.signUpScreen;
   static const mainScreen = _Paths.mainScreen;
   static const homeScreen = _Paths.homeScreen;
@@ -15,6 +15,7 @@ abstract class Routes {
   static const profileScreen = _Paths.profileScreen;
   static const myOrdersScreen = _Paths.myOrdersScreen;
   static const orderDetailsScreen = _Paths.orderDetailsScreen;
+  static const settingScreen = _Paths.settingScreen;
 }
 
 abstract class _Paths {
@@ -31,4 +32,5 @@ abstract class _Paths {
   static const profileScreen = '/profileScreen';
   static const myOrdersScreen = '/myOrdersScreen';
   static const orderDetailsScreen = '/orderDetailsScreen';
+  static const settingScreen = '/settingScreen';
 }

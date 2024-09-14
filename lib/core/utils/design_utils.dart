@@ -6,6 +6,7 @@ import 'package:fashion_shoping/features/profile/presentation/pages/profile_scre
 import 'package:fashion_shoping/features/shop/presentation/pages/shop_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:shimmer/shimmer.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 

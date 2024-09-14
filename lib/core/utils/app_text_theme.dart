@@ -74,4 +74,12 @@ class AppTextTheme {
     fontWeight: FontWeight.w500,
     decoration: TextDecoration.none,
   );
+  static final text34 = TextStyle(
+    color: primaryTextColor,
+    fontSize: 34,
+    letterSpacing: -.24,
+    overflow: defaultOverflow,
+    fontWeight: FontWeight.w500,
+    decoration: TextDecoration.none,
+  );
 }

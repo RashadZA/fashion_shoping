@@ -16,6 +16,10 @@ class ProfileScreenController extends GetxController {
     Get.toNamed(Routes.myOrdersScreen);
   }
 
+  Future<void> settingCardOnPressed() async {
+    Get.toNamed(Routes.settingScreen);
+  }
+
   Future<void> close() async {}
 
   @override
