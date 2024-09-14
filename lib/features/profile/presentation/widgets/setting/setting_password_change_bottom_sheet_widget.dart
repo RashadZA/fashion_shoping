@@ -52,7 +52,7 @@ class SettingPasswordChangeBottomSheetWidget extends GetWidget<SettingScreenCont
               CoreTextField(
                 hintText: "Old Password",
                 keyboardType: TextInputType.text,
-                textInputAction: TextInputAction.next,
+                textInputAction: TextInputAction.done,
                 controller: controller.oldPasswordTextEditController,
               ),
               const SizedBox(
@@ -85,7 +85,7 @@ class SettingPasswordChangeBottomSheetWidget extends GetWidget<SettingScreenCont
               CoreTextField(
                 hintText: "Confirm Password",
                 keyboardType: TextInputType.text,
-                textInputAction: TextInputAction.next,
+                textInputAction: TextInputAction.done,
                 controller: controller.confirmPasswordTextEditController,
               ),
               const SizedBox(
