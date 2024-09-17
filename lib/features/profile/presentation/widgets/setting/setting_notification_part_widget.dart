@@ -1,7 +1,6 @@
 import 'package:fashion_shoping/core/utils/design_utils.dart';
 import 'package:fashion_shoping/features/profile/controllers/setting/setting_screen_controller.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class SettingNotificationPartWidget extends GetWidget<SettingScreenController> {

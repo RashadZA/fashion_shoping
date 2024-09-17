@@ -1,5 +1,3 @@
-import 'package:fashion_shoping/core/utils/design_utils.dart';
-
 /// My Order List sample data
 Map<String, dynamic> myOrderSampleData = {
   "data": [
@@ -2456,3 +2454,120 @@ Map<String, dynamic> myOrderSampleData = {
 
 /// Order type sample data List
 List<String> orderTypeSampleDataList = ["Delivered","Processing","Cancelled"];
+
+/// My Bag List sample data
+Map<String, dynamic> myBagSampleData = {
+  "data": [
+    {
+      "itemId": "MyBagItem01",
+      "itemImageUrl":
+      "https://drive.google.com/uc?export=view&id=13mhQOhbi75Ecx6gpm8_cYKbSfH3ePzlO",
+      "itemName": "T-Shirt",
+      "itemDescription": "Pullover",
+      "itemColor": "Black and White",
+      "itemSize": "XL",
+      "itemUnits": 2,
+      "itemUnitPrice": 5.0,
+      "itemTotalPrice": 10.0
+    },
+    {
+      "itemId": "MyBagItem02",
+      "itemImageUrl":
+      "https://drive.google.com/uc?export=view&id=1zvV74a2OyYkRB0ZEpiln1b47Ri_sqWWp",
+      "itemName": "T-Shirt",
+      "itemDescription": "Pullover",
+      "itemColor": "Black and White",
+      "itemSize": "XL",
+      "itemUnits": 5,
+      "itemUnitPrice": 4.0,
+      "itemTotalPrice": 20.0
+    },
+    {
+      "itemId": "MyBagItem03",
+      "itemImageUrl":
+      "https://drive.google.com/uc?export=view&id=1AJLaV8LfMSvroY9rtQfvkWCrWDCoS-8N",
+      "itemName": "T-Shirt",
+      "itemDescription": "Pullover",
+      "itemColor": "Black and White",
+      "itemSize": "XL",
+      "itemUnits": 3,
+      "itemUnitPrice": 5.0,
+      "itemTotalPrice": 15.0
+    },
+    {
+      "itemId": "MyBagItem04",
+      "itemImageUrl":
+      "https://drive.google.com/uc?export=view&id=1xEUJZ9SF3qV7uGTH-1S9_27vtk_HIkKa",
+      "itemName": "T-Shirt",
+      "itemDescription": "Pullover",
+      "itemColor": "Black and White",
+      "itemSize": "L",
+      "itemUnits": 1,
+      "itemUnitPrice": 5.0,
+      "itemTotalPrice": 5.0,
+    },
+    {
+      "itemId": "MyBagItem05",
+      "itemImageUrl":
+      "https://drive.google.com/uc?export=view&id=1f7eLitIydRPVHEgyOJpIM5Pj6J6Q2nQT",
+      "itemName": "Shirt",
+      "itemDescription": "Pullover",
+      "itemColor": "Blue",
+      "itemSize": "XL",
+      "itemUnits": 2,
+      "itemUnitPrice": 5.0,
+      "itemTotalPrice": 10.0,
+    }
+  ]
+};
+
+/// Your Promo Codes Demo Data List
+Map<String, dynamic> yourPromoCodesSampleData = {
+  "data": [
+    {
+      "promoCodesId" : "QAZXSW2024",
+      "promoCodesTitle" : "Brand Offer",
+      "promoCodesValue": 10,
+      "promoCodesRemainDays": 30,
+      "promoCodesType": "Percentage",
+      "promoCodeImage": ""
+    },
+    {
+      "promoCodesId" : "CDERFV2024",
+      "promoCodesTitle" : "Summer Sale",
+      "promoCodesValue": 25,
+      "promoCodesRemainDays": 30,
+      "promoCodesType": "Percentage",
+      "promoCodeImage": "https://drive.google.com/uc?export=view&id=1HDpNqPGGjDAqju8Ef-WeIZl_UV9ots3s"
+    },
+    {
+      "promoCodesId" : "BGTYHN2024",
+      "promoCodesTitle" : "Personal Offer",
+      "promoCodesValue": 50,
+      "promoCodesRemainDays": 30,
+      "promoCodesType": "Percentage",
+      "promoCodeImage": "https://drive.google.com/uc?export=view&id=1PrnnkIdG5byaZfHmqmczWgSQtGuHUmOZ"
+    },
+    {
+      "promoCodesId" : "MJUIKLOP2024",
+      "promoCodesTitle" : "Fall Sale",
+      "promoCodesValue": 75,
+      "promoCodesRemainDays": 30,
+      "promoCodesType": "Percentage",
+      "promoCodeImage": "https://drive.google.com/uc?export=view&id=1RtvoQnY6SJGI-D6BICL1xDKmVULk713L"
+    },
+    {
+      "promoCodesId" : "MJUIKLOP2024",
+      "promoCodesTitle" : "Winter Sale",
+      "promoCodesValue": 90,
+      "promoCodesRemainDays": 30,
+      "promoCodesType": "Percentage",
+      "promoCodeImage": "https://drive.google.com/uc?export=view&id=1EKFNJO2IFpV6S2t3W2OK4vR8oW2E0Ji2"
+    }
+  ]
+};
+
+
+
+
+

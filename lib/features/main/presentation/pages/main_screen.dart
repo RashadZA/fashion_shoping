@@ -20,7 +20,7 @@ class MainScreen extends GetWidget<MainScreenController> {
               .map(
                 (item) => BottomNavyBarItem(
               icon: item.icon,
-              title: Text(item.title),
+              title:  Text(item.title, overflow: TextOverflow.ellipsis),
               activeColor: item.activeColor,
               inactiveColor: item.inActiveColor,
             ),

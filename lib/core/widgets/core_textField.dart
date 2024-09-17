@@ -114,10 +114,9 @@ class CoreTextField extends StatelessWidget {
             labelText: labelText,
             hintText: hintText,
             suffixIcon: suffixIcon,
-            // labelStyle: AppTextTheme.text16.copyWith(
-            //   color: hintTextColor ?? AppColors.primaryColor,
-            //   fontSize: fontSize,
-            // ),
+            hintStyle: AppTextTheme.text16.copyWith(
+              color: hintTextColor ?? secondaryTextColor,
+            ),
             filled: true,
             contentPadding:
                 const EdgeInsets.symmetric(horizontal: 16, vertical: 15),
