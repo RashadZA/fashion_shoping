@@ -1,4 +1,5 @@
 import 'package:fashion_shoping/core/utils/design_utils.dart';
+import 'package:fashion_shoping/core/widgets/buttons/core_button.dart';
 import 'package:fashion_shoping/core/widgets/buttons/core_flat_button.dart';
 import 'package:fashion_shoping/core/widgets/core_textField.dart';
 import 'package:fashion_shoping/features/bag/controllers/bag_screen_controller.dart';
@@ -31,22 +32,42 @@ class BagScreenBodyPart extends GetWidget<BagScreenController> {
           },
         ),
         const SizedBox(
-          height: 15,
+          height: 20,
         ),
-        CoreTextField(
-          readOnly: true,
-          hintText: "Enter your promo code",
-          keyboardType: TextInputType.text,
-          textInputAction: TextInputAction.done,
-          controller: controller.promoCodeTextEditController,
-          suffixIcon: IconButton(
-            onPressed: ()=> controller.promoCodesFieldOnTapMethod(),
-            icon: const Icon(
-              Icons.arrow_forward_outlined,
-              size: 25,
-            ),),
-          onTap: ()=> controller.promoCodesFieldOnTapMethod(),
-        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            CoreButton(
+              onPressed: ()=> controller.promoCodesFieldOnTapMethod(),
+              child: SizedBox(
+                width: Get.width - 85,
+                child: Text(
+                  controller.selectedPromoCode.value.promoCodesId ?? "Enter your promo code",
+                  style: AppTextTheme.text16.copyWith(
+                    color: secondaryTextColor,
+                  ),
+                ),
+              ),
+            ),
+            CoreButton(
+              onPressed: ()=> controller.selectedPromoCode.value.promoCodesId != null ? controller.promoCodesFieldClearCloseButtonOnTapMethod() : controller.promoCodesFieldOnTapMethod(),
+              child: SizedBox(
+                width: 25,
+                height: 25,
+                child: controller.selectedPromoCode.value.promoCodesId != null ? const Icon(
+                  Icons.close,
+                  size: 25,
+                  color: secondaryTextColor,
+                ) : const Icon(
+                  Icons.arrow_forward_outlined,
+                  size: 25,
+                  color: secondaryTextColor,
+                ),
+              ),
+            )
+          ],
+        ).defaultContainer(),
         const SizedBox(
           height: 30,
         ),

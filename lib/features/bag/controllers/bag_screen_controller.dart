@@ -50,7 +50,23 @@ class BagScreenController extends GetxController {
     for(MyBagItemDataModel item in myBagItemList){
       totalAmount.value += item.itemTotalPrice ?? 0.0;
     }
+    await calculateItemTotalAmountWithDiscount();
     update();
+  }
+
+
+
+  Future<void> calculateItemTotalAmountWithDiscount() async {
+   RxDouble discountAmount = 0.0.obs;
+   if(selectedPromoCode.value.promoCodesType == fixedAmount){
+     discountAmount.value = (selectedPromoCode.value.promoCodesValue ?? 0).toDouble();
+   } else if(selectedPromoCode.value.promoCodesType == percentage){
+     if((selectedPromoCode.value.promoCodesValue ?? 0) > 0){
+       discountAmount.value = totalAmount.value * ((selectedPromoCode.value.promoCodesValue ?? 0)/100);
+     }
+   }
+   totalAmount.value = totalAmount.value - discountAmount.value;
+   update();
   }
 
   Future<void> updateSelectedExchangeMedicineList({required int index}) async {
@@ -118,6 +134,7 @@ class BagScreenController extends GetxController {
 
   Future<void> removeFromList({required int index}) async {
     myBagItemList.removeAt(index);
+    await calculateItemTotalAmount();
     "Successfully remove from list".successSnackBar();
     update();
   }
@@ -131,6 +148,7 @@ class BagScreenController extends GetxController {
   Future<void> promoCodesFieldClearCloseButtonOnTapMethod() async {
     selectedPromoCode.value = PromoCodesDataModel();
     promoCodeTextEditController.clear();
+    await calculateItemTotalAmount();
     update();
   }
 
@@ -144,6 +162,7 @@ class BagScreenController extends GetxController {
       }
       selectedPromoCode.value = tempData.value;
       promoCodeTextEditController.text = tempData.value.promoCodesId ?? "";
+      await calculateItemTotalAmount();
       Get.back();
       promoCodesBottomSheetTextFieldSuffixIconIsTapped.value = false;
       update();
@@ -156,6 +175,7 @@ class BagScreenController extends GetxController {
       promoCodesBottomSheetApplyButtonIsTapped.value = true;
       selectedPromoCode.value = promoCode;
       promoCodeTextEditController.text = promoCode.promoCodesId ?? "";
+      await calculateItemTotalAmount();
       Get.back();
       promoCodesBottomSheetApplyButtonIsTapped.value = false;
       update();

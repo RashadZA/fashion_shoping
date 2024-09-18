@@ -4,3 +4,4 @@ const String delivered = "Delivered";
 const String processing = "Processing";
 const String cancelled = "Cancelled";
 const String percentage = "Percentage";
+const String fixedAmount = "Fixed Amount";
