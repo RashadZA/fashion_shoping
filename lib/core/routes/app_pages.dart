@@ -5,7 +5,9 @@ import 'package:fashion_shoping/features/auth/presentation/pages/forgot_password
 import 'package:fashion_shoping/features/auth/presentation/pages/signin_screen.dart';
 import 'package:fashion_shoping/features/auth/presentation/pages/signup_screen.dart';
 import 'package:fashion_shoping/features/bag/controllers/bag_screen_controller.dart';
+import 'package:fashion_shoping/features/bag/controllers/check_out_screen_controller.dart';
 import 'package:fashion_shoping/features/bag/presentation/pages/bag_screen.dart';
+import 'package:fashion_shoping/features/bag/presentation/pages/check_out_screen.dart';
 import 'package:fashion_shoping/features/favorites/controllers/favorites_screen_controller.dart';
 import 'package:fashion_shoping/features/favorites/presentation/pages/favorites_screen.dart';
 import 'package:fashion_shoping/features/home/controllers/home_screen_controller.dart';
@@ -125,6 +127,13 @@ class AppPages {
       page: () => const SettingScreen(),
       binding: BindingsBuilder(
             () => Get.lazyPut<SettingScreenController>(() => SettingScreenController()),
+      ),
+    ),
+    GetPage(
+      name: Routes.checkOutScreen,
+      page: () => const CheckOutScreen(),
+      binding: BindingsBuilder(
+            () => Get.lazyPut<CheckOutScreenController>(() => CheckOutScreenController()),
       ),
     ),
   ];

@@ -1,7 +1,7 @@
+import 'package:fashion_shoping/core/routes/app_pages.dart';
 import 'package:fashion_shoping/core/utils/design_utils.dart';
 import 'package:fashion_shoping/core/widgets/buttons/core_button.dart';
 import 'package:fashion_shoping/core/widgets/buttons/core_flat_button.dart';
-import 'package:fashion_shoping/core/widgets/core_textField.dart';
 import 'package:fashion_shoping/features/bag/controllers/bag_screen_controller.dart';
 import 'package:fashion_shoping/features/bag/presentation/widgets/bagScreen/bag_screen_item_card_widget.dart';
 import 'package:flutter/material.dart';
@@ -97,7 +97,7 @@ class BagScreenBodyPart extends GetWidget<BagScreenController> {
           height: 30,
         ),
         CoreFlatButton(
-          onPressed: (){},
+          onPressed: ()=> controller.checkOutButtonOnPressedMethod(),
           borderRadius: 30,
           text: "CHECK OUT",
           isGradientBg: true,

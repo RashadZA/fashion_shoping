@@ -1,3 +1,4 @@
+import 'package:fashion_shoping/core/routes/app_pages.dart';
 import 'package:fashion_shoping/core/utils/demo_data.dart';
 import 'package:fashion_shoping/core/utils/design_utils.dart';
 import 'package:fashion_shoping/features/bag/data/my_bag_response_model.dart';
@@ -180,6 +181,17 @@ class BagScreenController extends GetxController {
       promoCodesBottomSheetApplyButtonIsTapped.value = false;
       update();
     }
+  }
+
+  Future<void> checkOutButtonOnPressedMethod() async {
+    Get.toNamed(
+        Routes.checkOutScreen,
+        arguments: myBagItemList,
+        parameters: {
+          "promoCodeId": selectedPromoCode.value.promoCodesId ?? "",
+          "totalAmount": totalAmount.value.toString()
+        }
+    );
   }
 
   Future<void> close() async {}

@@ -2567,6 +2567,49 @@ Map<String, dynamic> yourPromoCodesSampleData = {
   ]
 };
 
+/// Shipping Addresses List Demo Data
+Map<String, dynamic> shippingAddressesSampleData = {
+  "data": [
+    {
+      "shippingAddressId": "QWERTYUI",
+      "shippingAddressName": "John Wick",
+      "shippingAddressRoad": "3 Newbridge Court",
+      "shippingAddressCity": "Chino Hills",
+      "shippingAddressRegion": "California",
+      "shippingAddressZIPCode": "91709",
+      "shippingAddressZIPCountry": "United States"
+    },
+    {
+      "shippingAddressId": "QWERTYUI",
+      "shippingAddressName": "Kira",
+      "shippingAddressRoad": "3 Newbridge Court",
+      "shippingAddressCity": "Chino Hills",
+      "shippingAddressRegion": "California",
+      "shippingAddressZIPCode": "91709",
+      "shippingAddressZIPCountry": "United States"
+    },
+    {
+      "shippingAddressId": "QWERTYUI",
+      "shippingAddressName": "Sherlock Holmes",
+      "shippingAddressRoad": "221B Baker Street",
+      "shippingAddressCity": "London",
+      "shippingAddressRegion": "",
+      "shippingAddressZIPCode": "",
+      "shippingAddressZIPCountry": "United Kingdom"
+    },
+    {
+      "shippingAddressId": "QWERTYUI",
+      "shippingAddressName": "Naruto Uzumaki",
+      "shippingAddressRoad": "3 Newbridge Court",
+      "shippingAddressCity": "Chino Hills",
+      "shippingAddressRegion": "California",
+      "shippingAddressZIPCode": "91709",
+      "shippingAddressZIPCountry": "United States"
+    }
+  ]
+};
+
+
 
 
 
