@@ -1,4 +1,5 @@
 import 'package:fashion_shoping/core/API/service/api_repositories.dart';
+import 'package:fashion_shoping/core/routes/app_pages.dart';
 import 'package:fashion_shoping/core/utils/demo_data.dart';
 import 'package:fashion_shoping/features/bag/data/shipping_address_response_model.dart';
 import 'package:get/get.dart';
@@ -39,7 +40,11 @@ class ShippingAddressesScreenController extends GetxController {
     update();
   }
 
-  Future<void> shippingAddressEditTextButtonOnPressedMethod() async {
+  Future<void> shippingAddressEditTextButtonOnPressedMethod(ShippingAddressDataModel shippingAddress) async {
+    Get.toNamed(
+        Routes.addShippingAddressesScreen,
+      arguments: shippingAddress
+    );
   }
   
   Future<void> setAsADefaultShippingAddress(ShippingAddressDataModel address) async {
@@ -49,7 +54,8 @@ class ShippingAddressesScreenController extends GetxController {
     update();
   }
 
-  Future<void> settingCardOnPressed() async {
+  Future<void> addShippingAddressButtonOnPressedMethod() async {
+    Get.toNamed(Routes.addShippingAddressesScreen);
   }
 
   Future<void> close() async {}

@@ -184,3 +184,23 @@ Widget defaultLoaderOfCircularProgressIndicatorForStateFullWidget({
     strokeWidth: strokeWidth ?? 4.0,
   );
 }
+
+Widget titleText({
+  required String title
+}) {
+  return Column(
+    mainAxisAlignment: MainAxisAlignment.start,
+    crossAxisAlignment: CrossAxisAlignment.start,
+    children: [
+      Text(
+        title,
+        style: AppTextTheme.text16.copyWith(
+          color: secondaryTextColor,
+        ),
+      ),
+      const SizedBox(
+        height: 5,
+      ),
+    ],
+  );
+}

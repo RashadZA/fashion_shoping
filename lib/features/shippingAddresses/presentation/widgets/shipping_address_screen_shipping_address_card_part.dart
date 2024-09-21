@@ -118,7 +118,7 @@ class ShippingAddressScreenShippingAddressCardPart extends GetWidget<ShippingAdd
           top: 15,
           right: 10,
           child: CoreButton(
-            onPressed: ()=> controller.shippingAddressEditTextButtonOnPressedMethod(),
+            onPressed: ()=> controller.shippingAddressEditTextButtonOnPressedMethod(shippingAddress),
             child: Text(
               "Edit",
               style: AppTextTheme.text16.copyWith(

@@ -23,7 +23,9 @@ import 'package:fashion_shoping/features/profile/presentation/pages/orders/my_or
 import 'package:fashion_shoping/features/profile/presentation/pages/orders/order_details_screen.dart';
 import 'package:fashion_shoping/features/profile/presentation/pages/profile_screen.dart';
 import 'package:fashion_shoping/features/profile/presentation/pages/setting/setting_screen.dart';
+import 'package:fashion_shoping/features/shippingAddresses/controllers/add_shipping_address_screen_controller.dart';
 import 'package:fashion_shoping/features/shippingAddresses/controllers/shipping_addresses_screen_controller.dart';
+import 'package:fashion_shoping/features/shippingAddresses/presentation/pages/add_shipping_address_screen.dart';
 import 'package:fashion_shoping/features/shippingAddresses/presentation/pages/shipping_addresses_screen.dart';
 import 'package:fashion_shoping/features/shop/controllers/shop_screen_controller.dart';
 import 'package:fashion_shoping/features/shop/presentation/pages/shop_screen.dart';
@@ -144,6 +146,13 @@ class AppPages {
       page: () => const ShippingAddressesScreen(),
       binding: BindingsBuilder(
             () => Get.lazyPut<ShippingAddressesScreenController>(() => ShippingAddressesScreenController()),
+      ),
+    ),
+    GetPage(
+      name: Routes.addShippingAddressesScreen,
+      page: () => const AddShippingAddressScreen(),
+      binding: BindingsBuilder(
+            () => Get.lazyPut<AddShippingAddresseScreenController>(() => AddShippingAddresseScreenController()),
       ),
     ),
   ];

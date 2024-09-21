@@ -1,4 +1,5 @@
 import 'package:fashion_shoping/core/utils/design_utils.dart';
+import 'package:fashion_shoping/core/widgets/buttons/core_button.dart';
 import 'package:fashion_shoping/features/shippingAddresses/controllers/shipping_addresses_screen_controller.dart';
 import 'package:fashion_shoping/features/shippingAddresses/presentation/widgets/shipping_address_screen_shipping_address_card_part.dart';
 import 'package:flutter/material.dart';
@@ -53,33 +54,36 @@ class ShippingAddressesScreen extends GetWidget<ShippingAddressesScreenControlle
       ),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-      floatingActionButton: SizedBox(
-        width: 105,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            const Icon(
-                Icons.add,
-              size: 25,
-              color: whiteColor,
-            ),
-            const SizedBox(
-              width: 10,
-            ),
-            SizedBox(
-              width: 40,
-              child: Text(
-                "Add",
-                style: AppTextTheme.text16.copyWith(
-                  color: whiteColor
-                ),
+      floatingActionButton: CoreButton(
+        onPressed: ()=> controller.addShippingAddressButtonOnPressedMethod(),
+        child: SizedBox(
+          width: 105,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              const Icon(
+                  Icons.add,
+                size: 25,
+                color: whiteColor,
               ),
-            )
-          ],
-        ).defaultContainer(
-          vP: 5,
-          backgroundColor: primaryColor,
+              const SizedBox(
+                width: 10,
+              ),
+              SizedBox(
+                width: 40,
+                child: Text(
+                  "Add",
+                  style: AppTextTheme.text16.copyWith(
+                    color: whiteColor
+                  ),
+                ),
+              )
+            ],
+          ).defaultContainer(
+            vP: 5,
+            backgroundColor: primaryColor,
+          ),
         ),
       ),
     );

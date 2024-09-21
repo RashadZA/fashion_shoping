@@ -279,7 +279,7 @@ class PromoCodesBottomSheetCardWidget extends GetWidget<BagScreenController> {
                           child: controller.promoCodesBottomSheetApplyButtonIsTapped.value ? SizedBox(
                             width: 25,
                               height: 25,
-                              child: defaultLoaderOfCupertinoActivity(),
+                              child: defaultLoaderOfCupertinoActivity(color: primaryColor),
                           ) : Text(
                             "Apply",
                             textAlign: TextAlign.center,
