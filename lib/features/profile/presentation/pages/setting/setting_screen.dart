@@ -16,7 +16,7 @@ class SettingScreen extends GetWidget<SettingScreenController> {
         final double deviceWidth = Get.width - (defaultPadding + defaultPadding);
         return Scaffold(
           appBar: AppBar(
-            backgroundColor: whiteColor,
+            backgroundColor: scaffoldAppBarColor,
             centerTitle: true,
             leading: IconButton(
               onPressed: ()=> Get.back(),

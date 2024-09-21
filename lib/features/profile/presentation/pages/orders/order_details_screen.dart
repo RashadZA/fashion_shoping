@@ -17,7 +17,7 @@ class OrderDetailsScreen extends GetWidget<OrderDetailsScreenController> {
         return Scaffold(
           backgroundColor: scaffoldBackgroundColor,
           appBar: AppBar(
-            backgroundColor: whiteColor,
+            backgroundColor: scaffoldAppBarColor,
             centerTitle: true,
             leading: IconButton(
               onPressed: ()=> Get.back(),

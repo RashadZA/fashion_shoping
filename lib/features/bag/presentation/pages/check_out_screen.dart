@@ -1,5 +1,7 @@
 import 'package:fashion_shoping/core/utils/design_utils.dart';
 import 'package:fashion_shoping/features/bag/controllers/check_out_screen_controller.dart';
+import 'package:fashion_shoping/features/bag/presentation/widgets/checkOutScreen/check_out_screen_row_widget.dart';
+import 'package:fashion_shoping/features/bag/presentation/widgets/checkOutScreen/check_out_screen_shiiping_address_card_part.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -11,7 +13,7 @@ class CheckOutScreen extends GetWidget<CheckOutScreenController> {
     return Scaffold(
       backgroundColor: scaffoldBackgroundColor,
       appBar: AppBar(
-        backgroundColor: whiteColor,
+        backgroundColor: scaffoldAppBarColor,
         centerTitle: true,
         leading: IconButton(
           onPressed: ()=> Get.back(),
@@ -220,114 +222,6 @@ class CheckOutScreen extends GetWidget<CheckOutScreenController> {
         ),
       ),
       ),
-    );
-  }
-}
-class CheckOutScreenShippingAddressCardPart extends GetWidget<CheckOutScreenController> {
-  const CheckOutScreenShippingAddressCardPart({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            SizedBox(
-              width: Get.width,
-              child: Text(
-                controller.selectedShippingAddress.value.shippingAddressName ?? "",
-                style: AppTextTheme.text16.copyWith(
-                  fontWeight: FontWeight.w400,
-                  overflow: TextOverflow.visible,
-                ),
-              ),
-            ),
-            SizedBox(
-              width: Get.width,
-              child: Text(
-                controller.shippingAddressRoad.value,
-                style: AppTextTheme.text16.copyWith(
-                  fontWeight: FontWeight.w400,
-                  overflow: TextOverflow.visible,
-                ),
-              ),
-            ),
-            SizedBox(
-              width: Get.width,
-              child: Text(
-                controller.shippingAddressRestOfThePartWithoutRoad.value,
-                style: AppTextTheme.text16.copyWith(
-                  fontWeight: FontWeight.w400,
-                  overflow: TextOverflow.visible,
-                ),
-              ),
-            ),
-          ],
-        ).defaultContainer(),
-        Positioned(
-          top: 15,
-          right: 10,
-          child: Text(
-            "Change",
-            style: AppTextTheme.text16.copyWith(
-              color: primaryColor,
-              overflow: TextOverflow.visible,
-            ),
-          ),
-        ),
-      ],
-    );
-  }
-}
-
-class CheckOutScreenRowWidget extends StatelessWidget {
-  final String title;
-  final String value;
-  const CheckOutScreenRowWidget({super.key, required this.title, required this.value});
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.start,
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: [
-        SizedBox(
-          width: 70,
-          height: 30,
-          child: Text(
-            title,
-            style: AppTextTheme.text16.copyWith(
-              color: secondaryTextColor,
-              overflow: TextOverflow.visible,
-            ),
-          ),
-        ),
-        SizedBox(
-          width: 10,
-          height: 30,
-          child: Text(
-            ":",
-
-            style: AppTextTheme.text16.copyWith(
-              color: secondaryTextColor,
-              overflow: TextOverflow.visible,
-            ),
-          ),
-        ),
-        SizedBox(
-          height: 30,
-          width: Get.width - 110,
-          child: Text(
-            "$value\$",
-            textAlign: TextAlign.right,
-            style: AppTextTheme.text18.copyWith(
-              overflow: TextOverflow.visible,
-            ),
-          ),
-        ),
-      ],
     );
   }
 }

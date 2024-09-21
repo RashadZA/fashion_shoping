@@ -41,6 +41,8 @@ dependencies:
   shimmer: ^3.0.0
   cached_network_image: ^3.4.1
 
+  shared_preferences: ^2.3.2
+
   get_cli: ^1.8.1
   get: ^4.6.6
 

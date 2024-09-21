@@ -1,3 +1,4 @@
+import 'package:fashion_shoping/core/API/service/api_repositories.dart';
 import 'package:fashion_shoping/features/auth/controllers/forgot_password_screen_controller.dart';
 import 'package:fashion_shoping/features/auth/controllers/signin_screen_controller.dart';
 import 'package:fashion_shoping/features/auth/controllers/signout_screen_controller.dart';
@@ -22,6 +23,8 @@ import 'package:fashion_shoping/features/profile/presentation/pages/orders/my_or
 import 'package:fashion_shoping/features/profile/presentation/pages/orders/order_details_screen.dart';
 import 'package:fashion_shoping/features/profile/presentation/pages/profile_screen.dart';
 import 'package:fashion_shoping/features/profile/presentation/pages/setting/setting_screen.dart';
+import 'package:fashion_shoping/features/shippingAddresses/controllers/shipping_addresses_screen_controller.dart';
+import 'package:fashion_shoping/features/shippingAddresses/presentation/pages/shipping_addresses_screen.dart';
 import 'package:fashion_shoping/features/shop/controllers/shop_screen_controller.dart';
 import 'package:fashion_shoping/features/shop/presentation/pages/shop_screen.dart';
 import 'package:fashion_shoping/features/startUp/splash/splash_screen.dart';
@@ -136,12 +139,20 @@ class AppPages {
             () => Get.lazyPut<CheckOutScreenController>(() => CheckOutScreenController()),
       ),
     ),
+    GetPage(
+      name: Routes.shippingAddressesScreen,
+      page: () => const ShippingAddressesScreen(),
+      binding: BindingsBuilder(
+            () => Get.lazyPut<ShippingAddressesScreenController>(() => ShippingAddressesScreenController()),
+      ),
+    ),
   ];
 }
 
 class BindingsX {
   static BindingsBuilder initialBindigs() {
     return BindingsBuilder(() {
+      Get.lazyPut<APIRepository>(() => APIRepository(), fenix: true);
       Get.lazyPut<HomeScreenController>(() => HomeScreenController(), fenix: true);
       Get.lazyPut<ShopScreenController>(() => ShopScreenController(), fenix: true);
       Get.lazyPut<BagScreenController>(() => BagScreenController(), fenix: true);

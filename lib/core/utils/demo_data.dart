@@ -2580,7 +2580,7 @@ Map<String, dynamic> shippingAddressesSampleData = {
       "shippingAddressZIPCountry": "United States"
     },
     {
-      "shippingAddressId": "QWERTYUI",
+      "shippingAddressId": "ASDFGHJK",
       "shippingAddressName": "Kira",
       "shippingAddressRoad": "3 Newbridge Court",
       "shippingAddressCity": "Chino Hills",
@@ -2589,7 +2589,7 @@ Map<String, dynamic> shippingAddressesSampleData = {
       "shippingAddressZIPCountry": "United States"
     },
     {
-      "shippingAddressId": "QWERTYUI",
+      "shippingAddressId": "ZXCVBNML",
       "shippingAddressName": "Sherlock Holmes",
       "shippingAddressRoad": "221B Baker Street",
       "shippingAddressCity": "London",
@@ -2598,13 +2598,58 @@ Map<String, dynamic> shippingAddressesSampleData = {
       "shippingAddressZIPCountry": "United Kingdom"
     },
     {
-      "shippingAddressId": "QWERTYUI",
+      "shippingAddressId": "QAZXSWED",
       "shippingAddressName": "Naruto Uzumaki",
       "shippingAddressRoad": "3 Newbridge Court",
       "shippingAddressCity": "Chino Hills",
       "shippingAddressRegion": "California",
       "shippingAddressZIPCode": "91709",
       "shippingAddressZIPCountry": "United States"
+    },
+    {
+      "shippingAddressId": "BBJYSBVVBFJSVBFGVBEFGY",
+      "shippingAddressName": "Kakashi Hatake",
+      "shippingAddressRoad": "3 Newbridge Court",
+      "shippingAddressCity": "Chino Hills",
+      "shippingAddressRegion": "California",
+      "shippingAddressZIPCode": "91709",
+      "shippingAddressZIPCountry": "United States"
+    },
+    {
+      "shippingAddressId": "GTSFAWZADAWDASS",
+      "shippingAddressName": "Satoru Gojo",
+      "shippingAddressRoad": "Tokyo Metropolitan Curse Technical College",
+      "shippingAddressCity": "Sendai",
+      "shippingAddressRegion": "Tohoku",
+      "shippingAddressZIPCode": "978548",
+      "shippingAddressZIPCountry": "Japan"
+    },
+    {
+      "shippingAddressId": "QSDFGTYG",
+      "shippingAddressName": "Ryomen Sukuna",
+      "shippingAddressRoad": "Tokyo Metropolitan Curse Technical College",
+      "shippingAddressCity": "Sendai",
+      "shippingAddressRegion": "Tohoku",
+      "shippingAddressZIPCode": "978548",
+      "shippingAddressZIPCountry": "Japan"
+    },
+    {
+      "shippingAddressId": "QAKHGDRX",
+      "shippingAddressName": "Yuji Itadori",
+      "shippingAddressRoad": "Tokyo Metropolitan Curse Technical College",
+      "shippingAddressCity": "Sendai",
+      "shippingAddressRegion": "Tohoku",
+      "shippingAddressZIPCode": "978548",
+      "shippingAddressZIPCountry": "Japan"
+    },
+    {
+      "shippingAddressId": "PAGDECSP",
+      "shippingAddressName": "Kirigaya Kazuto (Kirito)",
+      "shippingAddressRoad": "Kawagoe, Saitama prefecture",
+      "shippingAddressCity": "Chino Hills",
+      "shippingAddressRegion": "",
+      "shippingAddressZIPCode": "91709",
+      "shippingAddressZIPCountry": "Japan"
     }
   ]
 };

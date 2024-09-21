@@ -5,6 +5,7 @@ import 'package:fashion_shoping/features/profile/presentation/widgets/profile_ca
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
 
@@ -27,10 +28,19 @@ class _ProfileScreenState extends State<ProfileScreen> {
         builder: (context,orientation) {
           return Scaffold(
             backgroundColor: scaffoldBackgroundColor,
-            body: SingleChildScrollView(
-              padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 30,),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+            body: SizedBox(
+              width: Get.width,
+              height: Get.height,
+              child: Obx(()=> controller.profileScreenDataProcessing.value
+                  ? SizedBox(
+                width: Get.width,
+                height: Get.height,
+                child: Center(
+                  child: defaultLoaderOfCircularProgressIndicatorForStateFullWidget(),
+                ),
+              ) : ListView(
+                padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 30,),
+                // crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   const SizedBox(height: 40,),
                   const Text(
@@ -68,17 +78,17 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   const SizedBox(height: 20,),
                   CoreButton(
                     onPressed: () => controller.myOrderCardOnPressed(),
-                    child: const ProfileCardButton(
+                    child: ProfileCardButton(
                       buttonTitle: "My Orders",
-                      buttonSubTitle: "Already have 12 orders",
+                      buttonSubTitle: "Already have ${controller.processingOrderModelList.length} orders",
                     ),
                   ),
                   const SizedBox(height: 20,),
                   CoreButton(
-                    onPressed: () {},
-                    child: const ProfileCardButton(
+                    onPressed: () => controller.shippingAddressCardOnPressed(),
+                    child: ProfileCardButton(
                       buttonTitle: "Shipping Addresses",
-                      buttonSubTitle: "3 addresses",
+                      buttonSubTitle: "${controller.shippingAddressList.length} addresses",
                     ),
                   ),
                   const SizedBox(height: 20,),
@@ -115,6 +125,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   ),
                   const SizedBox(height: 40,),
                 ],
+              ),
               ),
             ),
           );

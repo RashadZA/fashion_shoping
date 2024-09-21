@@ -17,6 +17,7 @@ abstract class Routes {
   static const orderDetailsScreen = _Paths.orderDetailsScreen;
   static const settingScreen = _Paths.settingScreen;
   static const checkOutScreen = _Paths.checkOutScreen;
+  static const shippingAddressesScreen = _Paths.shippingAddressesScreen;
 }
 
 abstract class _Paths {
@@ -35,4 +36,5 @@ abstract class _Paths {
   static const orderDetailsScreen = '/orderDetailsScreen';
   static const settingScreen = '/settingScreen';
   static const checkOutScreen = '/checkOutScreen';
+  static const shippingAddressesScreen = '/shippingAddressesScreen';
 }

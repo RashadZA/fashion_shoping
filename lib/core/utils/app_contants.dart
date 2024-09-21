@@ -160,3 +160,27 @@ class ImageErrorHandle extends StatelessWidget {
     );
   }
 }
+
+Widget defaultLoaderOfCupertinoActivityForStateFullWidget({
+  Color? color,
+  double? radius,
+}) => Center(
+  child: CupertinoActivityIndicator(
+    color: color ?? whiteColor,
+    radius: radius ?? 10.0,
+  ),
+);
+
+Widget defaultLoaderOfCircularProgressIndicatorForStateFullWidget({
+  Color? color,
+  Color? backgroundColor,
+  double? strokeWidth,
+  double? value,
+}){
+  return CircularProgressIndicator(
+    value: value,
+    backgroundColor: backgroundColor ?? primaryColor.withOpacity(0.3),
+    color: color ?? primaryColor,
+    strokeWidth: strokeWidth ?? 4.0,
+  );
+}
