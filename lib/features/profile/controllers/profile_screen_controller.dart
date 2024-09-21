@@ -2,6 +2,7 @@ import 'package:fashion_shoping/core/API/service/api_repositories.dart';
 import 'package:fashion_shoping/core/routes/app_pages.dart';
 import 'package:fashion_shoping/core/utils/demo_data.dart';
 import 'package:fashion_shoping/core/utils/design_utils.dart';
+import 'package:fashion_shoping/features/bag/data/promo_codes_response_model.dart';
 import 'package:fashion_shoping/features/bag/data/shipping_address_response_model.dart';
 import 'package:fashion_shoping/features/shippingAddresses/data/models/oder_model.dart';
 import 'package:get/get.dart';
@@ -13,9 +14,11 @@ class ProfileScreenController extends GetxController {
   RxList<ShippingAddressDataModel> shippingAddressList = <ShippingAddressDataModel>[].obs;
   RxList<OrderModel> processingOrderModelList = <OrderModel>[].obs;
   RxList<OrderModel> orderModelList = <OrderModel>[].obs;
+  RxList<PromoCodesDataModel> promoCodesList = <PromoCodesDataModel>[].obs;
 
   Rx<ShippingAddressResponseModel> shippingAddressResponse = ShippingAddressResponseModel().obs;
   Rx<MyOrdersResponseModel> myOrdersResponse = MyOrdersResponseModel().obs;
+  Rx<PromoCodesResponseModel> promoCodesResponse = PromoCodesResponseModel().obs;
 
   RxBool profileScreenDataProcessing = false.obs;
 
@@ -29,6 +32,10 @@ class ProfileScreenController extends GetxController {
     profileScreenDataProcessing.value = true;
 
     processingOrderModelList.value = <OrderModel>[];
+
+    /// Promo Codes part
+    promoCodesResponse.value = PromoCodesResponseModel.fromJson(yourPromoCodesSampleData);
+    promoCodesList.value = promoCodesResponse.value.data ?? <PromoCodesDataModel>[];
 
     /// My order part
     myOrdersResponse.value = MyOrdersResponseModel.fromJson(myOrderSampleData);
@@ -58,6 +65,12 @@ class ProfileScreenController extends GetxController {
   Future<void> shippingAddressCardOnPressed() async {
     Get.toNamed(
       Routes.shippingAddressesScreen,
+    )?.then((value)=> init());
+  }
+
+  Future<void> promoCodesCardOnPressed() async {
+    Get.toNamed(
+      Routes.promoCodesScreen,
     )?.then((value)=> init());
   }
 

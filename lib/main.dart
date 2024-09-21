@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
     return  GetMaterialApp(
       title: "Fashion Shopping",
       debugShowCheckedModeBanner: false,
-      initialRoute: Routes.mainScreen,
+      initialRoute: Routes.splashScreen,
       getPages: AppPages.routes,
       initialBinding: BindingsX.initialBindigs(),
       theme: AppTheme.lightTheme,

@@ -18,10 +18,12 @@ import 'package:fashion_shoping/features/main/presentation/pages/main_screen.dar
 import 'package:fashion_shoping/features/profile/controllers/orders/my_orders_screen_controller.dart';
 import 'package:fashion_shoping/features/profile/controllers/orders/order_details_screen_controller.dart';
 import 'package:fashion_shoping/features/profile/controllers/profile_screen_controller.dart';
+import 'package:fashion_shoping/features/profile/controllers/promoCode/promo_code_screen_controller.dart';
 import 'package:fashion_shoping/features/profile/controllers/setting/setting_screen_controller.dart';
 import 'package:fashion_shoping/features/profile/presentation/pages/orders/my_orders_screen.dart';
 import 'package:fashion_shoping/features/profile/presentation/pages/orders/order_details_screen.dart';
 import 'package:fashion_shoping/features/profile/presentation/pages/profile_screen.dart';
+import 'package:fashion_shoping/features/profile/presentation/pages/promoCode/promo_code_screen.dart';
 import 'package:fashion_shoping/features/profile/presentation/pages/setting/setting_screen.dart';
 import 'package:fashion_shoping/features/shippingAddresses/controllers/add_shipping_address_screen_controller.dart';
 import 'package:fashion_shoping/features/shippingAddresses/controllers/shipping_addresses_screen_controller.dart';
@@ -153,6 +155,13 @@ class AppPages {
       page: () => const AddShippingAddressScreen(),
       binding: BindingsBuilder(
             () => Get.lazyPut<AddShippingAddresseScreenController>(() => AddShippingAddresseScreenController()),
+      ),
+    ),
+    GetPage(
+      name: Routes.promoCodesScreen,
+      page: () => const PromoCodeScreen(),
+      binding: BindingsBuilder(
+            () => Get.lazyPut<PromoCodeScreenController>(() => PromoCodeScreenController()),
       ),
     ),
   ];

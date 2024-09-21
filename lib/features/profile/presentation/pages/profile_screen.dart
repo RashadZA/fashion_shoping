@@ -101,10 +101,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   ),
                   const SizedBox(height: 20,),
                   CoreButton(
-                    onPressed: () {},
-                    child: const ProfileCardButton(
+                    onPressed: () => controller.promoCodesCardOnPressed(),
+                    child: ProfileCardButton(
                       buttonTitle: "Promo Codes",
-                      buttonSubTitle: "You have special promo codes",
+                      buttonSubTitle: "You have ${controller.promoCodesList.length} promo codes",
                     ),
                   ),
                   const SizedBox(height: 20,),
