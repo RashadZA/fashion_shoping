@@ -195,27 +195,30 @@ class CheckOutScreen extends GetWidget<CheckOutScreenController> {
             const SizedBox(
               height: 30,
             ),
-            Container(
-              height: 50,
-              width: Get.width,
-              alignment: Alignment.center,
-              decoration: BoxDecoration(
-                color: primaryColor,
-                borderRadius: BorderRadius.circular(25),
-                boxShadow: [
-                  BoxShadow(
-                    blurRadius: 3,
-                    offset: const Offset(0, 1),
-                    color: primaryColor.withOpacity(0.5),
+            CoreButton(
+              onPressed: ()=> controller.submitOrderButtonOnChangedMethod(),
+              child: Container(
+                height: 50,
+                width: Get.width,
+                alignment: Alignment.center,
+                decoration: BoxDecoration(
+                  color: primaryColor,
+                  borderRadius: BorderRadius.circular(25),
+                  boxShadow: [
+                    BoxShadow(
+                      blurRadius: 3,
+                      offset: const Offset(0, 1),
+                      color: primaryColor.withOpacity(0.5),
+                    ),
+                  ],
+                ),
+                child: Text(
+                  "Submit Order",
+                  textAlign: TextAlign.center,
+                  style: AppTextTheme.text18.copyWith(
+                    color: whiteColor,
+                    overflow: TextOverflow.visible,
                   ),
-                ],
-              ),
-              child: Text(
-                "Submit Order",
-                textAlign: TextAlign.center,
-                style: AppTextTheme.text18.copyWith(
-                  color: whiteColor,
-                  overflow: TextOverflow.visible,
                 ),
               ),
             ),
@@ -229,5 +232,6 @@ class CheckOutScreen extends GetWidget<CheckOutScreenController> {
     );
   }
 }
+
 
 

@@ -5,12 +5,15 @@ import 'package:fashion_shoping/core/utils/design_utils.dart';
 import 'package:fashion_shoping/features/bag/data/my_bag_response_model.dart';
 import 'package:fashion_shoping/features/bag/data/promo_codes_response_model.dart';
 import 'package:fashion_shoping/features/bag/data/shipping_address_response_model.dart';
+import 'package:fashion_shoping/features/bag/presentation/widgets/checkOutScreen/order_successful_dialog.dart';
+import 'package:fashion_shoping/features/main/controllers/main_screen_controller.dart';
 import 'package:fashion_shoping/features/paymentMethod/models/payment_method_response_model.dart';
 import 'package:get/get.dart';
 
 class CheckOutScreenController extends GetxController {
 
   final APIRepository apiRepository = Get.find<APIRepository>();
+  final MainScreenController mainScreenController = Get.find<MainScreenController>();
 
   RxList<MyBagItemDataModel> myBagItemList = <MyBagItemDataModel>[].obs;
   RxList<ShippingAddressDataModel> shippingAddressList = <ShippingAddressDataModel>[].obs;
@@ -123,6 +126,17 @@ class CheckOutScreenController extends GetxController {
       }
     }
     totalAmount.value = totalAmount.value - discountAmount.value;
+    update();
+  }
+
+  Future<void> submitOrderButtonOnChangedMethod() async {
+    Get.dialog(
+        const OrderSuccessfulDialog()
+    );
+  }
+
+  Future<void> orderSuccessfulDialogContinueShoppingButtonOnPressedMethod() async {
+    Get.offAllNamed(Routes.mainScreen);
     update();
   }
 
