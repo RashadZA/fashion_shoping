@@ -93,10 +93,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   ),
                   const SizedBox(height: 20,),
                   CoreButton(
-                    onPressed: () {},
-                    child: const ProfileCardButton(
+                    onPressed: () => controller.paymentMethodCardOnPressed(),
+                    child: ProfileCardButton(
                       buttonTitle: "Payment Methods",
-                      buttonSubTitle: "Visa ***123",
+                      buttonSubTitle: "${controller.cardList.length} cards",
                     ),
                   ),
                   const SizedBox(height: 20,),

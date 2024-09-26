@@ -15,6 +15,8 @@ import 'package:fashion_shoping/features/home/controllers/home_screen_controller
 import 'package:fashion_shoping/features/home/presentation/pages/home_screen.dart';
 import 'package:fashion_shoping/features/main/controllers/main_screen_controller.dart';
 import 'package:fashion_shoping/features/main/presentation/pages/main_screen.dart';
+import 'package:fashion_shoping/features/paymentMethod/controllers/payment_method_screen_controller.dart';
+import 'package:fashion_shoping/features/paymentMethod/presentation/payment_method_screen.dart';
 import 'package:fashion_shoping/features/profile/controllers/orders/my_orders_screen_controller.dart';
 import 'package:fashion_shoping/features/profile/controllers/orders/order_details_screen_controller.dart';
 import 'package:fashion_shoping/features/profile/controllers/profile_screen_controller.dart';
@@ -162,6 +164,13 @@ class AppPages {
       page: () => const PromoCodeScreen(),
       binding: BindingsBuilder(
             () => Get.lazyPut<PromoCodeScreenController>(() => PromoCodeScreenController()),
+      ),
+    ),
+    GetPage(
+      name: Routes.paymentMethodScreen,
+      page: () => const PaymentMethodScreen(),
+      binding: BindingsBuilder(
+            () => Get.lazyPut<PaymentMethodScreenController>(() => PaymentMethodScreenController()),
       ),
     ),
   ];

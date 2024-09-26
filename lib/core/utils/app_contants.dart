@@ -204,3 +204,11 @@ Widget titleText({
     ],
   );
 }
+
+String maskCardNumber(String cardNumber) {
+  // Get the last 4 digits of the card number
+  String lastFourDigits = cardNumber.substring(cardNumber.length - 4);
+
+  // Create the masked card number format
+  return "* * * *   * * * *   * * * *   $lastFourDigits";
+}

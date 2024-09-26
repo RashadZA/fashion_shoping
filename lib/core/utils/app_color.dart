@@ -29,6 +29,7 @@ const Color buttonPrimaryColor = Color(0xFFDB3022);
 
 const Color masterCardColorOne = Color(0xFFEB001B);
 const Color masterCardColorTwo = Color(0xFFF79E1B);
+const Color masterCardColorThree = Color(0xFFD29634);
 
 const Color defaultBorderColorOne = Color(0xFF222222);
 

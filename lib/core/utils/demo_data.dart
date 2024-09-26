@@ -2654,6 +2654,83 @@ Map<String, dynamic> shippingAddressesSampleData = {
   ]
 };
 
+/// Payment Method sample Data List
+Map<String, dynamic> paymentMethodSampleData = {
+  "data": [
+    {
+      "cardId": "SDKFBISUEB1",
+      "cardName": "Naruto Uzumaki",
+      "cardNumber": "4111111111111111",
+      "cardExpiredDate": "12/25",
+      "cardCVV": "123"
+    },
+    {
+      "cardId": "NVZINHGRI2",
+      "cardName": "Goku Son",
+      "cardNumber": "5500000000000004",
+      "cardExpiredDate": "05/24",
+      "cardCVV": "456"
+    },
+    {
+      "cardId": "HVISHI3",
+      "cardName": "Monkey D. Luffy",
+      "cardNumber": "6011000000000004",
+      "cardExpiredDate": "11/26",
+      "cardCVV": "789"
+    },
+    {
+      "cardId": "HVISNNFN4",
+      "cardName": "Ichigo Kurosaki",
+      "cardNumber": "3530111333300000",
+      "cardExpiredDate": "09/23",
+      "cardCVV": "012"
+    },
+    {
+      "cardId": "VSIBI5",
+      "cardName": "Saitama",
+      "cardNumber": "4000000000000002",
+      "cardExpiredDate": "01/27",
+      "cardCVV": "345"
+    },
+    {
+      "cardId": "UHVFISVIBS6",
+      "cardName": "Edward Elric",
+      "cardNumber": "340000000000009",
+      "cardExpiredDate": "03/25",
+      "cardCVV": "678"
+    },
+    {
+      "cardId": "ISGVIB7",
+      "cardName": "Levi Ackerman",
+      "cardNumber": "6011111111111117",
+      "cardExpiredDate": "08/24",
+      "cardCVV": "901"
+    },
+    {
+      "cardId": "GSVDIUBSVKS8",
+      "cardName": "Light Yagami",
+      "cardNumber": "378282246310005",
+      "cardExpiredDate": "06/23",
+      "cardCVV": "234"
+    },
+    {
+      "cardId": "VSDVSV9",
+      "cardName": "Sakura Haruno",
+      "cardNumber": "30569309025904",
+      "cardExpiredDate": "02/28",
+      "cardCVV": "567"
+    },
+    {
+      "cardId": "SDVSDVVDV10",
+      "cardName": "Mikasa Ackerman",
+      "cardNumber": "6011000990139424",
+      "cardExpiredDate": "07/22",
+      "cardCVV": "890"
+    }
+  ]
+};
+
+
 
 
 

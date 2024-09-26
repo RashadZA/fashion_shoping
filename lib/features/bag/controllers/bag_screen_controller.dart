@@ -41,7 +41,6 @@ class BagScreenController extends GetxController {
     /// Promo Codes part
     promoCodesResponse.value = PromoCodesResponseModel.fromJson(yourPromoCodesSampleData);
     promoCodesList.value = promoCodesResponse.value.data ?? <PromoCodesDataModel>[];
-
     myBagScreenDataProcessing.value = false;
     update();
   }
@@ -54,8 +53,6 @@ class BagScreenController extends GetxController {
     await calculateItemTotalAmountWithDiscount();
     update();
   }
-
-
 
   Future<void> calculateItemTotalAmountWithDiscount() async {
    RxDouble discountAmount = 0.0.obs;

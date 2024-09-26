@@ -26,6 +26,33 @@ class APIRepository {
     await prefs.remove('selectedShippingAddress');
     debugPrint('saved SelectedShippingAddress====');
   }
-/// User SelectedShippingAddress SharedPreferences Part End
-///
+/// User Selected Payment Method SharedPreferences Part End
+
+  /// User SelectedShippingAddress SharedPreferences Part Start
+  Future<void> saveSelectedPaymentMethod(String? value) async {
+    await deleteSelectedPaymentMethod();
+    debugPrint(' SelectedPaymentMethod value==== $value');
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    if (value != null) {
+      await prefs.setString('selectedPaymentMethod', value);
+      await getSelectedPaymentMethod();
+    }
+  }
+
+  Future<String> getSelectedPaymentMethod() async {
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    String? getSelectedPaymentMethod = prefs.getString('selectedPaymentMethod');
+    debugPrint('get SelectedPaymentMethod==== $getSelectedPaymentMethod');
+    return getSelectedPaymentMethod ?? "SDKFBISUEB1";
+  }
+
+  Future<void> deleteSelectedPaymentMethod() async {
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    await prefs.remove('selectedPaymentMethod');
+    debugPrint('saved SelectedShippingAddress====');
+  }
+/// User Selected Payment Method SharedPreferences Part End
+
+
+
 }

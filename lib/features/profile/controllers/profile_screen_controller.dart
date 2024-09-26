@@ -4,6 +4,7 @@ import 'package:fashion_shoping/core/utils/demo_data.dart';
 import 'package:fashion_shoping/core/utils/design_utils.dart';
 import 'package:fashion_shoping/features/bag/data/promo_codes_response_model.dart';
 import 'package:fashion_shoping/features/bag/data/shipping_address_response_model.dart';
+import 'package:fashion_shoping/features/paymentMethod/models/payment_method_response_model.dart';
 import 'package:fashion_shoping/features/shippingAddresses/data/models/oder_model.dart';
 import 'package:get/get.dart';
 
@@ -15,12 +16,16 @@ class ProfileScreenController extends GetxController {
   RxList<OrderModel> processingOrderModelList = <OrderModel>[].obs;
   RxList<OrderModel> orderModelList = <OrderModel>[].obs;
   RxList<PromoCodesDataModel> promoCodesList = <PromoCodesDataModel>[].obs;
+  RxList<CardDataModel> cardList = <CardDataModel>[].obs;
 
+  Rx<PaymentMethodResponseModel> paymentMethodResponse = PaymentMethodResponseModel().obs;
   Rx<ShippingAddressResponseModel> shippingAddressResponse = ShippingAddressResponseModel().obs;
   Rx<MyOrdersResponseModel> myOrdersResponse = MyOrdersResponseModel().obs;
   Rx<PromoCodesResponseModel> promoCodesResponse = PromoCodesResponseModel().obs;
 
   RxBool profileScreenDataProcessing = false.obs;
+
+  RxString defaultPaymentMethodId = "".obs;
 
   @override
   void onInit() {
@@ -50,6 +55,11 @@ class ProfileScreenController extends GetxController {
     shippingAddressResponse.value = ShippingAddressResponseModel.fromJson(shippingAddressesSampleData);
     shippingAddressList.value = shippingAddressResponse.value.data ?? <ShippingAddressDataModel>[];
 
+    /// Payment Method part
+    defaultPaymentMethodId.value = await apiRepository.getSelectedPaymentMethod();
+    paymentMethodResponse.value = PaymentMethodResponseModel.fromJson(paymentMethodSampleData);
+    cardList.value = paymentMethodResponse.value.data ?? <CardDataModel>[];
+
     profileScreenDataProcessing.value = false;
     update();
   }
@@ -66,6 +76,10 @@ class ProfileScreenController extends GetxController {
     Get.toNamed(
       Routes.shippingAddressesScreen,
     )?.then((value)=> init());
+  }
+
+  Future<void> paymentMethodCardOnPressed() async {
+    Get.toNamed(Routes.paymentMethodScreen,)?.then((value)=> init());
   }
 
   Future<void> promoCodesCardOnPressed() async {

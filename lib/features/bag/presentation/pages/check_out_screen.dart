@@ -1,4 +1,5 @@
 import 'package:fashion_shoping/core/utils/design_utils.dart';
+import 'package:fashion_shoping/core/widgets/buttons/core_button.dart';
 import 'package:fashion_shoping/features/bag/controllers/check_out_screen_controller.dart';
 import 'package:fashion_shoping/features/bag/presentation/widgets/checkOutScreen/check_out_screen_row_widget.dart';
 import 'package:fashion_shoping/features/bag/presentation/widgets/checkOutScreen/check_out_screen_shiiping_address_card_part.dart';
@@ -59,11 +60,14 @@ class CheckOutScreen extends GetWidget<CheckOutScreenController> {
                     overflow: TextOverflow.visible,
                   ),
                 ),
-                Text(
-                  "Change",
-                  style: AppTextTheme.text16.copyWith(
-                    color: primaryColor,
-                    overflow: TextOverflow.visible,
+                CoreButton(
+                  onPressed: ()=> controller.paymentMethodChangeTextButtonOnPressedMethod(),
+                  child: Text(
+                    "Change",
+                    style: AppTextTheme.text16.copyWith(
+                      color: primaryColor,
+                      overflow: TextOverflow.visible,
+                    ),
                   ),
                 ),
               ],
@@ -107,7 +111,7 @@ class CheckOutScreen extends GetWidget<CheckOutScreenController> {
                   ),
                 ),
                 Text(
-                  "**** **** **** 1452",
+                  maskCardNumber(controller.selectedCard.value.cardNumber ?? ""),
                   style: AppTextTheme.text16.copyWith(overflow: TextOverflow.visible),
                 ),
               ],

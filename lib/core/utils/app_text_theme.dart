@@ -49,6 +49,15 @@ class AppTextTheme {
     decoration: TextDecoration.none,
   );
 
+  static final text20 = TextStyle(
+    color: primaryTextColor,
+    fontSize: 20,
+    letterSpacing: -.24,
+    overflow: defaultOverflow,
+    fontWeight: FontWeight.w500,
+    decoration: TextDecoration.none,
+  );
+
   static final text22 = TextStyle(
     color: primaryTextColor,
     fontSize: 22,
