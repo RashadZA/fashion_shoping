@@ -1,3 +1,5 @@
+import 'package:fashion_shoping/core/utils/design_utils.dart';
+
 /// My Order List sample data
 Map<String, dynamic> myOrderSampleData = {
   "data": [
@@ -2729,8 +2731,30 @@ Map<String, dynamic> paymentMethodSampleData = {
     }
   ]
 };
-
-
+ Map<String,dynamic> dataForSliderList = {
+  "data": [
+    {
+      "title": fashionSale,
+      "imageUrl" : "https://drive.google.com/uc?export=view&id=1u6tpw21qhx9cjzYjezTyI8L2Yjm0IArn"
+    },
+    {
+      "title": streetClothes,
+      "imageUrl" : "https://drive.google.com/uc?export=view&id=1rQ26b01FmTw_9qd-_wCwRb1AyXYJD3eR"
+    },
+    {
+      "title": summerSale,
+      "imageUrl" : "https://drive.google.com/uc?export=view&id=15zIb8Ty0VWtx-gDceS0XUYMBaVNiQX82"
+    },
+    {
+      "title": mensHoodies,
+      "imageUrl" : "https://drive.google.com/uc?export=view&id=1yrv3PYO2-K12PIsowxzMyfACGEQDY6iO"
+    },
+    {
+      "title": topSales,
+      "imageUrl" : "https://drive.google.com/uc?export=view&id=1eCfgEUuvPCQKJOPd7w2hoRICxDh96CXa"
+    }
+  ]
+};
 
 
 

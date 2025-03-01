@@ -1,6 +1,9 @@
 import 'package:fashion_shoping/core/utils/design_utils.dart';
+import 'package:fashion_shoping/core/widgets/image_handle_from_network_network.dart';
 import 'package:fashion_shoping/features/home/controllers/home_screen_controller.dart';
+import 'package:carousel_slider_plus/carousel_slider_plus.dart';
 import 'package:flutter/material.dart';
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:get/get.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -13,14 +16,73 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   final HomeScreenController controller = Get.find<HomeScreenController>();
 
+
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      backgroundColor: scaffoldBackgroundColor,
-      body: Center(
-        child: Text(
-          "Home Screen"
+    return Container(
+      width: Get.width,
+      height: Get.height,
+      color: scaffoldBackgroundColor,
+      child: Obx(()=> controller.homeScreenDataOnProcessing.value
+          ? SizedBox(
+        width: Get.width,
+        height: Get.height,
+        child: Center(
+          child: defaultLoaderOfCircularProgressIndicatorForStateFullWidget(),
         ),
+      ) : Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          CarouselSlider(
+            options: CarouselOptions(
+              height: 300.0,
+              autoPlay: true,
+              enlargeCenterPage: true,
+              viewportFraction: 1.0, // To ensure full width
+              onPageChanged: (index, reason) => controller.sliderOnChangedMethod(index),
+            ),
+            items: controller.sliderList.map((item) {
+              return SizedBox(
+                width: Get.width,
+                height: 300,
+                child: Stack(
+                  children: [
+                    ImageHandleFromNetworkWidget(
+                      imageUrl: item.imageUrl ?? "",
+                      fit: BoxFit.fill,
+                      width: Get.width,
+                      height: 300,
+                      radius: 0,
+                    ),
+                    Positioned(
+                      left: 10,
+                      bottom: 10,
+                      child: Text(
+                        item.title ?? "",
+                        style: AppTextTheme.text20.copyWith(
+                          color: whiteColor,
+                          fontWeight: FontWeight.bold
+                        ),
+                    ),
+                    )
+                  ],
+                ),
+              );
+            }).toList(),
+          ),
+          const SizedBox(height: 10.0),
+          AnimatedSmoothIndicator(
+            activeIndex: controller.sliderCurrentIndex.value,
+            count: controller.sliderList.length,
+            effect: const WormEffect(
+              activeDotColor: primaryColor,
+              dotColor: secondaryColor,
+              dotHeight: 12,
+              dotWidth: 30,
+            ),
+          ),
+        ],
+      ),
       ),
     );
   }

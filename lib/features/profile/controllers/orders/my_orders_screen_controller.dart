@@ -2,7 +2,6 @@ import 'package:fashion_shoping/core/routes/app_pages.dart';
 import 'package:fashion_shoping/core/utils/demo_data.dart';
 import 'package:fashion_shoping/core/utils/design_utils.dart';
 import 'package:fashion_shoping/features/profile/data/models/oder_model.dart';
-import 'package:fashion_shoping/features/profile/presentation/widgets/order/order_category_model.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

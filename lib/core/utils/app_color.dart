@@ -21,9 +21,14 @@ const primaryTextColor = Color(0xFF222222);
 
 const secondaryTextColor = Color(0xFF9B9B9B);
 
-const Color primaryColor = Color(0xFFDB3022);
+/// Shimmer color
+ Color shimmerBaseColor = Colors.grey.shade300;
+ Color shimmerHighlightColor = Colors.grey.shade100;
 
-Color primaryShadowColor = primaryColor.withOpacity(0.3);
+const Color primaryColor = Color(0xFFDB3022);
+const Color secondaryColor = Color(0xFFE8E8E8);
+
+Color primaryShadowColor = primaryColor.withValues(alpha: 0.3);
 
 const Color buttonPrimaryColor = Color(0xFFDB3022);
 
@@ -36,7 +41,7 @@ const Color defaultBorderColorOne = Color(0xFF222222);
 const Color defaultCardColorOne = Color(0xFFFFFFFF);
 
 const Color gradientStartColor = Color(0xFFDB3022);
-Color gradientEndColor = gradientStartColor.withOpacity(0.5);
+Color gradientEndColor = gradientStartColor.withValues(alpha:0.5);
 
 const errorColor = Color(0xFF9B9B9B);
 
