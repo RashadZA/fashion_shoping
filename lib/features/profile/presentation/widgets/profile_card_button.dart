@@ -25,20 +25,18 @@ class ProfileCardButton extends StatelessWidget {
               width: Get.width - 85,
               child: Text(
                 buttonTitle,
-                style: const TextStyle(
-                    fontSize: 16,
+                style: AppTextTheme.text16.copyWith(
                     fontWeight: FontWeight.bold,
-                    color: primaryTextColor),
+                    ),
               ),
             ),
             SizedBox(
               width: Get.width - 85,
               child: Text(
                 buttonSubTitle,
-                style: const TextStyle(
-                    fontSize: 14,
+                style: AppTextTheme.text14.copyWith(
                     fontWeight: FontWeight.bold,
-                    color: secondaryTextColor),
+                ),
               ),
             ),
           ],

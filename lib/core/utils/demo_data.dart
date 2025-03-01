@@ -2756,6 +2756,88 @@ Map<String, dynamic> paymentMethodSampleData = {
   ]
 };
 
+/// Item List sample data
+Map<String, dynamic> itemSampleData = {
+  "data": [
+    {
+      "itemId": "MyBagItem01",
+      "itemImageUrl":
+      "https://drive.google.com/uc?export=view&id=13mhQOhbi75Ecx6gpm8_cYKbSfH3ePzlO",
+      "itemName": "T-Shirt",
+      "itemDescription": "Pullover",
+      "itemColor": "Black and White",
+      "itemSize": "XL",
+      "itemUnits": 2,
+      "itemUnitPrice": 5.0,
+      "itemTotalPrice": 10.0,
+      "itemType": "Casual Wear",
+      "itemUnitRegularPrice": 6.0,
+      "itemDiscountPrice": 5.0
+    },
+    {
+      "itemId": "MyBagItem02",
+      "itemImageUrl":
+      "https://drive.google.com/uc?export=view&id=1zvV74a2OyYkRB0ZEpiln1b47Ri_sqWWp",
+      "itemName": "T-Shirt",
+      "itemDescription": "Pullover",
+      "itemColor": "Black and White",
+      "itemSize": "XL",
+      "itemUnits": 5,
+      "itemUnitPrice": 4.0,
+      "itemTotalPrice": 20.0,
+      "itemType": "Casual Wear",
+      "itemUnitRegularPrice": 5.0,
+      "itemDiscountPrice": 4.0
+    },
+    {
+      "itemId": "MyBagItem03",
+      "itemImageUrl":
+      "https://drive.google.com/uc?export=view&id=1AJLaV8LfMSvroY9rtQfvkWCrWDCoS-8N",
+      "itemName": "T-Shirt",
+      "itemDescription": "Pullover",
+      "itemColor": "Black and White",
+      "itemSize": "XL",
+      "itemUnits": 3,
+      "itemUnitPrice": 5.0,
+      "itemTotalPrice": 15.0,
+      "itemType": "Casual Wear",
+      "itemUnitRegularPrice": 6.0,
+      "itemDiscountPrice": 5.0
+    },
+    {
+      "itemId": "MyBagItem04",
+      "itemImageUrl":
+      "https://drive.google.com/uc?export=view&id=1xEUJZ9SF3qV7uGTH-1S9_27vtk_HIkKa",
+      "itemName": "T-Shirt",
+      "itemDescription": "Pullover",
+      "itemColor": "Black and White",
+      "itemSize": "L",
+      "itemUnits": 1,
+      "itemUnitPrice": 5.0,
+      "itemTotalPrice": 5.0,
+      "itemType": "Casual Wear",
+      "itemUnitRegularPrice": 6.0,
+      "itemDiscountPrice": 5.0
+    },
+    {
+      "itemId": "MyBagItem05",
+      "itemImageUrl":
+      "https://drive.google.com/uc?export=view&id=1f7eLitIydRPVHEgyOJpIM5Pj6J6Q2nQT",
+      "itemName": "Shirt",
+      "itemDescription": "Pullover",
+      "itemColor": "Blue",
+      "itemSize": "XL",
+      "itemUnits": 2,
+      "itemUnitPrice": 5.0,
+      "itemTotalPrice": 10.0,
+      "itemType": "Formal Wear",
+      "itemUnitRegularPrice": 6.0,
+      "itemDiscountPrice": 5.0
+    }
+  ]
+};
+
+
 
 
 

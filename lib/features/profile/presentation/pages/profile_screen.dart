@@ -43,37 +43,50 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 // crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   const SizedBox(height: 40,),
-                  const Text(
+                  Text(
                     "My Profile",
-                    style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold,),
+                    style: AppTextTheme.text30,
                   ),
                   const SizedBox(height: 20,),
-                  const SizedBox(
-                    height: 60,
-                    child: Row(
-                      children: [
-                        Icon(
-                          Icons.person,
-                          size: 60,
-                        ),
-                        SizedBox(
-                          width: 10,
-                        ),
-                        Column(
+                  Row(
+                    children: [
+                      Icon(
+                        Icons.person,
+                        size: 60,
+                      ),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      SizedBox(
+                        width: Get.width - 100,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
                               "Rashaduzzaman Ananda",
-                              style: TextStyle(
-                                fontSize: 20,
-                                fontWeight: FontWeight.bold,
+                              style: AppTextTheme.text20.copyWith(
+                              overflow: TextOverflow.visible,
+                              )
+                            ),
+                            Text(
+                                "rashad.ananda@gmail.com",
+                              style: AppTextTheme.text15.copyWith(
+                                fontWeight: FontWeight.normal,
+                                overflow: TextOverflow.visible,
                               ),
                             ),
-                            Text("rashad.ananda@gmail.com"),
+                            Text(
+                              "+8801408687771",
+                              style: AppTextTheme.text15.copyWith(
+                                fontWeight: FontWeight.normal,
+                                overflow: TextOverflow.visible,
+                              ),
+                            ),
                           ],
                         ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
                   const SizedBox(height: 20,),
                   CoreButton(

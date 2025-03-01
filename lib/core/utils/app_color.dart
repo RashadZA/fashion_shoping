@@ -6,6 +6,7 @@ const Color scaffoldAppBarColor = Colors.white;
 const Color transparentColor = Colors.transparent;
 
 const Color cardColor = Colors.white;
+ Color cardShadowColor = Colors.grey.withValues(alpha: 0.3);
 
 const Color coreTextFieldBackgroundColor = Colors.white;
 

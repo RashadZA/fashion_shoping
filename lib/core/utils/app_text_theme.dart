@@ -4,6 +4,7 @@ class AppTextTheme {
   AppTextTheme._();
 
   static TextOverflow defaultOverflow = TextOverflow.ellipsis;
+  static String get getDefaultFontFamily => 'Poppins';
 
 
   static final text12 = TextStyle(
@@ -13,6 +14,7 @@ class AppTextTheme {
     overflow: defaultOverflow,
     fontWeight: FontWeight.w500,
     decoration: TextDecoration.none,
+    fontFamily: getDefaultFontFamily,
   );
   static final text14 = TextStyle(
     color: primaryTextColor,
@@ -21,14 +23,16 @@ class AppTextTheme {
     overflow: defaultOverflow,
     fontWeight: FontWeight.w500,
     decoration: TextDecoration.none,
+    fontFamily: getDefaultFontFamily,
   );
   static final text15 = TextStyle(
     color: primaryTextColor,
-    fontSize: 16,
+    fontSize: 15,
     letterSpacing: -.24,
     overflow: defaultOverflow,
     fontWeight: FontWeight.w500,
     decoration: TextDecoration.none,
+    fontFamily: getDefaultFontFamily,
   );
 
   static final text16 = TextStyle(
@@ -38,6 +42,7 @@ class AppTextTheme {
     overflow: defaultOverflow,
     fontWeight: FontWeight.w500,
     decoration: TextDecoration.none,
+    fontFamily: getDefaultFontFamily,
   );
 
   static final text18 = TextStyle(
@@ -47,6 +52,7 @@ class AppTextTheme {
     overflow: defaultOverflow,
     fontWeight: FontWeight.w500,
     decoration: TextDecoration.none,
+    fontFamily: getDefaultFontFamily,
   );
 
   static final text20 = TextStyle(
@@ -56,6 +62,7 @@ class AppTextTheme {
     overflow: defaultOverflow,
     fontWeight: FontWeight.w500,
     decoration: TextDecoration.none,
+    fontFamily: getDefaultFontFamily,
   );
 
   static final text22 = TextStyle(
@@ -65,6 +72,7 @@ class AppTextTheme {
     overflow: defaultOverflow,
     fontWeight: FontWeight.w500,
     decoration: TextDecoration.none,
+    fontFamily: getDefaultFontFamily,
   );
 
   static final text24 = TextStyle(
@@ -74,7 +82,9 @@ class AppTextTheme {
     overflow: defaultOverflow,
     fontWeight: FontWeight.w500,
     decoration: TextDecoration.none,
+    fontFamily: getDefaultFontFamily,
   );
+
   static final text26 = TextStyle(
     color: primaryTextColor,
     fontSize: 26,
@@ -82,7 +92,19 @@ class AppTextTheme {
     overflow: defaultOverflow,
     fontWeight: FontWeight.w500,
     decoration: TextDecoration.none,
+    fontFamily: getDefaultFontFamily,
   );
+
+  static final text30 = TextStyle(
+    color: primaryTextColor,
+    fontSize: 30,
+    letterSpacing: -.24,
+    overflow: defaultOverflow,
+    fontWeight: FontWeight.w500,
+    decoration: TextDecoration.none,
+    fontFamily: getDefaultFontFamily,
+  );
+
   static final text34 = TextStyle(
     color: primaryTextColor,
     fontSize: 34,
@@ -90,5 +112,6 @@ class AppTextTheme {
     overflow: defaultOverflow,
     fontWeight: FontWeight.w500,
     decoration: TextDecoration.none,
+    fontFamily: getDefaultFontFamily,
   );
 }

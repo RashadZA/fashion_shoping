@@ -1,7 +1,9 @@
 import 'package:fashion_shoping/core/utils/design_utils.dart';
+import 'package:fashion_shoping/core/widgets/buttons/core_button.dart';
 import 'package:fashion_shoping/core/widgets/image_handle_from_network_network.dart';
 import 'package:fashion_shoping/features/home/controllers/home_screen_controller.dart';
 import 'package:carousel_slider_plus/carousel_slider_plus.dart';
+import 'package:fashion_shoping/features/home/presentation/widgets/home_screen_sale_part_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:get/get.dart';
@@ -30,8 +32,9 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Center(
           child: defaultLoaderOfCircularProgressIndicatorForStateFullWidget(),
         ),
-      ) : Column(
-        mainAxisAlignment: MainAxisAlignment.start,
+      ) : ListView(
+        // mainAxisAlignment: MainAxisAlignment.start,
+        padding: EdgeInsets.all(0.0),
         children: [
           CarouselSlider(
             options: CarouselOptions(
@@ -71,16 +74,72 @@ class _HomeScreenState extends State<HomeScreen> {
             }).toList(),
           ),
           const SizedBox(height: 10.0),
-          AnimatedSmoothIndicator(
-            activeIndex: controller.sliderCurrentIndex.value,
-            count: controller.sliderList.length,
-            effect: const WormEffect(
-              activeDotColor: primaryColor,
-              dotColor: secondaryColor,
-              dotHeight: 12,
-              dotWidth: 30,
+          Center(
+            child: AnimatedSmoothIndicator(
+              activeIndex: controller.sliderCurrentIndex.value,
+              count: controller.sliderList.length,
+              effect: const WormEffect(
+                activeDotColor: primaryColor,
+                dotColor: secondaryColor,
+                dotHeight: 12,
+                dotWidth: 30,
+              ),
             ),
           ),
+          Padding(
+            padding: const EdgeInsets.only(left: 15.0, right: 15.0, top: 10, bottom: 40),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    SizedBox(
+                      width: Get.width - 110,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Text(
+                            "Sale",
+                            style: AppTextTheme.text34.copyWith(
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          Text(
+                            "Super summer sale",
+                            style: AppTextTheme.text16.copyWith(
+                              fontWeight: FontWeight.normal,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    CoreButton(
+                      onPressed: (){},
+                      child: SizedBox(
+                        // color: Colors.grey,
+                        width: 80,
+                        child: Text(
+                          "View All",
+                          textAlign: TextAlign.right,
+                          style: AppTextTheme.text18.copyWith(
+                            color: primaryColor,
+                            fontWeight: FontWeight.normal,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                // const SizedBox(height: 5.0),
+                HomeScreenSalePartWidget(),
+              ],
+            ),
+          ),
+
         ],
       ),
       ),
