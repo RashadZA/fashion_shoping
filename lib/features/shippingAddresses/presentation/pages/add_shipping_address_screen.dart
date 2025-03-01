@@ -35,6 +35,7 @@ class AddShippingAddressScreen extends GetWidget<AddShippingAddresseScreenContro
             children: [
               titleText(title: "Name"),
               CoreTextField(
+                hintText: "Name",
                 keyboardType: TextInputType.text,
                 textInputAction: TextInputAction.next,
                 controller: controller.nameTextEditController,
@@ -46,6 +47,7 @@ class AddShippingAddressScreen extends GetWidget<AddShippingAddresseScreenContro
               titleText(title: "Address"),
               CoreTextField(
                 maxLines: 5,
+                hintText: "Address",
                 keyboardType: TextInputType.text,
                 textInputAction: TextInputAction.next,
                 controller: controller.roadAddressTextEditController,
@@ -56,6 +58,7 @@ class AddShippingAddressScreen extends GetWidget<AddShippingAddresseScreenContro
               ),
               titleText(title: "City"),
               CoreTextField(
+                hintText: "City",
                 keyboardType: TextInputType.text,
                 textInputAction: TextInputAction.next,
                 controller: controller.cityTextEditController,
@@ -66,6 +69,7 @@ class AddShippingAddressScreen extends GetWidget<AddShippingAddresseScreenContro
               ),
               titleText(title: "State / Region"),
               CoreTextField(
+                hintText: "State / Region",
                 keyboardType: TextInputType.text,
                 textInputAction: TextInputAction.next,
                 controller: controller.stateOrRegionTextEditController,
@@ -76,8 +80,9 @@ class AddShippingAddressScreen extends GetWidget<AddShippingAddresseScreenContro
               ),
               titleText(title: "Country"),
               CoreTextField(
+                hintText: "Country",
                 keyboardType: TextInputType.text,
-                textInputAction: TextInputAction.next,
+                textInputAction: TextInputAction.done,
                 controller: controller.countryTextEditController,
                 prefixIcon: Icons.flag,
               ),
