@@ -24,7 +24,7 @@ class CoreFlatButton extends StatelessWidget {
   final double borderRadius;
   final void Function()? onPressed;
   const CoreFlatButton({
-    Key? key,
+    super.key,
     this.prefixIcon,
     this.prefixIconSize,
     this.prefixIconColor,
@@ -45,7 +45,7 @@ class CoreFlatButton extends StatelessWidget {
     this.width = double.infinity,
     this.height = 56,
     this.padding = EdgeInsets.zero,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

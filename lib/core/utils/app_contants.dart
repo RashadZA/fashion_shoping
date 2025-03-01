@@ -20,7 +20,7 @@ extension WidgetExtension on Widget{
   }){
     return CircularProgressIndicator(
       value: value,
-      backgroundColor: backgroundColor ?? primaryColor.withOpacity(0.3),
+      backgroundColor: backgroundColor ?? primaryColor.withValues(alpha:0.3),
       color: color ?? primaryColor,
       strokeWidth: strokeWidth ?? 4.0,
     );
@@ -179,7 +179,7 @@ Widget defaultLoaderOfCircularProgressIndicatorForStateFullWidget({
 }){
   return CircularProgressIndicator(
     value: value,
-    backgroundColor: backgroundColor ?? primaryColor.withOpacity(0.3),
+    backgroundColor: backgroundColor ?? primaryColor.withValues(alpha:0.3),
     color: color ?? primaryColor,
     strokeWidth: strokeWidth ?? 4.0,
   );

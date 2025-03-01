@@ -1,5 +1,3 @@
-import 'package:flutter/material.dart';
-
 class OrderStatusModel {
   String status;
   bool isSelected;

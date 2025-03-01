@@ -1,7 +1,6 @@
 import 'package:fashion_shoping/core/utils/design_utils.dart';
 import 'package:fashion_shoping/core/widgets/buttons/core_button.dart';
 import 'package:fashion_shoping/features/bag/controllers/bag_screen_controller.dart';
-import 'package:fashion_shoping/features/bag/data/my_bag_response_model.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

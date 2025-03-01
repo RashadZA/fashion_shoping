@@ -30,7 +30,7 @@ class CoreTextField extends StatelessWidget {
   final List<TextInputFormatter>? inputFormatters;
 
   const CoreTextField({
-    Key? key,
+    super.key,
     this.readOnly = false,
     this.obscureText = false,
     this.labelText,
@@ -56,12 +56,12 @@ class CoreTextField extends StatelessWidget {
     this.hintTextColor,
     this.hintText,
     this.textInputAction = TextInputAction.next,
-  }) : super(key: key);
+  });
 
   static OutlineInputBorder focusedBorder = OutlineInputBorder(
     borderRadius: BorderRadius.circular(16),
     borderSide:
-        BorderSide(width: 0, color: coreTextFieldBackgroundColor.withOpacity(.67),),
+        BorderSide(width: 0, color: coreTextFieldBackgroundColor.withValues(alpha:.67),),
   );
 
   static OutlineInputBorder enabledBorder = OutlineInputBorder(

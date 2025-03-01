@@ -1,7 +1,6 @@
-import 'package:fashion_shoping/core/routes/app_pages.dart';
 import 'package:fashion_shoping/core/utils/design_utils.dart';
 import 'package:fashion_shoping/core/widgets/buttons/core_button.dart';
-import 'package:fashion_shoping/core/widgets/core_textField.dart';
+import 'package:fashion_shoping/core/widgets/core_text_field.dart';
 import 'package:fashion_shoping/features/bag/controllers/bag_screen_controller.dart';
 import 'package:fashion_shoping/features/bag/data/promo_codes_response_model.dart';
 
@@ -272,7 +271,7 @@ class PromoCodesBottomSheetCardWidget extends GetWidget<BagScreenController> {
                               BoxShadow(
                                 blurRadius: 3,
                                 offset: const Offset(0, 2),
-                                color: primaryColor.withOpacity(0.5),
+                                color: primaryColor.withValues(alpha:0.5),
                               ),
                             ],
                           ),

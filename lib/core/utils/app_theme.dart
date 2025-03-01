@@ -14,7 +14,7 @@ class AppTheme {
     primaryColorLight: primaryColor,
     splashColor: transparentColor,
     scaffoldBackgroundColor: scaffoldBackgroundColor,
-    hintColor: primaryColor.withOpacity(.4),
+    hintColor: primaryColor.withValues(alpha:.4),
     iconTheme: const IconThemeData(size: defaultIconSize),
     appBarTheme: AppBarTheme(
       elevation: defaultElevation,

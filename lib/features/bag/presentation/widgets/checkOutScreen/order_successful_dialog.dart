@@ -83,7 +83,7 @@ class OrderSuccessfulDialog extends GetWidget<CheckOutScreenController> {
                       BoxShadow(
                         blurRadius: 3,
                         offset: const Offset(0, 1),
-                        color: primaryColor.withOpacity(0.5),
+                        color: primaryColor.withValues(alpha:0.5),
                       ),
                     ],
                   ),

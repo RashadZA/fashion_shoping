@@ -43,7 +43,7 @@ class PromoCodeScreen extends GetWidget<PromoCodeScreenController> {
                   BoxShadow(
                     blurRadius: 1,
                     offset: const Offset(0, 1),
-                    color: cardColor.withOpacity(0.5),
+                    color: cardColor.withValues(alpha:0.5),
                   ),
                 ]
             ),

@@ -1,4 +1,3 @@
-import 'package:fashion_shoping/core/routes/app_pages.dart';
 import 'package:fashion_shoping/features/profile/data/models/oder_model.dart';
 import 'package:fashion_shoping/features/profile/data/models/order_item_model.dart';
 import 'package:flutter/material.dart';

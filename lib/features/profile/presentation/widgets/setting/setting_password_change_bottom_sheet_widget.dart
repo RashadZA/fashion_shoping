@@ -1,8 +1,7 @@
 import 'package:fashion_shoping/core/routes/app_pages.dart';
 import 'package:fashion_shoping/core/utils/design_utils.dart';
 import 'package:fashion_shoping/core/widgets/buttons/core_button.dart';
-import 'package:fashion_shoping/core/widgets/buttons/core_flat_button.dart';
-import 'package:fashion_shoping/core/widgets/core_textField.dart';
+import 'package:fashion_shoping/core/widgets/core_text_field.dart';
 import 'package:fashion_shoping/features/profile/controllers/setting/setting_screen_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -103,7 +102,7 @@ class SettingPasswordChangeBottomSheetWidget extends GetWidget<SettingScreenCont
                       BoxShadow(
                         blurRadius: 3,
                         offset: const Offset(0, 1),
-                        color: primaryColor.withOpacity(0.5),
+                        color: primaryColor.withValues(alpha:0.5),
                       ),
                     ],
                     borderRadius: BorderRadius.circular(25),

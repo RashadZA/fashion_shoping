@@ -36,7 +36,7 @@ class SettingNotificationPartWidget extends GetWidget<SettingScreenController> {
               Transform.scale(
                 scale: 0.7,
                 child: CupertinoSwitch(
-                  activeColor: greenColor,
+                  activeTrackColor: greenColor,
                   value: controller.salesNotificationStatus.value,
                   onChanged: (bool value) => controller.salesNotificationStatusChangeMethod(value),
                 ),
@@ -57,7 +57,7 @@ class SettingNotificationPartWidget extends GetWidget<SettingScreenController> {
               Transform.scale(
                 scale: 0.7,
                 child: CupertinoSwitch(
-                  activeColor: greenColor,
+                  activeTrackColor: greenColor,
                   value: controller.newArrivalsNotificationStatus.value,
                   onChanged: (bool value) => controller.newArrivalsNotificationStatusChangeMethod(value),
                 ),
@@ -78,7 +78,7 @@ class SettingNotificationPartWidget extends GetWidget<SettingScreenController> {
               Transform.scale(
                 scale: 0.7,
                 child: CupertinoSwitch(
-                  activeColor: greenColor,
+                  activeTrackColor: greenColor,
                   value: controller.deliveryStatusChangeNotificationStatus.value,
                   onChanged: (bool value) => controller.deliveryStatusChangeNotificationStatusChangeMethod(value),
                 ),

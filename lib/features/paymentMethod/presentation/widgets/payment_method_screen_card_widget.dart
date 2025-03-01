@@ -210,13 +210,13 @@ class PaymentMethodScreenCardWidget extends GetWidget<PaymentMethodScreenControl
                         blurRadius: 0.5,
                         offset:const Offset(0, 0.5),
                         color: controller.selectedCard.value.cardId == card.cardId
-                            ? primaryColor.withOpacity(0.5) : defaultBorderColorOne.withOpacity(0.5),
+                            ? primaryColor.withValues(alpha:0.5) : defaultBorderColorOne.withValues(alpha:0.5),
                       ),
                       BoxShadow(
                         blurRadius: 1,
                         offset:const Offset(0, 1),
                         color: controller.selectedCard.value.cardId == card.cardId
-                            ? primaryColor.withOpacity(0.5) : defaultBorderColorOne.withOpacity(0.5),
+                            ? primaryColor.withValues(alpha:0.5) : defaultBorderColorOne.withValues(alpha:0.5),
                       ),
                     ],
                   ),

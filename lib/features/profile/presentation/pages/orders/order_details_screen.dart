@@ -333,7 +333,7 @@ class OrderDetailsScreen extends GetWidget<OrderDetailsScreenController> {
                               BoxShadow(
                                 blurRadius: 5,
                                 offset: const Offset(0, 1),
-                                color: defaultBorderColorOne.withOpacity(0.3),
+                                color: defaultBorderColorOne.withValues(alpha:0.3),
                               ),
                             ],
                             borderRadius: BorderRadius.circular(25),
@@ -361,7 +361,7 @@ class OrderDetailsScreen extends GetWidget<OrderDetailsScreenController> {
                               BoxShadow(
                                 blurRadius: 5,
                                 offset: const Offset(0, 1),
-                                color: primaryColor.withOpacity(0.5),
+                                color: primaryColor.withValues(alpha:0.5),
                               ),
                             ],
                             borderRadius: BorderRadius.circular(25),
@@ -403,7 +403,7 @@ class OrderDetailsScreenShimmerEffect extends StatelessWidget {
       // child: defaultLoaderOfCupertinoActivity(color: primaryColor),
       child: Shimmer.fromColors(
         baseColor: primaryColor,
-        highlightColor: primaryColor.withOpacity(0.5),
+        highlightColor: primaryColor.withValues(alpha:0.5),
         child: ListView(
           // crossAxisAlignment: CrossAxisAlignment.start,
           padding: const EdgeInsets.symmetric(
