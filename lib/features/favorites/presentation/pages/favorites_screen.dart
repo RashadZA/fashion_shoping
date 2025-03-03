@@ -22,11 +22,14 @@ class _FavoritesScreenState extends State<FavoritesScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      backgroundColor: scaffoldBackgroundColor,
-      body: Center(
-        child: Text(
-            "Favorites Screen"
+    return SafeArea(
+      top: false,
+      child: const Scaffold(
+        backgroundColor: scaffoldBackgroundColor,
+        body: Center(
+          child: Text(
+              "Favorites Screen"
+          ),
         ),
       ),
     );

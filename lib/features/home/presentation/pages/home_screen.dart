@@ -24,88 +24,91 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: Get.width,
-      height: Get.height,
-      color: scaffoldBackgroundColor,
-      child: Obx(()=> controller.homeScreenDataOnProcessing.value
-          ? SizedBox(
+    return SafeArea(
+      top: false,
+      child: Container(
         width: Get.width,
         height: Get.height,
-        child: Center(
-          child: defaultLoaderOfCircularProgressIndicatorForStateFullWidget(),
-        ),
-      ) : ListView(
-        // mainAxisAlignment: MainAxisAlignment.start,
-        padding: EdgeInsets.all(0.0),
-        children: [
-          CarouselSlider(
-            options: CarouselOptions(
-              height: 300.0,
-              autoPlay: true,
-              enlargeCenterPage: true,
-              viewportFraction: 1.0, // To ensure full width
-              onPageChanged: (index, reason) => controller.sliderOnChangedMethod(index),
-            ),
-            items: controller.sliderList.map((item) {
-              return SizedBox(
-                width: Get.width,
-                height: 300,
-                child: Stack(
-                  children: [
-                    ImageHandleFromNetworkWidget(
-                      imageUrl: item.imageUrl ?? "",
-                      fit: BoxFit.fill,
-                      width: Get.width,
-                      height: 300,
-                      radius: 0,
-                    ),
-                    Positioned(
-                      left: 10,
-                      bottom: 10,
-                      child: Text(
-                        item.title ?? "",
-                        style: AppTextTheme.text20.copyWith(
-                          color: whiteColor,
-                          fontWeight: FontWeight.bold
-                        ),
-                    ),
-                    )
-                  ],
-                ),
-              );
-            }).toList(),
+        color: scaffoldBackgroundColor,
+        child: Obx(()=> controller.homeScreenDataOnProcessing.value
+            ? SizedBox(
+          width: Get.width,
+          height: Get.height,
+          child: Center(
+            child: defaultLoaderOfCircularProgressIndicatorForStateFullWidget(),
           ),
-          const SizedBox(height: 10.0),
-          Center(
-            child: AnimatedSmoothIndicator(
-              activeIndex: controller.sliderCurrentIndex.value,
-              count: controller.sliderList.length,
-              effect: const WormEffect(
-                activeDotColor: primaryColor,
-                dotColor: secondaryColor,
-                dotHeight: 12,
-                dotWidth: 30,
+        ) : ListView(
+          // mainAxisAlignment: MainAxisAlignment.start,
+          padding: EdgeInsets.all(0.0),
+          children: [
+            CarouselSlider(
+              options: CarouselOptions(
+                height: 300.0,
+                autoPlay: true,
+                enlargeCenterPage: true,
+                viewportFraction: 1.0, // To ensure full width
+                onPageChanged: (index, reason) => controller.sliderOnChangedMethod(index),
+              ),
+              items: controller.sliderList.map((item) {
+                return SizedBox(
+                  width: Get.width,
+                  height: 300,
+                  child: Stack(
+                    children: [
+                      ImageHandleFromNetworkWidget(
+                        imageUrl: item.imageUrl ?? "",
+                        fit: BoxFit.fill,
+                        width: Get.width,
+                        height: 300,
+                        radius: 0,
+                      ),
+                      Positioned(
+                        left: 10,
+                        bottom: 10,
+                        child: Text(
+                          item.title ?? "",
+                          style: AppTextTheme.text20.copyWith(
+                            color: whiteColor,
+                            fontWeight: FontWeight.bold
+                          ),
+                      ),
+                      )
+                    ],
+                  ),
+                );
+              }).toList(),
+            ),
+            const SizedBox(height: 10.0),
+            Center(
+              child: AnimatedSmoothIndicator(
+                activeIndex: controller.sliderCurrentIndex.value,
+                count: controller.sliderList.length,
+                effect: const WormEffect(
+                  activeDotColor: primaryColor,
+                  dotColor: secondaryColor,
+                  dotHeight: 12,
+                  dotWidth: 30,
+                ),
               ),
             ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(left: 15.0, right: 15.0, top: 10, bottom: 40),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                HomeScreenSalePartWidget(),
-                HomeScreenNewSalePartWidget(),
-                HomeScreenYouMayLikeSalePartWidget(),
-                HomeScreenPopularSalePartWidget(),
-                HomeScreenSummerSalePartWidget(),
-              ],
+            Padding(
+              padding: const EdgeInsets.only(left: 15.0, right: 15.0, top: 10, bottom: 40),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  HomeScreenSalePartWidget(),
+                  HomeScreenNewSalePartWidget(),
+                  HomeScreenYouMayLikeSalePartWidget(),
+                  HomeScreenPopularSalePartWidget(),
+                  HomeScreenSummerSalePartWidget(),
+                ],
+              ),
             ),
-          ),
 
-        ],
-      ),
+          ],
+        ),
+        ),
       ),
     );
   }

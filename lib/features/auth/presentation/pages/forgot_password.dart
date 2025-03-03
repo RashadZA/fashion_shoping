@@ -11,66 +11,69 @@ class ForgotPasswordScreen extends GetWidget<ForgotPasswordScreenController> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: scaffoldBackgroundColor,
-      appBar: AppBar(
-        backgroundColor: scaffoldAppBarColor,
-        title: Text(
-          "Forgot Password",
-          style: AppTextTheme.text24,
+    return SafeArea(
+      top: false,
+      child: Scaffold(
+        backgroundColor: scaffoldBackgroundColor,
+        appBar: AppBar(
+          backgroundColor: scaffoldAppBarColor,
+          title: Text(
+            "Forgot Password",
+            style: AppTextTheme.text24,
+          ),
+          centerTitle: true,
         ),
-        centerTitle: true,
-      ),
-      body: OrientationBuilder(
-        builder: (context, orientation) {
-          return SingleChildScrollView(
-            padding:  const EdgeInsets.all(15.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                const SizedBox(
-                  height: 60,
-                ),
-                const Icon(
-                  Icons.flutter_dash,
-                  size: 200,
-                ),
-
-                const SizedBox(
-                  height: 30,
-                ),
-                const Text(
-                  "Please, enter your email address. You will receive a link to create a new password via email.",
-                  style: TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.normal,
+        body: OrientationBuilder(
+          builder: (context, orientation) {
+            return SingleChildScrollView(
+              padding:  const EdgeInsets.all(15.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  const SizedBox(
+                    height: 60,
                   ),
-                ),
-                const SizedBox(
-                  height: 10,
-                ),
-                CoreTextField(
-                  hintText: "Email",
-                  keyboardType: TextInputType.text,
-                  textInputAction: TextInputAction.done,
-                  controller: controller.emailTextEditController,
-                ),
-                const SizedBox(
-                  height: 10,
-                ),
-                CoreFlatButton(
-                  onPressed: () => Get.back(),
-                  text: "SEND",
-                  isGradientBg: true,
-                ),
-                const SizedBox(
-                  height: 20,
-                ),
+                  const Icon(
+                    Icons.flutter_dash,
+                    size: 200,
+                  ),
 
-              ],
-            ),
-          );
-        },
+                  const SizedBox(
+                    height: 30,
+                  ),
+                  const Text(
+                    "Please, enter your email address. You will receive a link to create a new password via email.",
+                    style: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.normal,
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  CoreTextField(
+                    hintText: "Email",
+                    keyboardType: TextInputType.text,
+                    textInputAction: TextInputAction.done,
+                    controller: controller.emailTextEditController,
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  CoreFlatButton(
+                    onPressed: () => Get.back(),
+                    text: "SEND",
+                    isGradientBg: true,
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+
+                ],
+              ),
+            );
+          },
+        ),
       ),
     );
   }

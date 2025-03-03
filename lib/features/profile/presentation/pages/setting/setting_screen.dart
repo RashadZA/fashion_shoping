@@ -14,48 +14,51 @@ class SettingScreen extends GetWidget<SettingScreenController> {
     return OrientationBuilder(
       builder: (context,orientation) {
         final double deviceWidth = Get.width - (defaultPadding + defaultPadding);
-        return Scaffold(
-          appBar: AppBar(
-            backgroundColor: scaffoldAppBarColor,
-            centerTitle: true,
-            leading: IconButton(
-              onPressed: ()=> Get.back(),
-              icon: const Icon(Icons.arrow_back_ios),
-            ),
-            actions: [
-              IconButton(
-                onPressed: () {},
-                icon: const Icon(Icons.search),
+        return SafeArea(
+          top: false,
+          child: Scaffold(
+            appBar: AppBar(
+              backgroundColor: scaffoldAppBarColor,
+              centerTitle: true,
+              leading: IconButton(
+                onPressed: ()=> Get.back(),
+                icon: const Icon(Icons.arrow_back_ios),
               ),
-            ],
-          ),
-          body: Obx(()=> controller.settingDataLoading.value ? Center(
-            child: defaultLoaderOfCircularProgressIndicator().defaultContainer(),
-          ) : ListView(
-            padding: const EdgeInsets.all(0),
-            children: [
-              Container(
-                width: deviceWidth,
-                padding: const EdgeInsets.symmetric(horizontal: 15),
-                child: Text(
-                  "Settings",
-                  style: AppTextTheme.text34.copyWith(fontWeight: FontWeight.bold),
+              actions: [
+                IconButton(
+                  onPressed: () {},
+                  icon: const Icon(Icons.search),
                 ),
-              ),
-              const SizedBox(
-                height: 15,
-              ),
-              const SettingPersonalInformationPartWidget(),
-              const SizedBox(
-                height: 25,
-              ),
-              const SettingPasswordPartWidget(),
-              const SizedBox(
-                height: 25,
-              ),
-              const SettingNotificationPartWidget(),
-            ],
-          ),
+              ],
+            ),
+            body: Obx(()=> controller.settingDataLoading.value ? Center(
+              child: defaultLoaderOfCircularProgressIndicator().defaultContainer(),
+            ) : ListView(
+              padding: const EdgeInsets.all(0),
+              children: [
+                Container(
+                  width: deviceWidth,
+                  padding: const EdgeInsets.symmetric(horizontal: 15),
+                  child: Text(
+                    "Settings",
+                    style: AppTextTheme.text34.copyWith(fontWeight: FontWeight.bold),
+                  ),
+                ),
+                const SizedBox(
+                  height: 15,
+                ),
+                const SettingPersonalInformationPartWidget(),
+                const SizedBox(
+                  height: 25,
+                ),
+                const SettingPasswordPartWidget(),
+                const SizedBox(
+                  height: 25,
+                ),
+                const SettingNotificationPartWidget(),
+              ],
+            ),
+            ),
           ),
         );
       }

@@ -22,11 +22,14 @@ class _ShopScreenState extends State<ShopScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      backgroundColor: scaffoldBackgroundColor,
-      body: Center(
-        child: Text(
-            "Shop Screen"
+    return SafeArea(
+      top: false,
+      child: const Scaffold(
+        backgroundColor: scaffoldBackgroundColor,
+        body: Center(
+          child: Text(
+              "Shop Screen"
+          ),
         ),
       ),
     );

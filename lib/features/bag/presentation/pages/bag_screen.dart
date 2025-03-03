@@ -24,40 +24,43 @@ class _BagScreenState extends State<BagScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
-      backgroundColor: scaffoldBackgroundColor,
-      body: Obx(()=> controller.myBagScreenDataProcessing.value ?
-      SizedBox(
-        width: Get.width,
-        height: Get.height,
-        child: Center(
-          child: Container(
-            decoration: BoxDecoration(
-              color: cardColor,
-              borderRadius: BorderRadius.circular(defaultPadding),
-              boxShadow: [
-                BoxShadow(
-                  blurRadius: 1,
-                  offset: const Offset(0, 1),
-                  color: cardColor.withValues(alpha:0.5),
-                ),
-              ]
-            ),
-            child: defaultLoaderOfCupertinoActivityForStateFullWidget(
-              radius: 20,
-              color: primaryColor,
+    return SafeArea(
+      top: false,
+      child: Scaffold(
+        backgroundColor: scaffoldBackgroundColor,
+        body: Obx(()=> controller.myBagScreenDataProcessing.value ?
+        SizedBox(
+          width: Get.width,
+          height: Get.height,
+          child: Center(
+            child: Container(
+              decoration: BoxDecoration(
+                color: cardColor,
+                borderRadius: BorderRadius.circular(defaultPadding),
+                boxShadow: [
+                  BoxShadow(
+                    blurRadius: 1,
+                    offset: const Offset(0, 1),
+                    color: cardColor.withValues(alpha:0.5),
+                  ),
+                ]
+              ),
+              child: defaultLoaderOfCupertinoActivityForStateFullWidget(
+                radius: 20,
+                color: primaryColor,
+              ),
             ),
           ),
+        ) : const Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            BagScreenAppBarPart(),
+            Expanded(
+              // height: Get.height - 197,
+                child: BagScreenBodyPart()),
+          ],
+        )
         ),
-      ) : const Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          BagScreenAppBarPart(),
-          Expanded(
-            // height: Get.height - 197,
-              child: BagScreenBodyPart()),
-        ],
-      )
       ),
     );
   }

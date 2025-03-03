@@ -10,37 +10,40 @@ class HomeSeeAllItemsScreen extends GetWidget<HomeSeeAllItemsScreenController> {
   Widget build(BuildContext context) {
     return OrientationBuilder(
         builder: (context,orientation) {
-          return Scaffold(
-            backgroundColor: scaffoldBackgroundColor,
-            body: Column(
-              children: [
-                const SizedBox(
-                  height: 30,
-                ),
-                SizedBox(
-                  height: 40,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      IconButton(
-                        onPressed: () => Get.back(),
-                        icon: const Icon(Icons.arrow_back_ios),
-                      ),
-                      Text(
-                        "See All Items",
-                        style: AppTextTheme.text26,
-                      ),
-                      IconButton(
-                        onPressed: () {},
-                        icon: const Icon(Icons.search),
-                      ),
-                    ],
+          return SafeArea(
+            top: false,
+            child: Scaffold(
+              backgroundColor: scaffoldBackgroundColor,
+              body: Column(
+                children: [
+                  const SizedBox(
+                    height: 30,
                   ),
-                ),
-                const SizedBox(
-                  height: 10,
-                ),
-              ],
+                  SizedBox(
+                    height: 40,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        IconButton(
+                          onPressed: () => Get.back(),
+                          icon: const Icon(Icons.arrow_back_ios),
+                        ),
+                        Text(
+                          "See All Items",
+                          style: AppTextTheme.text26,
+                        ),
+                        IconButton(
+                          onPressed: () {},
+                          icon: const Icon(Icons.search),
+                        ),
+                      ],
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                ],
+              ),
             ),
           );
         }

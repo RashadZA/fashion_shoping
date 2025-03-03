@@ -11,37 +11,40 @@ class MainScreen extends GetWidget<MainScreenController> {
 
   @override
   Widget build(BuildContext context) {
-    return Obx(()=>PageWrapper(
-      child: Scaffold(
-        bottomNavigationBar: BottomNavyBar(
-          itemCornerRadius: 10,
-          selectedIndex: controller.newIndex.value,
-          items: bottomNavigationBarItemList
-              .map(
-                (item) => BottomNavyBarItem(
-              icon: item.icon,
-              title:  Text(item.title, overflow: TextOverflow.ellipsis),
-              activeColor: item.activeColor,
-              inactiveColor: item.inActiveColor,
-            ),
-          )
-              .toList(),
-          onItemSelected: (currentIndex) => controller.bottomNavigationBarOnItemSelected(currentIndex),
-        ),
-        body: PageTransitionSwitcher(
-          duration: const Duration(seconds: 1),
-          transitionBuilder: (
-              Widget child,
-              Animation<double> animation,
-              Animation<double> secondaryAnimation,
-              ) {
-            return FadeThroughTransition(
-              animation: animation,
-              secondaryAnimation: secondaryAnimation,
-              child: child,
-            );
-          },
-          child: screensList[controller.newIndex.value],
+    return Obx(()=>SafeArea(
+      top: false,
+      child: PageWrapper(
+        child: Scaffold(
+          bottomNavigationBar: BottomNavyBar(
+            itemCornerRadius: 10,
+            selectedIndex: controller.newIndex.value,
+            items: bottomNavigationBarItemList
+                .map(
+                  (item) => BottomNavyBarItem(
+                icon: item.icon,
+                title:  Text(item.title, overflow: TextOverflow.ellipsis),
+                activeColor: item.activeColor,
+                inactiveColor: item.inActiveColor,
+              ),
+            )
+                .toList(),
+            onItemSelected: (currentIndex) => controller.bottomNavigationBarOnItemSelected(currentIndex),
+          ),
+          body: PageTransitionSwitcher(
+            duration: const Duration(seconds: 1),
+            transitionBuilder: (
+                Widget child,
+                Animation<double> animation,
+                Animation<double> secondaryAnimation,
+                ) {
+              return FadeThroughTransition(
+                animation: animation,
+                secondaryAnimation: secondaryAnimation,
+                child: child,
+              );
+            },
+            child: screensList[controller.newIndex.value],
+          ),
         ),
       ),
     ),);
