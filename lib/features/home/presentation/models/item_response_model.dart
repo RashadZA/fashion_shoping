@@ -33,6 +33,7 @@ class ItemDataModel {
   String? itemType;
   double? itemUnitRegularPrice;
   double? itemDiscountPrice;
+  double? itemDiscountPercentage;
 
   ItemDataModel(
       {this.itemId,
@@ -46,7 +47,9 @@ class ItemDataModel {
         this.itemTotalPrice,
         this.itemType,
         this.itemUnitRegularPrice,
-        this.itemDiscountPrice});
+        this.itemDiscountPrice,
+        this.itemDiscountPercentage,
+      });
 
   ItemDataModel.fromJson(Map<String, dynamic> json) {
     itemId = json['itemId'];
@@ -61,6 +64,7 @@ class ItemDataModel {
     itemType = json['itemType'];
     itemUnitRegularPrice = json['itemUnitRegularPrice'];
     itemDiscountPrice = json['itemDiscountPrice'];
+    itemDiscountPercentage = json['itemDiscountPercentage'];
   }
 
   Map<String, dynamic> toJson() {
@@ -77,6 +81,7 @@ class ItemDataModel {
     data['itemType'] = itemType;
     data['itemUnitRegularPrice'] = itemUnitRegularPrice;
     data['itemDiscountPrice'] = itemDiscountPrice;
+    data['itemDiscountPercentage'] = itemDiscountPercentage;
     return data;
   }
 }

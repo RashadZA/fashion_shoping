@@ -3,7 +3,7 @@ import 'package:fashion_shoping/features/home/presentation/models/home_screen_sl
 import 'package:fashion_shoping/features/home/presentation/models/item_response_model.dart';
 import 'package:get/get.dart';
 
-class HomeScreenController extends GetxController {
+class HomeSeeAllItemsScreenController extends GetxController {
 
   RxList<HomeScreenSliderDataModel> sliderList = <HomeScreenSliderDataModel>[].obs;
   RxList<ItemDataModel> saleItemList = <ItemDataModel>[].obs;

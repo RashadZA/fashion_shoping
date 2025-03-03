@@ -1,9 +1,12 @@
 import 'package:fashion_shoping/core/utils/design_utils.dart';
-import 'package:fashion_shoping/core/widgets/buttons/core_button.dart';
 import 'package:fashion_shoping/core/widgets/image_handle_from_network_network.dart';
 import 'package:fashion_shoping/features/home/controllers/home_screen_controller.dart';
 import 'package:carousel_slider_plus/carousel_slider_plus.dart';
+import 'package:fashion_shoping/features/home/presentation/widgets/home_screen_new_sale_part_widget.dart';
+import 'package:fashion_shoping/features/home/presentation/widgets/home_screen_popular_sale_part_widget.dart';
 import 'package:fashion_shoping/features/home/presentation/widgets/home_screen_sale_part_widget.dart';
+import 'package:fashion_shoping/features/home/presentation/widgets/home_screen_summer_sale_part_widget.dart';
+import 'package:fashion_shoping/features/home/presentation/widgets/home_screen_you_may_like_sale_part_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:get/get.dart';
@@ -92,50 +95,11 @@ class _HomeScreenState extends State<HomeScreen> {
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    SizedBox(
-                      width: Get.width - 110,
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          Text(
-                            "Sale",
-                            style: AppTextTheme.text34.copyWith(
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                          Text(
-                            "Super summer sale",
-                            style: AppTextTheme.text16.copyWith(
-                              fontWeight: FontWeight.normal,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    CoreButton(
-                      onPressed: (){},
-                      child: SizedBox(
-                        // color: Colors.grey,
-                        width: 80,
-                        child: Text(
-                          "View All",
-                          textAlign: TextAlign.right,
-                          style: AppTextTheme.text18.copyWith(
-                            color: primaryColor,
-                            fontWeight: FontWeight.normal,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-                // const SizedBox(height: 5.0),
                 HomeScreenSalePartWidget(),
+                HomeScreenNewSalePartWidget(),
+                HomeScreenYouMayLikeSalePartWidget(),
+                HomeScreenPopularSalePartWidget(),
+                HomeScreenSummerSalePartWidget(),
               ],
             ),
           ),

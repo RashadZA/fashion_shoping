@@ -21,6 +21,8 @@ abstract class Routes {
   static const addShippingAddressesScreen = _Paths.addShippingAddressesScreen;
   static const promoCodesScreen = _Paths.promoCodesScreen;
   static const paymentMethodScreen = _Paths.paymentMethodScreen;
+  static const productDetailsScreen = _Paths.productDetailsScreen;
+  static const homeSeeAllItemsScreen = _Paths.homeSeeAllItemsScreen;
 }
 
 abstract class _Paths {
@@ -43,4 +45,6 @@ abstract class _Paths {
   static const addShippingAddressesScreen = '/addShippingAddressesScreen';
   static const promoCodesScreen = '/promoCodesScreen';
   static const paymentMethodScreen = '/paymentMethodScreen';
+  static const productDetailsScreen = '/productDetailsScreen';
+  static const homeSeeAllItemsScreen = '/homeSeeAllItemsScreen';
 }

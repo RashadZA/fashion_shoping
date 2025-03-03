@@ -6,8 +6,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:get/get.dart';
 
-class HomeScreenSalePartWidget extends GetWidget<HomeScreenController> {
-  const HomeScreenSalePartWidget({super.key});
+class HomeScreenYouMayLikeSalePartWidget extends GetWidget<HomeScreenController> {
+  const HomeScreenYouMayLikeSalePartWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -26,13 +26,13 @@ class HomeScreenSalePartWidget extends GetWidget<HomeScreenController> {
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   Text(
-                    "Sale",
+                    "You May Like",
                     style: AppTextTheme.text34.copyWith(
                       fontWeight: FontWeight.bold,
                     ),
                   ),
                   Text(
-                    "Super summer sale",
+                    "Suggestion list for you",
                     style: AppTextTheme.text16.copyWith(
                       fontWeight: FontWeight.normal,
                     ),
@@ -64,7 +64,7 @@ class HomeScreenSalePartWidget extends GetWidget<HomeScreenController> {
               shrinkWrap: true,
               padding: EdgeInsets.only(top: 10, bottom: 10),
               scrollDirection: Axis.horizontal,
-              itemCount: controller.saleItemList.length,
+              itemCount: controller.youMayLikeList.length,
               separatorBuilder: (context, index)=> const SizedBox(height: 5.0),
               itemBuilder: (context, index)=> CoreButton(
                 onPressed: ()=> Get.toNamed(Routes.productDetailsScreen),
@@ -89,9 +89,9 @@ class HomeScreenSalePartWidget extends GetWidget<HomeScreenController> {
                                           height: 184,
                                           width: 190,
                                           fit:BoxFit.cover,
-                                          imageUrl: controller.saleItemList[index].itemImageUrl ?? "",
+                                          imageUrl: controller.youMayLikeList[index].itemImageUrl ?? "",
                                         ),
-                                        (controller.saleItemList[index].itemDiscountPercentage ?? 0) == 0 ? Container() : Positioned(
+                                        (controller.youMayLikeList[index].itemDiscountPercentage ?? 0) == 0 ? Container() : Positioned(
                                           top: 10,
                                           left: 10,
                                           child: Container(
@@ -103,7 +103,7 @@ class HomeScreenSalePartWidget extends GetWidget<HomeScreenController> {
                                             ),
                                             child: Center(
                                               child: Text(
-                                                "-${controller.saleItemList[index].itemDiscountPercentage ?? 0}%",
+                                                "-${controller.youMayLikeList[index].itemDiscountPercentage ?? 0}%",
                                                 style: AppTextTheme.text16.copyWith(
                                                   color: whiteColor,
                                                 ),
@@ -164,7 +164,7 @@ class HomeScreenSalePartWidget extends GetWidget<HomeScreenController> {
                                         SizedBox(
                                           width: 180,
                                           child: Text(
-                                              controller.saleItemList[index].itemName ?? "",
+                                              controller.youMayLikeList[index].itemName ?? "",
                                               style: AppTextTheme.text14.copyWith(
                                                 fontWeight: FontWeight.normal,
                                                 // color: secondaryColor,
@@ -174,7 +174,7 @@ class HomeScreenSalePartWidget extends GetWidget<HomeScreenController> {
                                         SizedBox(
                                           width: 180,
                                           child: Text(
-                                              controller.saleItemList[index].itemType ?? "",
+                                              controller.youMayLikeList[index].itemType ?? "",
                                               style: AppTextTheme.text16.copyWith(
                                                 fontWeight: FontWeight.bold,
                                                 // color: secondaryColor,
@@ -183,15 +183,15 @@ class HomeScreenSalePartWidget extends GetWidget<HomeScreenController> {
                                         ),
                                         SizedBox(
                                           width: 180,
-                                          child: (controller.saleItemList[index].itemDiscountPrice ?? 0) == 0
-                                              || controller.saleItemList[index].itemDiscountPrice == controller.saleItemList[index].itemUnitRegularPrice ? Text(
-                                              "${controller.saleItemList[index].itemUnitRegularPrice ?? 0}\$",
+                                          child: (controller.youMayLikeList[index].itemDiscountPrice ?? 0) == 0
+                                              || controller.youMayLikeList[index].itemDiscountPrice == controller.youMayLikeList[index].itemUnitRegularPrice ? Text(
+                                              "${controller.youMayLikeList[index].itemUnitRegularPrice ?? 0}\$",
                                               style: AppTextTheme.text15.copyWith(
                                                 fontWeight: FontWeight.normal,
                                               )
                                           ) : RichText(
                                               text: TextSpan(
-                                                  text: "${controller.saleItemList[index].itemUnitRegularPrice ?? 0}\$",
+                                                  text: "${controller.youMayLikeList[index].itemUnitRegularPrice ?? 0}\$",
                                                   style: AppTextTheme.text15.copyWith(
                                                     // color: secondaryColor,
                                                       fontWeight: FontWeight.normal,
@@ -200,7 +200,7 @@ class HomeScreenSalePartWidget extends GetWidget<HomeScreenController> {
                                                   ),
                                                   children: [
                                                     TextSpan(
-                                                      text: " ${controller.saleItemList[index].itemDiscountPrice ?? 0}\$",
+                                                      text: " ${controller.youMayLikeList[index].itemDiscountPrice ?? 0}\$",
                                                       style: AppTextTheme.text15.copyWith(
                                                         color: redAccentColor,
                                                         fontWeight: FontWeight.w600,

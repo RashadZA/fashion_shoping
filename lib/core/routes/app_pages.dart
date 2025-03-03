@@ -12,11 +12,15 @@ import 'package:fashion_shoping/features/bag/presentation/pages/check_out_screen
 import 'package:fashion_shoping/features/favorites/controllers/favorites_screen_controller.dart';
 import 'package:fashion_shoping/features/favorites/presentation/pages/favorites_screen.dart';
 import 'package:fashion_shoping/features/home/controllers/home_screen_controller.dart';
+import 'package:fashion_shoping/features/home/controllers/home_see_all_items_screen_controller.dart';
 import 'package:fashion_shoping/features/home/presentation/pages/home_screen.dart';
+import 'package:fashion_shoping/features/home/presentation/pages/home_see_all_items_screen.dart';
 import 'package:fashion_shoping/features/main/controllers/main_screen_controller.dart';
 import 'package:fashion_shoping/features/main/presentation/pages/main_screen.dart';
 import 'package:fashion_shoping/features/paymentMethod/controllers/payment_method_screen_controller.dart';
 import 'package:fashion_shoping/features/paymentMethod/presentation/payment_method_screen.dart';
+import 'package:fashion_shoping/features/product/controllers/product_details_screen_controller.dart';
+import 'package:fashion_shoping/features/product/presentation/pages/product_details_screen.dart';
 import 'package:fashion_shoping/features/profile/controllers/orders/my_orders_screen_controller.dart';
 import 'package:fashion_shoping/features/profile/controllers/orders/order_details_screen_controller.dart';
 import 'package:fashion_shoping/features/profile/controllers/profile_screen_controller.dart';
@@ -171,6 +175,20 @@ class AppPages {
       page: () => const PaymentMethodScreen(),
       binding: BindingsBuilder(
             () => Get.lazyPut<PaymentMethodScreenController>(() => PaymentMethodScreenController()),
+      ),
+    ),
+    GetPage(
+      name: Routes.productDetailsScreen,
+      page: () => const ProductDetailsScreen(),
+      binding: BindingsBuilder(
+            () => Get.lazyPut<ProductDetailsScreenController>(() => ProductDetailsScreenController()),
+      ),
+    ),
+    GetPage(
+      name: Routes.homeSeeAllItemsScreen,
+      page: () => const HomeSeeAllItemsScreen(),
+      binding: BindingsBuilder(
+            () => Get.lazyPut<HomeSeeAllItemsScreenController>(() => HomeSeeAllItemsScreenController()),
       ),
     ),
   ];
