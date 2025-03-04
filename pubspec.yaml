@@ -29,7 +29,7 @@ dev_dependencies:
   flutter_lints: ^5.0.0  # Moved here
 
 flutter_native_splash:
-  color: "#558CF6"
+  color: "#DB3022"
   android: true
   ios: true
 
