@@ -1,7 +1,7 @@
 import 'package:fashion_shoping/core/utils/design_utils.dart';
-import 'package:fashion_shoping/core/widgets/buttons/core_button.dart';
-import 'package:fashion_shoping/core/widgets/buttons/core_flat_button.dart';
-import 'package:fashion_shoping/core/widgets/core_text_field.dart';
+import 'package:fashion_shoping/core/components/widgets/buttons/core_button.dart';
+import 'package:fashion_shoping/core/components/widgets/buttons/core_flat_button.dart';
+import 'package:fashion_shoping/core/components/widgets/core_text_field.dart';
 import 'package:fashion_shoping/features/auth/controllers/signout_screen_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

@@ -1,6 +1,6 @@
 import 'package:fashion_shoping/core/routes/app_pages.dart';
 import 'package:fashion_shoping/core/utils/design_utils.dart';
-import 'package:fashion_shoping/core/widgets/buttons/core_button.dart';
+import 'package:fashion_shoping/core/components/widgets/buttons/core_button.dart';
 import 'package:fashion_shoping/features/home/controllers/home_screen_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';

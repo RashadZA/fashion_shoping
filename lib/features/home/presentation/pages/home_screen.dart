@@ -1,5 +1,5 @@
 import 'package:fashion_shoping/core/utils/design_utils.dart';
-import 'package:fashion_shoping/core/widgets/image_handle_from_network_network.dart';
+import 'package:fashion_shoping/core/components/widgets/image_handle_from_network_network.dart';
 import 'package:fashion_shoping/features/home/controllers/home_screen_controller.dart';
 import 'package:carousel_slider_plus/carousel_slider_plus.dart';
 import 'package:fashion_shoping/features/home/presentation/widgets/home_screen_new_sale_part_widget.dart';

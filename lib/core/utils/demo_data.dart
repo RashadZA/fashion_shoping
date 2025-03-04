@@ -2756,6 +2756,7 @@ Map<String, dynamic> paymentMethodSampleData = {
   ]
 };
 
+
 /// Item List sample data
 Map<String, dynamic> itemSampleData = {
   "data": [
@@ -3096,6 +3097,84 @@ Map<String, dynamic> popularItemSampleData = {
       "itemUnitRegularPrice": 6.0,
       "itemDiscountPercentage": 15.0,
       "itemDiscountPrice": 5.0
+    }
+  ]
+};
+
+/// Product Image list
+final List<String> productImageListSampleData = [
+  "https://drive.google.com/uc?export=view&id=1kxFdZ_MwP0RWG7H8yeVQn8Cro35RqgiZ",
+  "https://drive.google.com/uc?export=view&id=1WWKKayAaJScQEKUWBS1qZa8VxSmk9T4q"
+];
+
+/// Item Size sample data
+Map<String, dynamic> itemSizeSampleData = {
+  "data": [
+    {
+      "name": "XS",
+      "id": "XSmall"
+    },
+    {
+      "name": "S",
+      "id": "Small"
+    },
+    {
+      "name": "M",
+      "id": "Medium"
+    },
+    {
+      "name": "L",
+      "id": "Large"
+    },
+    {
+      "name": "XL",
+      "id": "XLarge"
+    }
+  ]
+};
+
+/// Color sample data
+Map<String, dynamic> colorSampleData = {
+  "data": [
+    {
+      "name": "Red",
+      "id": "RED"
+    },
+    {
+      "name": "Blue",
+      "id": "BLUE"
+    },
+    {
+      "name": "Green",
+      "id": "GREEN"
+    },
+    {
+      "name": "Yellow",
+      "id": "YELLOW"
+    },
+    {
+      "name": "Black",
+      "id": "BLACK"
+    },
+    {
+      "name": "White",
+      "id": "WHITE"
+    },
+    {
+      "name": "Purple",
+      "id": "PURPLE"
+    },
+    {
+      "name": "Orange",
+      "id": "ORANGE"
+    },
+    {
+      "name": "Pink",
+      "id": "PINK"
+    },
+    {
+      "name": "Gray",
+      "id": "GRAY"
     }
   ]
 };

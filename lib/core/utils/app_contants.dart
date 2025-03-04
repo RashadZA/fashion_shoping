@@ -212,3 +212,49 @@ String maskCardNumber(String cardNumber) {
   // Create the masked card number format
   return "* * * *   * * * *   * * * *   $lastFourDigits";
 }
+
+
+
+OutlineInputBorder defaultFocusedBorder = OutlineInputBorder(
+  borderRadius: BorderRadius.circular(12),
+  borderSide: BorderSide(width: 1, color: greyColor.withValues(alpha: .67)),
+);
+
+OutlineInputBorder defaultEnabledBorder = OutlineInputBorder(
+  borderRadius: BorderRadius.circular(12),
+  borderSide: const BorderSide(width: 1, color: greyColor),
+);
+
+OutlineInputBorder defaultFocusedErrorBorder = OutlineInputBorder(
+  borderRadius: BorderRadius.circular(12),
+  borderSide: const BorderSide(width: 1, color: greyColor),
+);
+
+OutlineInputBorder defaultErrorBorder = OutlineInputBorder(
+  borderRadius: BorderRadius.circular(12),
+  borderSide: const BorderSide(width: 1, color: redAccentColor),
+);
+OutlineInputBorder defaultDisableBorder = OutlineInputBorder(
+  borderRadius: BorderRadius.circular(12),
+  borderSide: const BorderSide(width: 0, color: transparentColor),
+);
+
+OutlineInputBorder customizeFocusedBorder({double? borderRadius, double? borderSideWidth})=> OutlineInputBorder(
+  borderRadius: BorderRadius.circular(borderRadius ?? 12),
+  borderSide: BorderSide(width: borderSideWidth ?? 1, color: greyColor.withValues(alpha: .67)),
+);
+
+OutlineInputBorder customizeEnabledBorder({double? borderRadius, double? borderSideWidth})=> OutlineInputBorder(
+  borderRadius: BorderRadius.circular(borderRadius ?? 12),
+  borderSide: BorderSide(width: borderSideWidth ?? 1, color: greyColor),
+);
+
+OutlineInputBorder customizeFocusedErrorBorder({double? borderRadius, double? borderSideWidth})=> OutlineInputBorder(
+  borderRadius: BorderRadius.circular(borderRadius ?? 12),
+  borderSide: BorderSide(width: borderSideWidth ?? 1, color: greyColor),
+);
+
+OutlineInputBorder customizeErrorBorder({double? borderRadius, double? borderSideWidth})=> OutlineInputBorder(
+  borderRadius: BorderRadius.circular(borderRadius ?? 12),
+  borderSide: BorderSide(width: borderSideWidth ?? 1, color: redAccentColor),
+);

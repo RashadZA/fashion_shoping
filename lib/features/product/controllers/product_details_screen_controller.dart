@@ -1,27 +1,23 @@
+import 'package:fashion_shoping/core/components/dataModels/common_name_id_type_data_response_model.dart';
+import 'package:fashion_shoping/core/components/dataModels/common_response_model_for_id_name.dart';
 import 'package:fashion_shoping/core/utils/demo_data.dart';
-import 'package:fashion_shoping/features/home/presentation/models/home_screen_slider_response_model.dart';
-import 'package:fashion_shoping/features/home/presentation/models/item_response_model.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class ProductDetailsScreenController extends GetxController {
 
-  RxList<HomeScreenSliderDataModel> sliderList = <HomeScreenSliderDataModel>[].obs;
-  RxList<ItemDataModel> saleItemList = <ItemDataModel>[].obs;
-  RxList<ItemDataModel> summerSaleItemList = <ItemDataModel>[].obs;
-  RxList<ItemDataModel> newItemList = <ItemDataModel>[].obs;
-  RxList<ItemDataModel> youMayLikeList = <ItemDataModel>[].obs;
-  RxList<ItemDataModel> popularItemList = <ItemDataModel>[].obs;
+  RxList<String> productImageList = <String>[].obs;
+  RxList<CommonResponseModelForIdName> itemSizeList = <CommonResponseModelForIdName>[].obs;
+  RxList<CommonResponseModelForIdName> colorList = <CommonResponseModelForIdName>[].obs;
 
-  Rx<HomeScreenSliderResponseModel> domeScreenSliderResponseModel = HomeScreenSliderResponseModel().obs;
-  Rx<ItemResponseModel> saleItemResponseModel = ItemResponseModel().obs;
-  Rx<ItemResponseModel> summerSaleItemResponseModel = ItemResponseModel().obs;
-  Rx<ItemResponseModel> newItemResponseModel = ItemResponseModel().obs;
-  Rx<ItemResponseModel> youMayLikeItemResponseModel = ItemResponseModel().obs;
-  Rx<ItemResponseModel> popularItemResponseModel = ItemResponseModel().obs;
+  Rx<CommonNameIdTypeDataResponseModel> itemSizeResponseModel = CommonNameIdTypeDataResponseModel().obs;
+  Rx<CommonResponseModelForIdName> selectedItemSize = CommonResponseModelForIdName().obs;
+  Rx<CommonNameIdTypeDataResponseModel> colorResponseModel = CommonNameIdTypeDataResponseModel().obs;
+  Rx<CommonResponseModelForIdName> selectedColor = CommonResponseModelForIdName().obs;
 
   RxInt sliderCurrentIndex = 0.obs;
 
-  RxBool homeScreenDataOnProcessing = false.obs;
+  RxBool productDetailsScreenDataOnProcessing = false.obs;
 
   @override
   void onInit() {
@@ -30,39 +26,59 @@ class ProductDetailsScreenController extends GetxController {
   }
 
   Future<void> init() async {
-    homeScreenDataOnProcessing.value = true;
+    productDetailsScreenDataOnProcessing.value = true;
 
-    /// Slider List Part
-    domeScreenSliderResponseModel.value = HomeScreenSliderResponseModel.fromJson(dataForSliderList);
-    sliderList.value = domeScreenSliderResponseModel.value.data ?? <HomeScreenSliderDataModel>[];
+    /// Product Image List Part
+    productImageList.value = productImageListSampleData;
 
-    /// Sale Item List Part
-    saleItemResponseModel.value = ItemResponseModel.fromJson(itemSampleData);
-    saleItemList.value = saleItemResponseModel.value.data ?? <ItemDataModel>[];
+    /// Item Size
+    itemSizeResponseModel.value = CommonNameIdTypeDataResponseModel.fromJson(itemSizeSampleData);
+    itemSizeList.value = itemSizeResponseModel.value.data ?? <CommonResponseModelForIdName>[];
+    selectedItemSize.value = itemSizeList.firstWhere(
+        (size) => size.id == "Large",
+      orElse: ()=> itemSizeList.first,
+    );
 
-    /// New Item List Part
-    newItemResponseModel.value = ItemResponseModel.fromJson(newSaleItemSampleData);
-    newItemList.value = newItemResponseModel.value.data ?? <ItemDataModel>[];
+    /// Item Color
+    colorResponseModel.value = CommonNameIdTypeDataResponseModel.fromJson(colorSampleData);
+    colorList.value = colorResponseModel.value.data ?? <CommonResponseModelForIdName>[];
+    selectedColor.value = colorList.firstWhere(
+          (color) => color.id == "BLACK",
+      orElse: ()=> colorList.first,
+    );
 
-    /// You May Item List Part
-    youMayLikeItemResponseModel.value = ItemResponseModel.fromJson(youMayLikeItemSampleData);
-    youMayLikeList.value = youMayLikeItemResponseModel.value.data ?? <ItemDataModel>[];
+    debugPrint("Get.width: ${Get.width}");
+    debugPrint("Calculated width: ${(Get.width - 110) * 0.5}");
 
-    /// Sale Item List Part
-    popularItemResponseModel.value = ItemResponseModel.fromJson(popularItemSampleData);
-    popularItemList.value = popularItemResponseModel.value.data ?? <ItemDataModel>[];
-
-    /// Summer Sale Item List Part
-    summerSaleItemResponseModel.value = ItemResponseModel.fromJson(itemSampleData);
-    summerSaleItemList.value = saleItemResponseModel.value.data ?? <ItemDataModel>[];
-
-    homeScreenDataOnProcessing.value = false;
+    productDetailsScreenDataOnProcessing.value = false;
   }
 
-  Future<void> sliderOnChangedMethod(int index) async {
-    sliderCurrentIndex.value = index;
-    update();
+  /// Item Size Drop Down Related Part
+  Future<List<CommonResponseModelForIdName>> filterItemSize(String filter) async {
+    debugPrint("filter: $filter");
+    if (filter.isEmpty) {
+      return itemSizeList;
+    }
+    return itemSizeList.where((size) => (size.name ?? "").toLowerCase().contains(filter.toLowerCase()) ).toList();
   }
+
+  Future<void> itemSizeDropDownOnChangeMethod(CommonResponseModelForIdName? item) async {
+    selectedItemSize.value = item ?? CommonResponseModelForIdName();
+  }
+
+  /// Item Color Drop Down Related Part
+  Future<List<CommonResponseModelForIdName>> filterItemColor(String filter) async {
+    debugPrint("filter: $filter");
+    if (filter.isEmpty) {
+      return colorList;
+    }
+    return colorList.where((size) => (size.name ?? "").toLowerCase().contains(filter.toLowerCase()) ).toList();
+  }
+
+  Future<void> itemColorDropDownOnChangeMethod(CommonResponseModelForIdName? item) async {
+    selectedColor.value = item ?? CommonResponseModelForIdName();
+  }
+
 
   Future<void> close() async {}
 

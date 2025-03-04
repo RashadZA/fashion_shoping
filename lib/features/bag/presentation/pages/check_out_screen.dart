@@ -1,5 +1,5 @@
 import 'package:fashion_shoping/core/utils/design_utils.dart';
-import 'package:fashion_shoping/core/widgets/buttons/core_button.dart';
+import 'package:fashion_shoping/core/components/widgets/buttons/core_button.dart';
 import 'package:fashion_shoping/features/bag/controllers/check_out_screen_controller.dart';
 import 'package:fashion_shoping/features/bag/presentation/widgets/checkOutScreen/check_out_screen_row_widget.dart';
 import 'package:fashion_shoping/features/bag/presentation/widgets/checkOutScreen/check_out_screen_shiiping_address_card_part.dart';

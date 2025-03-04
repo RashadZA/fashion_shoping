@@ -1,6 +1,6 @@
 import 'package:fashion_shoping/core/utils/design_utils.dart';
-import 'package:fashion_shoping/core/widgets/buttons/core_button.dart';
-import 'package:fashion_shoping/core/widgets/core_text_field.dart';
+import 'package:fashion_shoping/core/components/widgets/buttons/core_button.dart';
+import 'package:fashion_shoping/core/components/widgets/core_text_field.dart';
 import 'package:fashion_shoping/features/bag/controllers/bag_screen_controller.dart';
 import 'package:fashion_shoping/features/bag/data/promo_codes_response_model.dart';
 

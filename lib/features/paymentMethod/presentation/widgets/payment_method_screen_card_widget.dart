@@ -1,5 +1,5 @@
 import 'package:fashion_shoping/core/utils/design_utils.dart';
-import 'package:fashion_shoping/core/widgets/buttons/core_button.dart';
+import 'package:fashion_shoping/core/components/widgets/buttons/core_button.dart';
 import 'package:fashion_shoping/features/paymentMethod/controllers/payment_method_screen_controller.dart';
 import 'package:fashion_shoping/features/paymentMethod/models/payment_method_response_model.dart';
 import 'package:flutter/material.dart';

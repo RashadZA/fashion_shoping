@@ -1,5 +1,5 @@
 import 'package:fashion_shoping/core/utils/design_utils.dart';
-import 'package:fashion_shoping/core/widgets/buttons/core_button.dart';
+import 'package:fashion_shoping/core/components/widgets/buttons/core_button.dart';
 import 'package:fashion_shoping/features/profile/controllers/orders/order_details_screen_controller.dart';
 import 'package:fashion_shoping/features/profile/presentation/widgets/order/order_item_card.dart';
 import 'package:flutter/material.dart';
@@ -112,31 +112,17 @@ class OrderDetailsScreen extends GetWidget<OrderDetailsScreenController> {
                   style:
                   AppTextTheme.text15.copyWith(overflow: TextOverflow.visible),
                 ),
-                ListView.builder(
+                const SizedBox(height: 15,),
+                ListView.separated(
                     shrinkWrap: true,
                     physics: const NeverScrollableScrollPhysics(),
                     itemCount: controller.orderItemsList.length,
+                    separatorBuilder: (context, index) => const SizedBox(height: 15,),
                     // padding: const EdgeInsets.all(0.0),
-                    itemBuilder: (context, index) {
-                      return Column(
-                        children: [
-                          index == 0
-                              ? const SizedBox(
-                            height: 15,
-                          )
-                              : const SizedBox(
-                            height: 0.0,
-                            width: 0.0,
-                          ),
-                          OrderItemCard(
-                            orderItemModel: controller.orderItemsList[index],
-                          ),
-                          SizedBox(
-                            height: index + 1 == controller.orderItemsList.length ? 5 : 15,
-                          ),
-                        ],
-                      );
-                    }),
+                    itemBuilder: (context, index)=> OrderItemCard(
+                        orderItemModel: controller.orderItemsList[index],
+                    ),
+                ),
                 SizedBox(
                   width: deviceWidth,
                   child: Text(
