@@ -6,7 +6,7 @@ import 'package:fashion_shoping/features/product/presentation/widgets/product_de
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class ProductDetailsScreenController extends GetxController {
+class ProductRatingAndReviewScreenController extends GetxController {
 
   RxList<String> productImageList = <String>[].obs;
   RxList<ItemDataModel> youMayLikeList = <ItemDataModel>[].obs;

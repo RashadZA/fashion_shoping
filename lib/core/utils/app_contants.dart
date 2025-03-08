@@ -14,15 +14,23 @@ extension WidgetExtension on Widget{
 
   Widget defaultLoaderOfCircularProgressIndicator({
     Color? color,
-    Color? backgroundColor,
-    double? strokeWidth,
+    double? radius,
+    double? width,
+    double? height,
     double? value,
+    double? strokeWidth,
   }){
-    return CircularProgressIndicator(
-      value: value,
-      backgroundColor: backgroundColor ?? primaryColor.withValues(alpha:0.3),
-      color: color ?? primaryColor,
-      strokeWidth: strokeWidth ?? 4.0,
+    return Center(
+      child: SizedBox(
+        width: width,
+        height: height,
+        child: CircularProgressIndicator(
+          strokeWidth: strokeWidth ?? 4,
+          color: color ?? primaryColor,
+          backgroundColor: color != null ? color.withValues(alpha: 0.5) : primaryColor.withValues(alpha: 0.5),
+          value: value,
+        ),
+      ),
     );
   }
 

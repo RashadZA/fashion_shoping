@@ -21,7 +21,7 @@ class MyOrdersScreen extends GetWidget<MyOrdersScreenController> {
             body: Column(
               children: [
                 const SizedBox(
-                  height: 30,
+                  height: 45,
                 ),
                 SizedBox(
                   height: 40,
@@ -51,7 +51,7 @@ class MyOrdersScreen extends GetWidget<MyOrdersScreenController> {
                   height: 15,
                 ),
                 SizedBox(
-                  height: Get.height - 125,
+                  height: Get.height - 140,
                   child: Obx(()=> controller.isDataLoading.value
                       ? const ListViewPlaceHolder().showShimmer()
                       : ListView.separated(

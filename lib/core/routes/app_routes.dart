@@ -23,6 +23,7 @@ abstract class Routes {
   static const paymentMethodScreen = _Paths.paymentMethodScreen;
   static const productDetailsScreen = _Paths.productDetailsScreen;
   static const homeSeeAllItemsScreen = _Paths.homeSeeAllItemsScreen;
+  static const productRatingAndReviewScreen = _Paths.productRatingAndReviewScreen;
 }
 
 abstract class _Paths {
@@ -47,4 +48,5 @@ abstract class _Paths {
   static const paymentMethodScreen = '/paymentMethodScreen';
   static const productDetailsScreen = '/productDetailsScreen';
   static const homeSeeAllItemsScreen = '/homeSeeAllItemsScreen';
+  static const productRatingAndReviewScreen = '/productRatingAndReviewScreen';
 }

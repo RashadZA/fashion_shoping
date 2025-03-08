@@ -73,3 +73,5 @@ Color buttonFillSecondaryColorForDarkMode = const Color(0xFF000000).withValues(a
 /// PopUp Menu Button color
 const Color popUpMenuButtonLightModeColor = Color(0xFFFAFAFA);
 const Color popUpMenuButtonDarkModeColor = Colors.black;
+
+const Color iconColor = Colors.black;

@@ -44,8 +44,8 @@ class FavoriteButton extends StatelessWidget {
         child: Center(
           child: Icon(
             selectedStatus ? Icons.favorite : Icons.favorite_border,
-            size: iconSize ?? 30,
-            color: selectedStatus ? primaryColor : secondaryColor,
+            size: iconSize ?? 25,
+            color: selectedStatus ? primaryColor : blackColor,
           ),
         ),
       ),

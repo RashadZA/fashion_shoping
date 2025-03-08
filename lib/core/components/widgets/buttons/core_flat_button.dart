@@ -93,6 +93,7 @@ class CoreFlatButton extends StatelessWidget {
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: fontSize,
+                    fontFamily: AppTextTheme.getDefaultFontFamily,
                     letterSpacing: -0.24,
                     fontWeight: FontWeight.w600,
                     color: textColor ?? whiteColor,

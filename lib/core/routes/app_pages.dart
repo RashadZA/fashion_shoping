@@ -20,7 +20,9 @@ import 'package:fashion_shoping/features/main/presentation/pages/main_screen.dar
 import 'package:fashion_shoping/features/paymentMethod/controllers/payment_method_screen_controller.dart';
 import 'package:fashion_shoping/features/paymentMethod/presentation/payment_method_screen.dart';
 import 'package:fashion_shoping/features/product/controllers/product_details_screen_controller.dart';
+import 'package:fashion_shoping/features/product/controllers/product_rating_and_review_screen_controller.dart';
 import 'package:fashion_shoping/features/product/presentation/pages/product_details_screen.dart';
+import 'package:fashion_shoping/features/product/presentation/pages/product_rating_and_review_screen.dart';
 import 'package:fashion_shoping/features/profile/controllers/orders/my_orders_screen_controller.dart';
 import 'package:fashion_shoping/features/profile/controllers/orders/order_details_screen_controller.dart';
 import 'package:fashion_shoping/features/profile/controllers/profile_screen_controller.dart';
@@ -189,6 +191,13 @@ class AppPages {
       page: () => const HomeSeeAllItemsScreen(),
       binding: BindingsBuilder(
             () => Get.lazyPut<HomeSeeAllItemsScreenController>(() => HomeSeeAllItemsScreenController()),
+      ),
+    ),
+    GetPage(
+      name: Routes.productRatingAndReviewScreen,
+      page: () => const ProductRatingAndReviewScreen(),
+      binding: BindingsBuilder(
+            () => Get.lazyPut<ProductRatingAndReviewScreenController>(() => ProductRatingAndReviewScreenController()),
       ),
     ),
   ];
