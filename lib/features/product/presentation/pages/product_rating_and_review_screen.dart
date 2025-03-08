@@ -1,13 +1,6 @@
-import 'package:fashion_shoping/core/components/dataModels/common_response_model_for_id_name.dart';
-import 'package:fashion_shoping/core/components/dropDown/common_drop_down_for_id_name.dart';
-import 'package:fashion_shoping/core/components/widgets/buttons/core_button.dart';
-import 'package:fashion_shoping/core/components/widgets/buttons/core_flat_button.dart';
-import 'package:fashion_shoping/core/components/widgets/buttons/favorite_button.dart';
-import 'package:fashion_shoping/core/routes/app_pages.dart';
 import 'package:fashion_shoping/core/utils/design_utils.dart';
 import 'package:fashion_shoping/features/product/controllers/product_rating_and_review_screen_controller.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:get/get.dart';
 
 class ProductRatingAndReviewScreen extends GetWidget<ProductRatingAndReviewScreenController> {
