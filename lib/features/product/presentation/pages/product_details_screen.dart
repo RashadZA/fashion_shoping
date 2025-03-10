@@ -3,6 +3,7 @@ import 'package:fashion_shoping/core/components/dropDown/common_drop_down_for_id
 import 'package:fashion_shoping/core/components/widgets/buttons/core_button.dart';
 import 'package:fashion_shoping/core/components/widgets/buttons/core_flat_button.dart';
 import 'package:fashion_shoping/core/components/widgets/buttons/favorite_button.dart';
+import 'package:fashion_shoping/core/components/widgets/rating_star_custom_widget.dart';
 import 'package:fashion_shoping/core/routes/app_pages.dart';
 import 'package:fashion_shoping/core/utils/design_utils.dart';
 import 'package:fashion_shoping/features/product/controllers/product_details_screen_controller.dart';
@@ -152,27 +153,14 @@ class ProductDetailsScreen extends GetWidget<ProductDetailsScreenController> {
                             mainAxisAlignment: MainAxisAlignment.start,
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
-                              SizedBox(
-                                width: 140,
-                                child: RatingBar.builder(
-                                  initialRating: 5,
-                                  minRating: 1,
-                                  direction: Axis.horizontal,
-                                  allowHalfRating: true,
-                                  itemCount: 5,
-                                  itemSize: 20,
-                                  itemPadding: EdgeInsets.symmetric(horizontal: 4.0),
-                                  itemBuilder: (context, _) => Icon(
-                                    Icons.star,
-                                    color: Colors.amber,
-                                  ),
-                                  onRatingUpdate: (rating) {
-                                    debugPrint("$rating");
-                                  },
-                                ),
+                              RatingStarCustomWidget(
+                                width: 150,
+                                rating: 5,
+                                iconSize: 25,
+                                gapeBetweenIcons: 5,
                               ),
                               SizedBox(
-                                width: Get.width - 180,
+                                width: Get.width - 190,
                                 child: Text(
                                     "(5.0)",
                                     style: AppTextTheme.text12.copyWith(

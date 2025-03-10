@@ -114,4 +114,14 @@ class AppTextTheme {
     decoration: TextDecoration.none,
     fontFamily: getDefaultFontFamily,
   );
+
+  static final text44 = TextStyle(
+    color: primaryTextColor,
+    fontSize: 44,
+    letterSpacing: -.24,
+    overflow: defaultOverflow,
+    fontWeight: FontWeight.w500,
+    decoration: TextDecoration.none,
+    fontFamily: getDefaultFontFamily,
+  );
 }

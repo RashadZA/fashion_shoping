@@ -22,6 +22,7 @@ class ProductRatingAndReviewScreenController extends GetxController {
   RxInt sliderCurrentIndex = 0.obs;
 
   RxBool productDetailsScreenDataOnProcessing = false.obs;
+  RxBool reviewWithPhotos = true.obs;
 
   @override
   void onInit() {
@@ -92,6 +93,11 @@ class ProductRatingAndReviewScreenController extends GetxController {
     Get.bottomSheet(
       const ProductDetailsShippingInfo(),
     );
+  }
+
+  Future<void> checkBoxOnPressedMethod() async {
+    reviewWithPhotos.value = !reviewWithPhotos.value;
+    update();
   }
 
 
