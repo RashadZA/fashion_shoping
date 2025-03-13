@@ -1,9 +1,9 @@
+import 'package:fashion_shoping/core/components/widgets/rating_star_custom_widget.dart';
 import 'package:fashion_shoping/core/routes/app_pages.dart';
 import 'package:fashion_shoping/core/utils/design_utils.dart';
 import 'package:fashion_shoping/core/components/widgets/buttons/core_button.dart';
 import 'package:fashion_shoping/features/home/controllers/home_screen_controller.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:get/get.dart';
 
 class HomeScreenSalePartWidget extends GetWidget<HomeScreenController> {
@@ -66,17 +66,17 @@ class HomeScreenSalePartWidget extends GetWidget<HomeScreenController> {
               scrollDirection: Axis.horizontal,
               itemCount: controller.saleItemList.length,
               separatorBuilder: (context, index)=> const SizedBox(height: 5.0),
-              itemBuilder: (context, index)=> CoreButton(
-                onPressed: ()=> Get.toNamed(Routes.productDetailsScreen),
-                child: Card(
-                    color: cardColor,
-                    child: SizedBox(
-                        width: 190,
-                        height: 300,
-                        // padding: const EdgeInsets.all(10.0),
-                        child: Stack(
-                          children: [
-                            Column(
+              itemBuilder: (context, index)=> Card(
+                  color: cardColor,
+                  child: SizedBox(
+                      width: 190,
+                      height: 300,
+                      // padding: const EdgeInsets.all(10.0),
+                      child: Stack(
+                        children: [
+                          CoreButton(
+                            onPressed: ()=> Get.toNamed(Routes.productDetailsScreen),
+                            child: Column(
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
@@ -121,29 +121,14 @@ class HomeScreenSalePartWidget extends GetWidget<HomeScreenController> {
                                     mainAxisAlignment: MainAxisAlignment.start,
                                     crossAxisAlignment: CrossAxisAlignment.center,
                                     children: [
-                                      RatingBar.builder(
-                                        initialRating: 5,
-                                        minRating: 1,
-                                        direction: Axis.horizontal,
-                                        allowHalfRating: true,
-                                        itemCount: 5,
-                                        itemSize: 20,
-                                        itemPadding: EdgeInsets.symmetric(horizontal: 4.0),
-                                        itemBuilder: (context, _) => Icon(
-                                          Icons.star,
-                                          color: Colors.amber,
-                                        ),
-                                        onRatingUpdate: (rating) {
-                                          debugPrint("$rating");
-                                        },
-                                      ),
+                                      RatingStarCustomWidget(rating: index== 2 || index == 5 ? 4 : 5),
                                       SizedBox(
                                         width: 40,
                                         child: Text(
-                                            "(5.0)",
+                                            "(${index== 2 || index == 5 ? 4 : 5})",
                                             style: AppTextTheme.text12.copyWith(
                                               fontWeight: FontWeight.normal,
-                                              // color: secondaryColor,
+                                              color: secondaryTextColor,
                                             )
                                         ),
                                       ),
@@ -215,9 +200,12 @@ class HomeScreenSalePartWidget extends GetWidget<HomeScreenController> {
                                   ),
                                 ]
                             ),
-                            Positioned(
-                              top: 160,
-                              right: 10,
+                          ),
+                          Positioned(
+                            top: 160,
+                            right: 10,
+                            child: CoreButton(
+                              onPressed: (){},
                               child: Container(
                                 width: 50,
                                 height: 50,
@@ -246,10 +234,10 @@ class HomeScreenSalePartWidget extends GetWidget<HomeScreenController> {
                                 ),
                               ),
                             ),
-                          ],
-                        )
-                    )
-                ),
+                          ),
+                        ],
+                      )
+                  )
               )
           ),
         ),
