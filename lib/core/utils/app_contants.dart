@@ -266,3 +266,42 @@ OutlineInputBorder customizeErrorBorder({double? borderRadius, double? borderSid
   borderRadius: BorderRadius.circular(borderRadius ?? 12),
   borderSide: BorderSide(width: borderSideWidth ?? 1, color: redAccentColor),
 );
+
+Widget showImageFromFilePath({
+  required String imagePath,
+  double width = 120,
+  double height = 120,
+  double radius = 10,
+  bool showDeleteButton = true,
+  Future<void> Function()? deleteImageFunction,
+}) {
+  return Stack(
+    children: [
+      Container(
+        width: width,
+        height: height,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(radius),
+          color: buttonFillColorForLightMode,
+          image: DecorationImage(
+            image: FileImage(File(imagePath)), // Use FileImage for local file paths
+            fit: BoxFit.cover, // Ensure the image covers the container
+          ),
+        ),
+      ),
+      Positioned(
+        top: 5,
+        right: 5,
+        child: CoreButton(
+            onPressed: deleteImageFunction,
+            child: Icon(
+              Icons.delete,
+              size: 30,
+              color: redAccentColor,
+            ),
+        ),
+      ),
+    ],
+  );
+}
+

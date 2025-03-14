@@ -13,7 +13,7 @@ class ProductDetailsShippingInfo extends StatelessWidget {
         builder: (context,orientation) {
           return Container(
               width: Get.width,
-              height: (Get.height * 0.8),
+              height: (Get.height * 0.65),
               decoration: const BoxDecoration(
                   color: scaffoldBackgroundColor,
                   borderRadius: BorderRadius.only(
@@ -22,6 +22,7 @@ class ProductDetailsShippingInfo extends StatelessWidget {
                   )
               ),
               child:  ListView(
+                shrinkWrap: true,
                 padding: const EdgeInsets.all(15),
                 children: [
                   Text(

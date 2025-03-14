@@ -22,24 +22,35 @@ class ProductRatingAndReviewScreen extends GetWidget<ProductRatingAndReviewScree
                   const SizedBox(
                     height: 45,
                   ),
-                  Align(
-                    alignment: Alignment.centerLeft,
-                    child: IconButton(
-                      onPressed: () => Get.back(),
-                      icon: const Icon(Icons.arrow_back_ios),
+                  SizedBox(
+                    height: 40,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        IconButton(
+                          onPressed: () => Get.back(),
+                          icon: const Icon(
+                              Icons.arrow_back_ios,
+                          ),
+                        ),
+                        SizedBox(
+                          width: Get.width - 63,
+                          child: Text(
+                            "Rating & Reviews",
+                            style: AppTextTheme.text26,
+                          ),
+                        ),
+                        const SizedBox(
+                          width: 15,
+                        ),
+                      ],
                     ),
                   ),
                   Expanded(
                     child: ListView(
                       padding: EdgeInsets.only(left: 15,right: 15, top: 10, bottom: 10),
                       children: [
-                        Text(
-                          "Rating & Reviews",
-                          style: AppTextTheme.text26.copyWith(
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        const SizedBox(height: 10),
                         RatingSummaryOfProductRatingAndReviewScreen(),
                         const SizedBox(height: 20),
                         Row(
@@ -96,7 +107,7 @@ class ProductRatingAndReviewScreen extends GetWidget<ProductRatingAndReviewScree
                 ],
               ),
               floatingActionButton: FloatingActionButton.extended(
-                onPressed: () {},
+                onPressed: ()=> controller.writeAReviewButtonOnPressedMethod(),
                 label: Text(
                   "Write a review",
                   style: AppTextTheme.text16.copyWith(

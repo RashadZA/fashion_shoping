@@ -91,6 +91,7 @@ class ProductDetailsScreenController extends GetxController {
   Future<void> shippingInfoButtonOnPressedMethod() async {
     Get.bottomSheet(
       const ProductDetailsShippingInfo(),
+      isScrollControlled: true,
     );
   }
 

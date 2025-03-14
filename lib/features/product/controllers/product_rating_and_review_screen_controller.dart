@@ -1,10 +1,13 @@
 import 'package:fashion_shoping/core/components/dataModels/common_name_id_type_data_response_model.dart';
 import 'package:fashion_shoping/core/components/dataModels/common_response_model_for_id_name.dart';
+import 'package:fashion_shoping/core/components/widgets/select_image_bottom_sheet_widget.dart';
 import 'package:fashion_shoping/core/utils/demo_data.dart';
 import 'package:fashion_shoping/features/home/presentation/models/item_response_model.dart';
+import 'package:fashion_shoping/features/product/presentation/widgets/productReview/writing_a_review_bottom_sheet_widget.dart';
 import 'package:fashion_shoping/features/product/presentation/widgets/product_details_shipping_info.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:image_picker/image_picker.dart';
 
 class ProductRatingAndReviewScreenController extends GetxController {
 
@@ -12,6 +15,7 @@ class ProductRatingAndReviewScreenController extends GetxController {
   RxList<ItemDataModel> youMayLikeList = <ItemDataModel>[].obs;
   RxList<CommonResponseModelForIdName> itemSizeList = <CommonResponseModelForIdName>[].obs;
   RxList<CommonResponseModelForIdName> colorList = <CommonResponseModelForIdName>[].obs;
+  RxList<XFile> addReviewImageList = <XFile>[].obs;
 
   Rx<ItemResponseModel> youMayLikeItemResponseModel = ItemResponseModel().obs;
   Rx<CommonNameIdTypeDataResponseModel> itemSizeResponseModel = CommonNameIdTypeDataResponseModel().obs;
@@ -20,9 +24,15 @@ class ProductRatingAndReviewScreenController extends GetxController {
   Rx<CommonResponseModelForIdName> selectedColor = CommonResponseModelForIdName().obs;
 
   RxInt sliderCurrentIndex = 0.obs;
+  RxDouble addReviewRatingValue = 0.0.obs;
 
   RxBool productDetailsScreenDataOnProcessing = false.obs;
   RxBool reviewWithPhotos = true.obs;
+
+  final TextEditingController yourReviewTextEditController = TextEditingController();
+
+  final ImagePicker picker = ImagePicker();
+
 
   @override
   void onInit() {
@@ -63,35 +73,12 @@ class ProductRatingAndReviewScreenController extends GetxController {
     productDetailsScreenDataOnProcessing.value = false;
   }
 
-  /// Item Size Drop Down Related Part
-  Future<List<CommonResponseModelForIdName>> filterItemSize(String filter) async {
-    debugPrint("filter: $filter");
-    if (filter.isEmpty) {
-      return itemSizeList;
-    }
-    return itemSizeList.where((size) => (size.name ?? "").toLowerCase().contains(filter.toLowerCase()) ).toList();
-  }
-
-  Future<void> itemSizeDropDownOnChangeMethod(CommonResponseModelForIdName? item) async {
-    selectedItemSize.value = item ?? CommonResponseModelForIdName();
-  }
-
-  /// Item Color Drop Down Related Part
-  Future<List<CommonResponseModelForIdName>> filterItemColor(String filter) async {
-    debugPrint("filter: $filter");
-    if (filter.isEmpty) {
-      return colorList;
-    }
-    return colorList.where((size) => (size.name ?? "").toLowerCase().contains(filter.toLowerCase()) ).toList();
-  }
-
-  Future<void> itemColorDropDownOnChangeMethod(CommonResponseModelForIdName? item) async {
-    selectedColor.value = item ?? CommonResponseModelForIdName();
-  }
-
-  Future<void> shippingInfoButtonOnPressedMethod() async {
+  Future<void> writeAReviewButtonOnPressedMethod() async {
+    addReviewImageList.clear();
     Get.bottomSheet(
-      const ProductDetailsShippingInfo(),
+      const WritingAReviewBottomSheetWidget(),
+      isScrollControlled: true,
+      // isDismissible: false,
     );
   }
 
@@ -99,6 +86,49 @@ class ProductRatingAndReviewScreenController extends GetxController {
     reviewWithPhotos.value = !reviewWithPhotos.value;
     update();
   }
+
+  Future<void> ratingBarOnRatingUpdate(double rating) async {
+    addReviewRatingValue.value = rating;
+    update();
+  }
+
+  Future<void> chooseImageFunction() async {
+    Get.bottomSheet(
+      SelectImageBottomSheetWidget(
+        imageFromCameraFunction: ()=> chooseImageFromCameraFunction(),
+        imageFromGalleryFunction: ()=> chooseImageGalleryFunction(),
+      ),
+      isScrollControlled: true,
+    );
+  }
+
+  Future<void> chooseImageFromCameraFunction() async {
+    final XFile? image = await picker.pickImage(source: ImageSource.camera);
+    if (image != null) {
+      debugPrint("Selected Image Path From Camera: ${image.path}");
+      debugPrint("Selected Image Name From Camera: ${image.name}");
+      addReviewImageList.add(image);
+    }
+    update();
+  }
+
+  Future<void> chooseImageGalleryFunction() async {
+    final XFile? image = await picker.pickImage(source: ImageSource.gallery);
+    if (image != null) {
+      debugPrint("Selected Image Path From Gallery: ${image.path}");
+      debugPrint("Selected Image Name From Gallery: ${image.name}");
+      addReviewImageList.add(image);
+      // debugPrint("imageBase64String.value: ${imageBase64String.value}");
+    }
+    update();
+  }
+
+  Future<void> removeSelectedImageFromList(XFile image) async {
+    addReviewImageList.removeWhere((img)=> img.path == image.path);
+    update();
+  }
+
+
 
 
   Future<void> close() async {}
