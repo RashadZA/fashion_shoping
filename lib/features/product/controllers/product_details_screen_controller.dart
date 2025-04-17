@@ -1,5 +1,6 @@
 import 'package:fashion_shoping/core/components/dataModels/common_name_id_type_data_response_model.dart';
 import 'package:fashion_shoping/core/components/dataModels/common_response_model_for_id_name.dart';
+import 'package:fashion_shoping/core/components/widgets/add_to_favorites_bottom_sheet_widget.dart';
 import 'package:fashion_shoping/core/utils/demo_data.dart';
 import 'package:fashion_shoping/features/home/presentation/models/item_response_model.dart';
 import 'package:fashion_shoping/features/product/presentation/widgets/product_details_shipping_info.dart';
@@ -93,6 +94,17 @@ class ProductDetailsScreenController extends GetxController {
       const ProductDetailsShippingInfo(),
       isScrollControlled: true,
     );
+  }
+
+  Future<void> favoriteButtonOnPressedMethod() async {
+    Get.bottomSheet(
+      AddToFavoritesBottomSheetWidget(item: ItemDataModel(
+        itemSize: selectedItemSize.value.name,
+      ),sizeList: itemSizeList,),
+      isScrollControlled: true,
+      // isDismissible: false,
+    );
+    update();
   }
 
 

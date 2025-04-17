@@ -205,7 +205,7 @@ class HomeScreenSalePartWidget extends GetWidget<HomeScreenController> {
                             top: 160,
                             right: 10,
                             child: CoreButton(
-                              onPressed: (){},
+                              onPressed: ()=> controller.favoriteButtonOnPressedMethod(controller.saleItemList[index]),
                               child: Container(
                                 width: 50,
                                 height: 50,

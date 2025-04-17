@@ -1,3 +1,6 @@
+import 'package:fashion_shoping/core/components/dataModels/common_name_id_type_data_response_model.dart';
+import 'package:fashion_shoping/core/components/dataModels/common_response_model_for_id_name.dart';
+import 'package:fashion_shoping/core/components/widgets/add_to_favorites_bottom_sheet_widget.dart';
 import 'package:fashion_shoping/core/utils/demo_data.dart';
 import 'package:fashion_shoping/features/home/presentation/models/home_screen_slider_response_model.dart';
 import 'package:fashion_shoping/features/home/presentation/models/item_response_model.dart';
@@ -11,7 +14,10 @@ class HomeScreenController extends GetxController {
   RxList<ItemDataModel> newItemList = <ItemDataModel>[].obs;
   RxList<ItemDataModel> youMayLikeList = <ItemDataModel>[].obs;
   RxList<ItemDataModel> popularItemList = <ItemDataModel>[].obs;
+  RxList<CommonResponseModelForIdName> itemSizeList = <CommonResponseModelForIdName>[].obs;
 
+  Rx<CommonNameIdTypeDataResponseModel> itemSizeResponseModel = CommonNameIdTypeDataResponseModel().obs;
+  Rx<CommonResponseModelForIdName> selectedItemSize = CommonResponseModelForIdName().obs;
   Rx<HomeScreenSliderResponseModel> domeScreenSliderResponseModel = HomeScreenSliderResponseModel().obs;
   Rx<ItemResponseModel> saleItemResponseModel = ItemResponseModel().obs;
   Rx<ItemResponseModel> summerSaleItemResponseModel = ItemResponseModel().obs;
@@ -56,12 +62,30 @@ class HomeScreenController extends GetxController {
     summerSaleItemResponseModel.value = ItemResponseModel.fromJson(itemSampleData);
     summerSaleItemList.value = saleItemResponseModel.value.data ?? <ItemDataModel>[];
 
+    /// Item Size
+    itemSizeResponseModel.value = CommonNameIdTypeDataResponseModel.fromJson(itemSizeSampleData);
+    itemSizeList.value = itemSizeResponseModel.value.data ?? <CommonResponseModelForIdName>[];
+    selectedItemSize.value = itemSizeList.firstWhere(
+          (size) => size.id == "Large",
+      orElse: ()=> itemSizeList.first,
+    );
+
+
     homeScreenDataOnProcessing.value = false;
   }
 
   Future<void> sliderOnChangedMethod(int index) async {
     sliderCurrentIndex.value = index;
     update();
+  }
+
+  Future<void> favoriteButtonOnPressedMethod(ItemDataModel item) async {
+    Get.bottomSheet(
+      AddToFavoritesBottomSheetWidget(item: item,sizeList: itemSizeList,),
+      isScrollControlled: true,
+      // isDismissible: false,
+    );
+  update();
   }
 
   Future<void> close() async {}

@@ -53,6 +53,7 @@ const Color greyColor = Colors.grey;
 
 const Color coreTextFieldTitleColorForLightMode = Color(0xFF515151);
 const Color coreTextFieldTitleColorForDarkMode = Color(0xFF515151);
+const Color borderColor = Color(0xFFACACAC);
 
 /// Core Button Colors
 const Color buttonPrimaryColor = Color(0xFFDB3022);

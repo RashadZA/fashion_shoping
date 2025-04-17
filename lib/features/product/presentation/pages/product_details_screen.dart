@@ -107,7 +107,7 @@ class ProductDetailsScreen extends GetWidget<ProductDetailsScreenController> {
                                     ),
                                   ),
                                   FavoriteButton(
-                                    onPressed: (){},
+                                    onPressed: ()=> controller.favoriteButtonOnPressedMethod(),
                                     selectedStatus: false,
                                   ),
                                 ],
