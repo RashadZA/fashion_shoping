@@ -10,3 +10,5 @@ const String streetClothes = "Street Clothes";
 const String summerSale = "Summer Sale";
 const String mensHoodies = "Men's Hoodies";
 const String topSales = "Top Sales";
+const String percentageDiscountType = "Percentage";
+const String fixedDiscountType = "Fixed";

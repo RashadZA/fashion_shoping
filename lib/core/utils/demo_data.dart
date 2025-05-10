@@ -3179,6 +3179,89 @@ Map<String, dynamic> colorSampleData = {
   ]
 };
 
+/// Favorites List sample data
+Map<String, dynamic> favoritesSampleData = {
+  "data": [
+    {
+      "itemId": "FavoritesItem01",
+      "itemImageUrl": "https://drive.google.com/uc?export=view&id=1IBpfkXuk7C3KakgL3DT1l7-u-5IPDMHd",
+      "itemName": "T-Shirt",
+      "itemDescription": "Berries",
+      "itemColor": "Black",
+      "itemSize": "L",
+      "itemUnits": 2,
+      "itemUnitPrice": 45.0,
+      "itemTotalPrice": 90.0,
+      "rating": 5.0,
+      "totalRating": 40,
+      "discount": 40,
+      "discountType": percentageDiscountType
+    },
+    {
+      "itemId": "FavoritesItem02",
+      "itemImageUrl": "https://drive.google.com/uc?export=view&id=1t0pf5vzBM6jhgod49xuNFcBw97uezFKu",
+      "itemName": "T-Shirt",
+      "itemDescription": "Pullover",
+      "itemColor": "Black and White",
+      "itemSize": "L",
+      "itemUnits": 5,
+      "itemUnitPrice": 55.0,
+      "itemTotalPrice": 275.0,
+      "rating": 4.5,
+      "totalRating": 10,
+      "discount": 15,
+      "discountType": fixedDiscountType
+    },
+    {
+      "itemId": "FavoritesItem03",
+      "itemImageUrl":
+      "https://drive.google.com/uc?export=view&id=1QLIi2dnoTNijyucVcD55piSivyIOO_Dm",
+      "itemName": "T-Shirt",
+      "itemDescription": "Pullover",
+      "itemColor": "Black and White",
+      "itemSize": "XL",
+      "itemUnits": 3,
+      "itemUnitPrice": 5.0,
+      "itemTotalPrice": 15.0,
+      "rating": 3.0,
+      "totalRating": 10,
+      "discount": 0,
+      "discountType": percentageDiscountType
+    },
+    {
+      "itemId": "FavoritesItem04",
+      "itemImageUrl": "https://drive.google.com/uc?export=view&id=1ttlnvO7IirTET1OutUYXgRIVmybmhcCN",
+      "itemName": "Longsleeve Violeta",
+      "itemDescription": "Mango",
+      "itemColor": "Orange",
+      "itemSize": "S",
+      "itemUnits": 10,
+      "itemUnitPrice": 40.0,
+      "itemTotalPrice": 400.0,
+      "rating": 3.0,
+      "totalRating": 10,
+      "discount": 35,
+      "discountType": percentageDiscountType
+    },
+    {
+      "itemId": "FavoritesItem05",
+      "itemImageUrl":
+      "https://drive.google.com/uc?export=view&id=1f7eLitIydRPVHEgyOJpIM5Pj6J6Q2nQT",
+      "itemName": "Shirt",
+      "itemDescription": "Lime",
+      "itemColor": "Blue",
+      "itemSize": "XL",
+      "itemUnits": 2,
+      "itemUnitPrice": 5.0,
+      "itemTotalPrice": 10.0,
+      "rating": 3.0,
+      "totalRating": 10,
+      "discount": 0,
+      "discountType": percentageDiscountType
+    }
+  ]
+};
+
 
 
 
