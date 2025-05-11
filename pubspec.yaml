@@ -44,6 +44,9 @@ dependencies:
   # For format numbers, dates, currencies, messages
   intl: ^0.19.0
 
+  # For App Bar
+  sliver_tools: ^0.2.12
+
 dev_dependencies:
   flutter_native_splash: "^2.4.3"
   flutter_launcher_icons: "^0.13.1"

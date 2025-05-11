@@ -1,14 +1,12 @@
 import 'package:fashion_shoping/core/components/widgets/rating_star_custom_widget.dart';
 import 'package:fashion_shoping/core/utils/design_utils.dart';
-import 'package:fashion_shoping/core/components/widgets/buttons/core_button.dart';
-import 'package:fashion_shoping/features/bag/controllers/bag_screen_controller.dart';
 import 'package:fashion_shoping/features/favorites/data/favorites_response_model.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class FavoritesScreenItemCardWidget extends StatelessWidget {
+class FavoritesScreenItemCardWidgetForListView extends StatelessWidget {
   final FavoritesItemDataModel item;
-  const FavoritesScreenItemCardWidget({super.key, required this.item,});
+  const FavoritesScreenItemCardWidgetForListView({super.key, required this.item,});
 
   @override
   Widget build(BuildContext context) {
@@ -28,23 +26,46 @@ class FavoritesScreenItemCardWidget extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Container(
-                height: 120,
-                width: 126,
-                decoration: const BoxDecoration(
-                  color: greyColor,
-                  shape: BoxShape.circle,
-                ),
-                child: ImageErrorHandle(
-                  height: 120,
-                  width: 126,
-                  borderRadius: const BorderRadiusDirectional.only(
-                    topStart: Radius.circular(defaultBorderRadius),
-                    // bottomStart: Radius.circular(defaultBorderRadius),
+              Stack(
+                children: [
+                  Container(
+                    height: 120,
+                    width: 126,
+                    decoration: const BoxDecoration(
+                      color: greyColor,
+                      shape: BoxShape.circle,
+                    ),
+                    child: ImageErrorHandle(
+                      height: 120,
+                      width: 126,
+                      borderRadius: const BorderRadiusDirectional.only(
+                        topStart: Radius.circular(defaultBorderRadius),
+                        // bottomStart: Radius.circular(defaultBorderRadius),
+                      ),
+                      // fit:BoxFit.cover,
+                      imageUrl: item.itemImageUrl ?? "",
+                    ),
                   ),
-                  // fit:BoxFit.cover,
-                  imageUrl: item.itemImageUrl ?? "",
-                ),
+                  (item.discount ?? 0.0) > 0.0 ? Positioned(
+                    top: 5,
+                      left: 5,
+                      child: Container(
+                        // height: 26,
+                        // width: 62,
+                        padding: EdgeInsets.only(left: 10,top: 5,right: 10,bottom: 5,),
+                        decoration: BoxDecoration(
+                          color: primaryColor,
+                          borderRadius: BorderRadius.circular(25),
+                        ),
+                        child: Text(
+                            "-${(item.discount ?? 0.0).toStringAsFixed(1)}${item.discountType == percentageDiscountType ? "%" : "\$"}",
+                          style: AppTextTheme.text15.copyWith(
+                            color: whiteColor,
+                          ),
+                        ),
+                      )
+                  ) : Container(),
+                ],
               ),
               SizedBox(
                 height: 26,
@@ -165,7 +186,11 @@ class FavoritesScreenItemCardWidget extends StatelessWidget {
                             ),
                             children: [
                               TextSpan(
-                                text: " ${item.itemUnitPrice ?? 0.0}\$",
+                                text: " ${calculateDiscountedPrice(
+                                  unitPrice: item.itemUnitPrice,
+                                  discount: item.discount,
+                                  discountType: item.discountType,
+                                )}\$",
                                 style: AppTextTheme.text16.copyWith(
                                   color: primaryColor
                                 ),

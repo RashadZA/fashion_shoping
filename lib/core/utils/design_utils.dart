@@ -21,3 +21,4 @@ part 'app_global_string.dart';
 part 'app_shimmer_placeholder.dart';
 part 'app_default_values.dart';
 part 'app_theme.dart';
+part 'app_common_methods.dart';

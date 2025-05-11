@@ -3262,6 +3262,32 @@ Map<String, dynamic> favoritesSampleData = {
   ]
 };
 
+/// Item type sample data
+Map<String, dynamic> itemTypeSampleData = {
+  "data": [
+    {
+      "id": "tShirtKey",
+      "name": "T-Shirt"
+    },
+    {
+      "id": "shirtKey",
+      "name": "Shirt"
+    },
+    {
+      "id": "polarShirtKey",
+      "name": "Polar Shirt"
+    },
+    {
+      "id": "summerKey",
+      "name": "Summer"
+    },
+    {
+      "id": "winterKey",
+      "name": "Winter"
+    }
+  ]
+};
+
 
 
 

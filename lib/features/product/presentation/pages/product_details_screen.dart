@@ -2,7 +2,7 @@ import 'package:fashion_shoping/core/components/dataModels/common_response_model
 import 'package:fashion_shoping/core/components/dropDown/common_drop_down_for_id_name.dart';
 import 'package:fashion_shoping/core/components/widgets/buttons/core_button.dart';
 import 'package:fashion_shoping/core/components/widgets/buttons/core_flat_button.dart';
-import 'package:fashion_shoping/core/components/widgets/buttons/favorite_button.dart';
+import 'package:fashion_shoping/core/components/widgets/buttons/icon_custom_button.dart';
 import 'package:fashion_shoping/core/components/widgets/rating_star_custom_widget.dart';
 import 'package:fashion_shoping/core/routes/app_pages.dart';
 import 'package:fashion_shoping/core/utils/design_utils.dart';
@@ -106,9 +106,10 @@ class ProductDetailsScreen extends GetWidget<ProductDetailsScreenController> {
                                       onChanged: (CommonResponseModelForIdName? item) => controller.itemColorDropDownOnChangeMethod(item),
                                     ),
                                   ),
-                                  FavoriteButton(
+                                  IconCustomButton(
                                     onPressed: ()=> controller.favoriteButtonOnPressedMethod(),
-                                    selectedStatus: false,
+                                    iconData: Icons.favorite_border,
+                                    iconColor: blackColor,
                                   ),
                                 ],
                               ),

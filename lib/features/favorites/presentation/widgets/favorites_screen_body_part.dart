@@ -4,7 +4,7 @@ import 'package:fashion_shoping/core/components/widgets/buttons/core_flat_button
 import 'package:fashion_shoping/features/bag/controllers/bag_screen_controller.dart';
 import 'package:fashion_shoping/features/bag/presentation/widgets/bagScreen/bag_screen_item_card_widget.dart';
 import 'package:fashion_shoping/features/favorites/controllers/favorites_screen_controller.dart';
-import 'package:fashion_shoping/features/favorites/presentation/widgets/favorites_screen_item_card_widget.dart';
+import 'package:fashion_shoping/features/favorites/presentation/widgets/favorites_screen_item_card_widget_for_list_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -28,7 +28,7 @@ class FavoritesScreenBodyPart extends GetWidget<FavoritesScreenController> {
             );
           },
           itemCount: controller.favoritesItemList.length,
-          itemBuilder: (context,index)=> FavoritesScreenItemCardWidget(item: controller.favoritesItemList[index],),
+          itemBuilder: (context,index)=> FavoritesScreenItemCardWidgetForListView(item: controller.favoritesItemList[index],),
         ),
       ],
     ),

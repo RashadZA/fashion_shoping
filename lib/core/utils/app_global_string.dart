@@ -12,3 +12,5 @@ const String mensHoodies = "Men's Hoodies";
 const String topSales = "Top Sales";
 const String percentageDiscountType = "Percentage";
 const String fixedDiscountType = "Fixed";
+const String lowestToHighestKey = "Lowest to Highest";
+const String highestToLowestKey = "Highest to Lowest";

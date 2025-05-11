@@ -305,3 +305,9 @@ Widget showImageFromFilePath({
   );
 }
 
+enum SortType {
+  unitPriceLowToHigh,
+  unitPriceHighToLow,
+  discountedPriceLowToHigh,
+  discountedPriceHighToLow,
+}

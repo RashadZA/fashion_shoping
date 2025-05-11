@@ -9,6 +9,40 @@ class FavoritesScreenAppBarPart extends GetWidget<FavoritesScreenController> {
   Widget build(BuildContext context) {
     return OrientationBuilder(
         builder: (context,orientation) {
+          return SliverAppBar(
+            pinned: true,
+            expandedHeight: 120.0,
+            centerTitle: true,
+            actions: [
+              IconButton(
+                onPressed: (){},
+                icon: Icon(
+                  Icons.search,
+                ),
+              )
+            ],
+            flexibleSpace: FlexibleSpaceBar(
+              titlePadding: EdgeInsets.all(15),
+              title: Text(
+                'SliverTools Example',
+                style: TextStyle(
+                    fontSize: 25,
+                    color: Colors.green
+                ),
+              ),
+            ),
+          );
+        }
+    );
+  }
+}
+class FavoritesScreenAppBarPartOld extends GetWidget<FavoritesScreenController> {
+  const FavoritesScreenAppBarPartOld({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return OrientationBuilder(
+        builder: (context,orientation) {
           return Padding(
             padding: const EdgeInsets.only(
                 left: 15,

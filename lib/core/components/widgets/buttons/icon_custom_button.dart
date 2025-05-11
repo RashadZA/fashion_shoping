@@ -2,20 +2,24 @@ import 'package:fashion_shoping/core/components/widgets/buttons/core_button.dart
 import 'package:fashion_shoping/core/utils/design_utils.dart';
 import 'package:flutter/material.dart';
 
-class FavoriteButton extends StatelessWidget {
-  final bool selectedStatus;
+class IconCustomButton extends StatelessWidget {
   final double? iconSize;
   final double? containerWidth;
   final double? containerHeight;
+  final IconData iconData;
+  final Color iconColor;
+  final Color? backgroundColor;
   final void Function()? onPressed;
 
-  const FavoriteButton({
+  const IconCustomButton({
     super.key,
-    required this.selectedStatus,
+    required this.iconData,
+    required this.iconColor,
     this.onPressed,
     this.containerWidth,
     this.containerHeight,
     this.iconSize,
+    this.backgroundColor,
   });
 
   @override
@@ -27,7 +31,7 @@ class FavoriteButton extends StatelessWidget {
         height: containerHeight ?? 50,
         decoration: BoxDecoration(
           shape: BoxShape.circle,
-          color: cardColor,
+          color: backgroundColor ?? cardColor,
           boxShadow: [
             BoxShadow(
               blurRadius: 2,
@@ -43,9 +47,11 @@ class FavoriteButton extends StatelessWidget {
         ),
         child: Center(
           child: Icon(
-            selectedStatus ? Icons.favorite : Icons.favorite_border,
+            // selectedStatus ? Icons.favorite : Icons.favorite_border,
+            iconData,
             size: iconSize ?? 25,
-            color: selectedStatus ? primaryColor : blackColor,
+            color: iconColor,
+            // color: selectedStatus ? primaryColor : blackColor,
           ),
         ),
       ),
