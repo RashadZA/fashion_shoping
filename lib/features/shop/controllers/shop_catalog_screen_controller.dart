@@ -5,7 +5,7 @@ import 'package:fashion_shoping/core/utils/design_utils.dart';
 import 'package:fashion_shoping/features/favorites/data/favorites_response_model.dart';
 import 'package:get/get.dart';
 
-class FavoritesScreenController extends GetxController {
+class ShopCatalogScreenController extends GetxController {
 
   RxList<FavoritesItemDataModel> favoritesItemList = <FavoritesItemDataModel>[].obs;
   RxList<CommonResponseModelForIdName> itemTypeList = <CommonResponseModelForIdName>[].obs;
@@ -14,19 +14,22 @@ class FavoritesScreenController extends GetxController {
   Rx<CommonNameIdTypeDataResponseModel> itemTypeResponse = CommonNameIdTypeDataResponseModel().obs;
 
   RxString itemShowAccordingToPriceType = lowestToHighestKey.obs;
+  RxString appBarTitle = "Catalog".obs;
 
   RxBool favoritesScreenDataProcessing = false.obs;
   RxBool showItemListInListView = true.obs;
 
 
-  // @override
-  // void onInit() {
-  //   init();
-  //   super.onInit();
-  // }
+  @override
+  void onInit() {
+    init();
+    super.onInit();
+  }
 
   Future<void> init() async {
     favoritesScreenDataProcessing.value = true;
+
+    appBarTitle.value = Get.parameters["name"] ?? "Catalog";
 
     /// Favorites Item List part
     favoritesResponse.value = FavoritesResponseModel.fromJson(favoritesSampleData);
@@ -124,5 +127,27 @@ class FavoritesScreenController extends GetxController {
     close();
     super.onClose();
   }
+
+  // void onItemTypeSelected(int index) {
+  //   selectedItemTypeIndex.value = index;
+  //   selectedItemTypeId = itemTypeList[index].id?.obs;
+  //
+  //   /// If you want to filter `favoritesItemList` based on the item type,
+  //   /// you can implement a filtering method here.
+  //   // filterItemsByType(selectedItemTypeId?.value);
+  // }
+  // void filterItemsByType(String? typeId) {
+  //   if (typeId == null) return;
+  //
+  //   final filteredList = favoritesResponse.value.data?.where(
+  //         (item) => item.itemTypeId == typeId, // or whatever matches your model
+  //   ).toList();
+  //
+  //   favoritesItemList.assignAll(filteredList ?? []);
+  //   update();
+  // }
+
+
+
 
 }

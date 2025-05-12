@@ -37,7 +37,9 @@ import 'package:fashion_shoping/features/shippingAddresses/controllers/add_shipp
 import 'package:fashion_shoping/features/shippingAddresses/controllers/shipping_addresses_screen_controller.dart';
 import 'package:fashion_shoping/features/shippingAddresses/presentation/pages/add_shipping_address_screen.dart';
 import 'package:fashion_shoping/features/shippingAddresses/presentation/pages/shipping_addresses_screen.dart';
+import 'package:fashion_shoping/features/shop/controllers/shop_catalog_screen_controller.dart';
 import 'package:fashion_shoping/features/shop/controllers/shop_screen_controller.dart';
+import 'package:fashion_shoping/features/shop/presentation/pages/shop_catalog_screen.dart';
 import 'package:fashion_shoping/features/shop/presentation/pages/shop_screen.dart';
 import 'package:fashion_shoping/features/startUp/splash/splash_screen.dart';
 import 'package:fashion_shoping/features/startUp/splash/splash_screen_controller.dart';
@@ -198,6 +200,13 @@ class AppPages {
       page: () => const ProductRatingAndReviewScreen(),
       binding: BindingsBuilder(
             () => Get.lazyPut<ProductRatingAndReviewScreenController>(() => ProductRatingAndReviewScreenController()),
+      ),
+    ),
+    GetPage(
+      name: Routes.shopCatalogScreen,
+      page: () => const ShopCatalogScreen(),
+      binding: BindingsBuilder(
+            () => Get.lazyPut<ShopCatalogScreenController>(() => ShopCatalogScreenController()),
       ),
     ),
   ];

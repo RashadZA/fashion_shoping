@@ -3288,6 +3288,42 @@ Map<String, dynamic> itemTypeSampleData = {
   ]
 };
 
+/// Item type sample data
+Map<String, dynamic> shopCategoriesItemSampleData = {
+  "data": [
+    {
+      "id": "newKey",
+      "imageUrl": "https://drive.google.com/uc?export=view&id=1a0zW2MzYRUvQ6sED8ft30esAGuRivzyI",
+      "name": "New"
+    },
+    {
+      "id": "clothesKey",
+      "imageUrl": "https://drive.google.com/uc?export=view&id=1XzpWVQKVnoPom5Cb48jigfpfj2S5loUl",
+      "name": "Clothes"
+    },
+    {
+      "id": "cosmeticsKey",
+      "imageUrl": "https://drive.google.com/uc?export=view&id=1g1dcKFQcJsDU30__SnRBctf76d3f1on-",
+      "name": "Cosmetics"
+    },
+    {
+      "id": "bagsKey",
+      "imageUrl": "https://drive.google.com/uc?export=view&id=19GzcUCAbKYQkD2tDSLTGJRF1zfInFLlj",
+      "name": "Bags"
+    },
+    {
+      "id": "accessoriesKey",
+      "imageUrl": "https://drive.google.com/uc?export=view&id=1d2Oyo9Y7WRPEkZ_TzyJ6Zjp-D5tL0C-j",
+      "name": "Accessories"
+    },
+    {
+      "id": "shoesKey",
+      "imageUrl": "https://drive.google.com/uc?export=view&id=1l_PrHlXdvWsvxHi0yXcfpTa8Nd9wf1Pz",
+      "name": "Shoes"
+    }
+  ]
+};
+
 
 
 

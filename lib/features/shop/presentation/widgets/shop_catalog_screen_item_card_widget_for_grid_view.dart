@@ -4,11 +4,11 @@ import 'package:fashion_shoping/core/utils/design_utils.dart';
 import 'package:fashion_shoping/features/favorites/data/favorites_response_model.dart';
 import 'package:flutter/material.dart';
 
-class FavoritesScreenItemCardWidgetForGridView extends StatelessWidget {
+class ShopCatalogScreenItemCardWidgetForGridView extends StatelessWidget {
   final FavoritesItemDataModel item;
   final double width;
   final double height;
-  const FavoritesScreenItemCardWidgetForGridView({
+  const ShopCatalogScreenItemCardWidgetForGridView({
     super.key,
     required this.item,
     required this.height,
@@ -73,10 +73,10 @@ class FavoritesScreenItemCardWidgetForGridView extends StatelessWidget {
                   Positioned(
                       top: 5,
                       right: 5,
-                      child: Icon(
-                        Icons.clear,
-                        size: 25,
-                        color: primaryColor,
+                      child: IconCustomButton(
+                        onPressed: (){},
+                        iconData: Icons.favorite_border,
+                        iconColor: blackColor,
                       )
                   ),
                 ],
