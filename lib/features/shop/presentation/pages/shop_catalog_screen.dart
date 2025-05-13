@@ -140,36 +140,36 @@ class ShopCatalogScreen extends GetWidget<ShopCatalogScreenController> {
                                       ],
                                     ),
                                   ),
-                                  SizedBox(
-                                    width: 220,
-                                    height: 50,
-                                    // color: Colors.green,
-                                    child: Row(
-                                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                      crossAxisAlignment: CrossAxisAlignment.center,
-                                      children: [
-                                        CoreButton(
-                                          onPressed: ()=> controller.showItemAccordingToPriceTypeOnPressedMethod(),
-                                          child: Icon(
+                                  CoreButton(
+                                    onPressed: ()=> controller.showByItemOnPressedMethod(),
+                                    child: SizedBox(
+                                      width: 220,
+                                      height: 50,
+                                      // color: Colors.green,
+                                      child: Row(
+                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                        crossAxisAlignment: CrossAxisAlignment.center,
+                                        children: [
+                                          Icon(
                                             Icons.swap_vert,
                                             size: 35,
                                             color: iconColor,
                                           ),
-                                        ),
-                                        Container(
-                                          width: 185,
-                                          height: 50,
-                                          // color: Colors.green,
-                                          padding: EdgeInsets.only(left: 5,top: 5,right: 0,bottom: 0,),
-                                          child: Text(
-                                            "Price: ${controller.itemShowAccordingToPriceType.value}",
-                                            textAlign: TextAlign.center,
-                                            style: AppTextTheme.text16.copyWith(
-                                              fontWeight: FontWeight.normal,
+                                          Container(
+                                            width: 185,
+                                            height: 50,
+                                            // color: Colors.green,
+                                            padding: EdgeInsets.only(left: 5,top: 5,right: 0,bottom: 0,),
+                                            child: Text(
+                                              controller.selectedShortByItem.value.name ?? "",
+                                              textAlign: TextAlign.center,
+                                              style: AppTextTheme.text16.copyWith(
+                                                fontWeight: FontWeight.normal,
+                                              ),
                                             ),
-                                          ),
-                                        )
-                                      ],
+                                          )
+                                        ],
+                                      ),
                                     ),
                                   ),
                                   CoreButton(

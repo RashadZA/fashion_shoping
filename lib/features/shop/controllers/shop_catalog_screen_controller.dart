@@ -1,5 +1,7 @@
+import 'package:fashion_shoping/core/components/bottomSheet/short_by_bootom_sheet_widget.dart';
 import 'package:fashion_shoping/core/components/dataModels/common_name_id_type_data_response_model.dart';
 import 'package:fashion_shoping/core/components/dataModels/common_response_model_for_id_name.dart';
+import 'package:fashion_shoping/core/components/dataModels/short_by_item_response_model.dart';
 import 'package:fashion_shoping/core/utils/demo_data.dart';
 import 'package:fashion_shoping/core/utils/design_utils.dart';
 import 'package:fashion_shoping/features/favorites/data/favorites_response_model.dart';
@@ -9,11 +11,13 @@ class ShopCatalogScreenController extends GetxController {
 
   RxList<FavoritesItemDataModel> favoritesItemList = <FavoritesItemDataModel>[].obs;
   RxList<CommonResponseModelForIdName> itemTypeList = <CommonResponseModelForIdName>[].obs;
+  RxList<ShortByItemDataModel> shortByItemList = <ShortByItemDataModel>[].obs;
 
   Rx<FavoritesResponseModel> favoritesResponse = FavoritesResponseModel().obs;
   Rx<CommonNameIdTypeDataResponseModel> itemTypeResponse = CommonNameIdTypeDataResponseModel().obs;
+  Rx<ShortByItemResponseModel> shortByItemResponse = ShortByItemResponseModel().obs;
+  Rx<ShortByItemDataModel> selectedShortByItem = ShortByItemDataModel().obs;
 
-  RxString itemShowAccordingToPriceType = lowestToHighestKey.obs;
   RxString appBarTitle = "Catalog".obs;
 
   RxBool favoritesScreenDataProcessing = false.obs;
@@ -34,23 +38,42 @@ class ShopCatalogScreenController extends GetxController {
     /// Favorites Item List part
     favoritesResponse.value = FavoritesResponseModel.fromJson(favoritesSampleData);
     favoritesItemList.value = favoritesResponse.value.data ?? <FavoritesItemDataModel>[];
-    sortFavorites(SortType.unitPriceLowToHigh);
 
     /// Item Type List Part
     itemTypeResponse.value = CommonNameIdTypeDataResponseModel.fromJson(itemTypeSampleData);
     itemTypeList.value = itemTypeResponse.value.data ?? <CommonResponseModelForIdName>[];
 
+    /// Item Short By List Part
+    shortByItemResponse.value = ShortByItemResponseModel.fromJson(shortByItemSampleData);
+    shortByItemList.value = shortByItemResponse.value.data ?? <ShortByItemDataModel>[];
+    selectedShortByItem.value = shortByItemList.firstWhere(
+        (shortBy)=> shortBy.id == lowestToHighestKey,
+        orElse: () => shortByItemList.first,
+    );
+
+
+    sortFavorites(selectedShortByItem.value);
+
     favoritesScreenDataProcessing.value = false;
     update();
   }
 
-  Future<void> showItemAccordingToPriceTypeOnPressedMethod() async {
-    itemShowAccordingToPriceType.value = itemShowAccordingToPriceType.value == lowestToHighestKey ? highestToLowestKey : lowestToHighestKey;
-    if(itemShowAccordingToPriceType.value == lowestToHighestKey){
-      sortFavorites(SortType.unitPriceLowToHigh);
-    } else{
-      sortFavorites(SortType.unitPriceHighToLow);
-    }
+  Future<void> showByItemOnPressedMethod() async {
+    Get.bottomSheet(
+      ShortByBottomSheetWidget(
+        itemList: shortByItemList,
+        selectedItem: selectedShortByItem.value,
+        onPressed: (item)=> showByItemBottomSheetOnPressedMethod(item),
+      ),
+      isScrollControlled: true,
+      // isDismissible: false,
+    );
+    update();
+  }
+  Future<void> showByItemBottomSheetOnPressedMethod(ShortByItemDataModel item) async {
+    Get.back();
+    selectedShortByItem.value = item;
+    sortFavorites(item);
     update();
   }
 
@@ -58,62 +81,65 @@ class ShopCatalogScreenController extends GetxController {
     showItemListInListView.value = !showItemListInListView.value;
     update();
   }
-  /// Sort: Low to High
-  Future<void> sortItemByPriceLowToHigh() async {
-    final sortedList = [...favoritesItemList];
-    sortedList.sort((a, b) => (a.itemUnitPrice ?? 0).compareTo(b.itemUnitPrice ?? 0));
-    favoritesItemList.assignAll(sortedList);
-    update();
-  }
 
-  /// Sort: High to Low
-  Future<void> sortItemByPriceHighToLow() async {
-    final sortedList = [...favoritesItemList];
-    sortedList.sort((a, b) => (b.itemUnitPrice ?? 0).compareTo(a.itemUnitPrice ?? 0));
-    favoritesItemList.assignAll(sortedList);
-    update();
-  }
-
-  void sortFavorites(SortType sortType) {
+  void sortFavorites(ShortByItemDataModel sortType) {
     final sortedList = [...favoritesItemList];
 
-    switch (sortType) {
-      case SortType.unitPriceLowToHigh:
-        sortedList.sort((a, b) => (a.itemUnitPrice ?? 0).compareTo(b.itemUnitPrice ?? 0));
+    switch (sortType.id) {
+      case pulloverKey :
+        sortedList.where((item) => item.itemType == pulloverKey);
         break;
-      case SortType.unitPriceHighToLow:
-        sortedList.sort((a, b) => (b.itemUnitPrice ?? 0).compareTo(a.itemUnitPrice ?? 0));
-        break;
-      case SortType.discountedPriceLowToHigh:
-        sortedList.sort((a, b) =>
-            calculateDiscountedPrice(
-              unitPrice: a.itemUnitPrice,
-              discount: a.discount,
-              discountType: a.discountType,
-            ).compareTo(
-              calculateDiscountedPrice(
-                unitPrice: b.itemUnitPrice,
-                discount: b.discount,
-                discountType: b.discountType,
-              ),
-            ),
-        );
-        break;
-      case SortType.discountedPriceHighToLow:
-        sortedList.sort((a, b) =>
-            calculateDiscountedPrice(
-              unitPrice: b.itemUnitPrice,
-              discount: b.discount,
-              discountType: b.discountType,
-            ).compareTo(
-              calculateDiscountedPrice(
-                unitPrice: a.itemUnitPrice,
-                discount: a.discount,
-                discountType: a.discountType,
-              ),
-            ),
-        );
-        break;
+      case berriesKey:
+          sortedList.where((item) => item.itemType == berriesKey);
+          break;
+
+          case mangoKey :
+            sortedList.where((item) => item.itemType == mangoKey);
+            break;
+
+            case limeKey:
+              sortedList.where((item) => item.itemType == limeKey);
+              break;
+
+              case lowestToHighestKey :
+                sortedList.sort((a, b) => (a.itemUnitPrice ?? 0).compareTo(b.itemUnitPrice ?? 0));
+                break;
+
+                case highestToLowestKey:
+                  sortedList.sort((a, b) => (b.itemUnitPrice ?? 0).compareTo(a.itemUnitPrice ?? 0));
+                  break;
+
+                  case discountLowestToHighestKey:
+                    sortedList.sort((a, b) =>
+                        calculateDiscountedPrice(
+                          unitPrice: a.itemUnitPrice,
+                          discount: a.discount,
+                          discountType: a.discountType,
+                        ).compareTo(
+                          calculateDiscountedPrice(
+                            unitPrice: b.itemUnitPrice,
+                            discount: b.discount,
+                            discountType: b.discountType,
+                          ),
+                        ),
+                    );
+                    break;
+
+                    case discountHighestToLowestKey:
+                      sortedList.sort((a, b) =>
+                          calculateDiscountedPrice(
+                            unitPrice: b.itemUnitPrice,
+                            discount: b.discount,
+                            discountType: b.discountType,
+                          ).compareTo(
+                            calculateDiscountedPrice(
+                              unitPrice: a.itemUnitPrice,
+                              discount: a.discount,
+                              discountType: a.discountType,
+                            ),
+                          ),
+                      );
+                      break;
     }
 
     favoritesItemList.assignAll(sortedList);
@@ -127,27 +153,5 @@ class ShopCatalogScreenController extends GetxController {
     close();
     super.onClose();
   }
-
-  // void onItemTypeSelected(int index) {
-  //   selectedItemTypeIndex.value = index;
-  //   selectedItemTypeId = itemTypeList[index].id?.obs;
-  //
-  //   /// If you want to filter `favoritesItemList` based on the item type,
-  //   /// you can implement a filtering method here.
-  //   // filterItemsByType(selectedItemTypeId?.value);
-  // }
-  // void filterItemsByType(String? typeId) {
-  //   if (typeId == null) return;
-  //
-  //   final filteredList = favoritesResponse.value.data?.where(
-  //         (item) => item.itemTypeId == typeId, // or whatever matches your model
-  //   ).toList();
-  //
-  //   favoritesItemList.assignAll(filteredList ?? []);
-  //   update();
-  // }
-
-
-
 
 }

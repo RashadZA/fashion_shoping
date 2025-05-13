@@ -3187,6 +3187,7 @@ Map<String, dynamic> favoritesSampleData = {
       "itemImageUrl": "https://drive.google.com/uc?export=view&id=1IBpfkXuk7C3KakgL3DT1l7-u-5IPDMHd",
       "itemName": "T-Shirt",
       "itemDescription": "Berries",
+      "itemType": berriesKey,
       "itemColor": "Black",
       "itemSize": "L",
       "itemUnits": 2,
@@ -3202,6 +3203,7 @@ Map<String, dynamic> favoritesSampleData = {
       "itemImageUrl": "https://drive.google.com/uc?export=view&id=1t0pf5vzBM6jhgod49xuNFcBw97uezFKu",
       "itemName": "T-Shirt",
       "itemDescription": "Pullover",
+      "itemType": pulloverKey,
       "itemColor": "Black and White",
       "itemSize": "L",
       "itemUnits": 5,
@@ -3218,6 +3220,7 @@ Map<String, dynamic> favoritesSampleData = {
       "https://drive.google.com/uc?export=view&id=1QLIi2dnoTNijyucVcD55piSivyIOO_Dm",
       "itemName": "T-Shirt",
       "itemDescription": "Pullover",
+      "itemType": pulloverKey,
       "itemColor": "Black and White",
       "itemSize": "XL",
       "itemUnits": 3,
@@ -3233,6 +3236,7 @@ Map<String, dynamic> favoritesSampleData = {
       "itemImageUrl": "https://drive.google.com/uc?export=view&id=1ttlnvO7IirTET1OutUYXgRIVmybmhcCN",
       "itemName": "Longsleeve Violeta",
       "itemDescription": "Mango",
+      "itemType": mangoKey,
       "itemColor": "Orange",
       "itemSize": "S",
       "itemUnits": 10,
@@ -3249,6 +3253,7 @@ Map<String, dynamic> favoritesSampleData = {
       "https://drive.google.com/uc?export=view&id=1f7eLitIydRPVHEgyOJpIM5Pj6J6Q2nQT",
       "itemName": "Shirt",
       "itemDescription": "Lime",
+      "itemType": limeKey,
       "itemColor": "Blue",
       "itemSize": "XL",
       "itemUnits": 2,
@@ -3320,6 +3325,44 @@ Map<String, dynamic> shopCategoriesItemSampleData = {
       "id": "shoesKey",
       "imageUrl": "https://drive.google.com/uc?export=view&id=1l_PrHlXdvWsvxHi0yXcfpTa8Nd9wf1Pz",
       "name": "Shoes"
+    }
+  ]
+};
+
+/// Item short by sample data
+Map<String, dynamic> shortByItemSampleData = {
+  "data": [
+    {
+      "id": pulloverKey,
+      "name": "Pullover"
+    },
+    {
+      "id": berriesKey,
+      "name": "Berries"
+    },
+    {
+      "id": mangoKey,
+      "name": "Mango"
+    },
+    {
+      "id": limeKey,
+      "name": "Lime"
+    },
+    {
+      "id": lowestToHighestKey,
+      "name": "Lowest to Highest"
+    },
+    {
+      "id": highestToLowestKey,
+      "name": "Highest to Lowest"
+    },
+    {
+      "id": discountLowestToHighestKey,
+      "name": "Discount Lowest to Highest"
+    },
+    {
+      "id": discountHighestToLowestKey,
+      "name": "Discount Highest to Lowest"
     }
   ]
 };

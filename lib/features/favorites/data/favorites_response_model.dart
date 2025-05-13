@@ -26,6 +26,7 @@ class FavoritesItemDataModel {
   String? itemImageUrl;
   String? itemName;
   String? itemDescription;
+  String? itemType;
   String? itemColor;
   String? itemSize;
   int? itemUnits;
@@ -59,6 +60,7 @@ class FavoritesItemDataModel {
     itemColor = json['itemColor'];
     itemSize = json['itemSize'];
     itemUnits = json['itemUnits'];
+    itemType = json['itemType'];
     itemUnitPrice = double.parse("${json['itemUnitPrice'] ?? 0}");
     itemTotalPrice = double.parse("${json['itemTotalPrice'] ?? 0}");
     rating = double.parse("${json['rating'] ?? 0}");
@@ -82,6 +84,7 @@ class FavoritesItemDataModel {
     data['totalRating'] = totalRating;
     data['discount'] = discount;
     data['discountType'] = discountType;
+    data['itemType'] = itemType;
     return data;
   }
 }
