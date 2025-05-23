@@ -3138,43 +3138,58 @@ Map<String, dynamic> colorSampleData = {
   "data": [
     {
       "name": "Red",
-      "id": "RED"
+      "id": "RED",
+      "colorCode": "#B82222"
     },
     {
       "name": "Blue",
-      "id": "BLUE"
+      "id": "BLUE",
+      "colorCode": "#151867"
     },
     {
       "name": "Green",
-      "id": "GREEN"
+      "id": "GREEN",
+      "colorCode": "#008000"
     },
     {
       "name": "Yellow",
-      "id": "YELLOW"
+      "id": "YELLOW",
+      "colorCode": "#FFFF00"
     },
     {
       "name": "Black",
-      "id": "BLACK"
+      "id": "BLACK",
+      "colorCode": "#000000"
     },
     {
       "name": "White",
-      "id": "WHITE"
+      "id": "WHITE",
+      "colorCode": "#FFFFFF"
     },
     {
       "name": "Purple",
-      "id": "PURPLE"
+      "id": "PURPLE",
+      "colorCode": "#800080"
     },
     {
       "name": "Orange",
-      "id": "ORANGE"
+      "id": "ORANGE",
+      "colorCode": "#FFA500"
     },
     {
       "name": "Pink",
-      "id": "PINK"
+      "id": "PINK",
+      "colorCode": "#FFC0CB"
     },
     {
       "name": "Gray",
-      "id": "GRAY"
+      "id": "GRAY",
+      "colorCode": "#808080"
+    },
+    {
+      "name": "Very Light Gray",
+      "id": "VeryLightGray",
+      "colorCode": "#F6F6F6"
     }
   ]
 };
@@ -3364,6 +3379,22 @@ Map<String, dynamic> shortByItemSampleData = {
       "id": discountHighestToLowestKey,
       "name": "Discount Highest to Lowest"
     }
+  ]
+};
+
+/// Item brand sample data
+Map<String, dynamic> itemBrandSampleData = {
+  "data": [
+    {"id": "adidasKey", "name": "adidas"},
+    {"id": "adidasOriginalsKey", "name": "adidas Originals"},
+    {"id": "blendKey", "name": "Blend"},
+    {"id": "boutiqueMoschinoKey", "name": "Boutique Moschino"},
+    {"id": "championKey", "name": "Champion"},
+    {"id": "dieselKey", "name": "Diesel"},
+    {"id": "jackJonesKey", "name": "Jack & Jones"},
+    {"id": "nafNafKey", "name": "Naf Naf"},
+    {"id": "redValentinoKey", "name": "Red Valentino"},
+    {"id": "soliverKey", "name": "s.Oliver"}
   ]
 };
 

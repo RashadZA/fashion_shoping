@@ -5,9 +5,13 @@ import 'package:flutter/material.dart';
 class CheckBoxCustomWidget extends StatelessWidget {
   final void Function()? onPressed;
   final bool isSelected;
+  final double? checkBoxSize;
+  final double? checkBoxIconSize;
   const CheckBoxCustomWidget({
     super.key,
     this.onPressed,
+    this.checkBoxSize,
+    this.checkBoxIconSize,
     required this.isSelected,
   });
 
@@ -16,8 +20,9 @@ class CheckBoxCustomWidget extends StatelessWidget {
     return CoreButton(
       onPressed: onPressed,
       child: Container(
-        width: 20,
-        height: 20,
+        width: checkBoxSize ?? 20,
+        height: checkBoxSize ?? 20,
+        alignment: Alignment.center,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(5),
           color: isSelected ? primaryColor : whiteColor,
@@ -38,9 +43,9 @@ class CheckBoxCustomWidget extends StatelessWidget {
             ),
           ],
         ),
-        child: isSelected ? const Icon(
+        child: isSelected ? Icon(
           Icons.check,
-          size: 20,
+          size: checkBoxIconSize ?? 20,
           color: whiteColor,
         ) : const SizedBox(
           width: 0,

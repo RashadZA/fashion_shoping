@@ -1,4 +1,5 @@
 import 'package:fashion_shoping/core/components/widgets/buttons/core_button.dart';
+import 'package:fashion_shoping/core/routes/app_pages.dart';
 import 'package:fashion_shoping/core/utils/design_utils.dart';
 import 'package:fashion_shoping/features/shop/controllers/shop_catalog_screen_controller.dart';
 import 'package:fashion_shoping/features/shop/presentation/widgets/shop_catalog_screen_item_card_widget_for_grid_view.dart';
@@ -118,7 +119,7 @@ class ShopCatalogScreen extends GetWidget<ShopCatalogScreenController> {
                                       crossAxisAlignment: CrossAxisAlignment.center,
                                       children: [
                                         CoreButton(
-                                        onPressed: (){},
+                                        onPressed: ()=> Get.toNamed(Routes.filterScreen),
                                           child: Icon(
                                             Icons.filter_list_sharp,
                                             size: 35,

@@ -11,6 +11,8 @@ import 'package:fashion_shoping/features/bag/presentation/pages/bag_screen.dart'
 import 'package:fashion_shoping/features/bag/presentation/pages/check_out_screen.dart';
 import 'package:fashion_shoping/features/favorites/controllers/favorites_screen_controller.dart';
 import 'package:fashion_shoping/features/favorites/presentation/pages/favorites_screen.dart';
+import 'package:fashion_shoping/features/filters/controllers/filter_screen_controller.dart';
+import 'package:fashion_shoping/features/filters/presentation/filter_screen.dart';
 import 'package:fashion_shoping/features/home/controllers/home_screen_controller.dart';
 import 'package:fashion_shoping/features/home/controllers/home_see_all_items_screen_controller.dart';
 import 'package:fashion_shoping/features/home/presentation/pages/home_screen.dart';
@@ -207,6 +209,13 @@ class AppPages {
       page: () => const ShopCatalogScreen(),
       binding: BindingsBuilder(
             () => Get.lazyPut<ShopCatalogScreenController>(() => ShopCatalogScreenController()),
+      ),
+    ),
+    GetPage(
+      name: Routes.filterScreen,
+      page: () => const FilterScreen(),
+      binding: BindingsBuilder(
+            () => Get.lazyPut<FilterScreenController>(() => FilterScreenController()),
       ),
     ),
   ];
