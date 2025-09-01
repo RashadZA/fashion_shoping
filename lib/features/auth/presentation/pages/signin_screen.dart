@@ -17,132 +17,129 @@ class SignInScreen extends GetWidget<SignInScreenController> {
         backgroundColor: scaffoldBackgroundColor,
         body: OrientationBuilder(
           builder: (context, orientation) {
-            return SingleChildScrollView(
-              child: Padding(
-                padding: const EdgeInsets.all(defaultPadding),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
+            return ListView(
+              padding: const EdgeInsets.all(defaultPadding),
+              children: [
+                const SizedBox(
+                  height: 20,
+                ),
+                const Icon(
+                  Icons.flutter_dash,
+                  size: 200,
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                Text("Sign In", style: AppTextTheme.text16,),
+                const SizedBox(
+                  height: 20,
+                ),
+                CoreTextField(
+                  hintText: "Email",
+                  keyboardType: TextInputType.text,
+                  controller: controller.emailTextEditController,
+                  prefixIcon: Icons.email_rounded,
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                CoreTextField(
+                  hintText: "Password",
+                  keyboardType: TextInputType.text,
+                  textInputAction: TextInputAction.done,
+                  controller: controller.passwordTextEditController,
+                  prefixIcon: Icons.password_outlined,
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                CoreButton(
+                  onPressed: () => controller.forgotPasswordOnPressedMethod(),
+                  child: const Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      Text(
+                        "Forgot your password?",
+                        style: TextStyle(color: primaryTextColor),
+                      ),
+                      Icon(
+                        Icons.arrow_right_alt,
+                        color: redAccentColor,
+                      )
+                    ],
+                  ),
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                CoreFlatButton(
+                  onPressed: () => controller.signInOnPressedMethod(),
+                  text: "SIGN IN",
+                  isGradientBg: true,
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                CoreButton(
+                  onPressed: () => controller.createAccountOnPressedMethod(),
+                  child: const Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      Text(
+                        "Create account",
+                        style: TextStyle(color: primaryTextColor),
+                      ),
+                      Icon(
+                        Icons.arrow_right_alt,
+                        color: redAccentColor,
+                      )
+                    ],
+                  ),
+                ),
+                const SizedBox(
+                  height: 50,
+                ),
+                const Text("Or login with social account"),
+                const SizedBox(
+                  height: 10,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    const SizedBox(
-                      height: 60,
-                    ),
-                    const Icon(
-                      Icons.flutter_dash,
-                      size: 200,
-                    ),
-                    const SizedBox(
-                      height: 10,
-                    ),
-                    const Text("Sign In"),
-                    const SizedBox(
-                      height: 20,
-                    ),
-                    CoreTextField(
-                      keyboardType: TextInputType.text,
-                      controller: controller.emailTextEditController,
-                      prefixIcon: Icons.email_rounded,
-                    ),
-                    const SizedBox(
-                      height: 10,
-                    ),
-                    CoreTextField(
-                      keyboardType: TextInputType.text,
-                      textInputAction: TextInputAction.done,
-                      controller: controller.passwordTextEditController,
-                      prefixIcon: Icons.password_outlined,
-                    ),
-                    const SizedBox(
-                      height: 10,
-                    ),
                     CoreButton(
-                      onPressed: () => controller.forgotPasswordOnPressedMethod(),
-                      child: const Row(
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        children: [
-                          Text(
-                            "Forgot your password?",
-                            style: TextStyle(color: primaryTextColor),
-                          ),
-                          Icon(
-                            Icons.arrow_right_alt,
-                            color: redAccentColor,
-                          )
-                        ],
+                      child: Container(
+                        height: 64,
+                        width: 92,
+                        decoration: BoxDecoration(
+                            color: whiteColor,
+                            borderRadius: BorderRadius.circular(15)),
+                        child: const Icon(
+                          Icons.facebook,
+                          size: 40,
+                          color: Colors.blueAccent,
+                        ),
                       ),
                     ),
                     const SizedBox(
-                      height: 10,
-                    ),
-                    CoreFlatButton(
-                      onPressed: () => controller.signInOnPressedMethod(),
-                      text: "SIGN IN",
-                      isGradientBg: true,
-                    ),
-                    const SizedBox(
-                      height: 10,
+                      width: 15,
                     ),
                     CoreButton(
-                      onPressed: () => controller.createAccountOnPressedMethod(),
-                      child: const Row(
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        children: [
-                          Text(
-                            "Create account",
-                            style: TextStyle(color: primaryTextColor),
-                          ),
-                          Icon(
-                            Icons.arrow_right_alt,
-                            color: redAccentColor,
-                          )
-                        ],
+                      child: Container(
+                        height: 64,
+                        width: 92,
+                        decoration: BoxDecoration(
+                            color: whiteColor,
+                            borderRadius: BorderRadius.circular(15)),
+                        child: const Icon(
+                          Icons.facebook,
+                          size: 40,
+                          color: Colors.blueAccent,
+                        ),
                       ),
-                    ),
-                    const SizedBox(
-                      height: 100,
-                    ),
-                    const Text("Or login with social account"),
-                    const SizedBox(
-                      height: 10,
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        CoreButton(
-                          child: Container(
-                            height: 64,
-                            width: 92,
-                            decoration: BoxDecoration(
-                                color: whiteColor,
-                                borderRadius: BorderRadius.circular(15)),
-                            child: const Icon(
-                              Icons.facebook,
-                              size: 40,
-                              color: Colors.blueAccent,
-                            ),
-                          ),
-                        ),
-                        const SizedBox(
-                          width: 15,
-                        ),
-                        CoreButton(
-                          child: Container(
-                            height: 64,
-                            width: 92,
-                            decoration: BoxDecoration(
-                                color: whiteColor,
-                                borderRadius: BorderRadius.circular(15)),
-                            child: const Icon(
-                              Icons.facebook,
-                              size: 40,
-                              color: Colors.blueAccent,
-                            ),
-                          ),
-                        ),
-                      ],
                     ),
                   ],
                 ),
-              ),
+              ],
             );
           },
         ),

@@ -92,9 +92,8 @@ class FavoritesScreenItemCardWidgetForGridView extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        RatingStarCustomWidget(rating: item.rating ?? 0.0),
-                        SizedBox(
-                          width: 40,
+                        RatingStarCustomWidget(rating: item.rating ?? 0.0,iconSize: 15,width: 75,),
+                        Flexible(
                           child: Text(
                               "(${item.rating ?? 0.0})",
                               style: AppTextTheme.text12.copyWith(

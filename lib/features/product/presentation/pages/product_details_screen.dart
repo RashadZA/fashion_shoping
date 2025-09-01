@@ -301,7 +301,7 @@ class ProductDetailsScreen extends GetWidget<ProductDetailsScreenController> {
                           ],
                         ),
                         SizedBox(
-                          height: 320,
+                          height: 325,
                           width: Get.width,
                           child: ListView.separated(
                               shrinkWrap: true,
@@ -313,7 +313,7 @@ class ProductDetailsScreen extends GetWidget<ProductDetailsScreenController> {
                                   color: cardColor,
                                   child: SizedBox(
                                       width: 190,
-                                      height: 300,
+                                      height: 305,
                                       // padding: const EdgeInsets.all(10.0),
                                       child: Stack(
                                         children: [

@@ -17,123 +17,118 @@ class SignUpScreen extends GetWidget<SignUpScreenController> {
         backgroundColor: scaffoldBackgroundColor,
         body: OrientationBuilder(
           builder: (context, orientation) {
-            return SingleChildScrollView(
-              child: Padding(
-                padding: const EdgeInsets.all(defaultPadding),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
+            return ListView(
+              padding: const EdgeInsets.all(defaultPadding),
+              children: [
+                const SizedBox(
+                  height: 20,
+                ),
+                const Icon(
+                  Icons.flutter_dash,
+                  size: 200,
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                Text("Sign Up", style: AppTextTheme.text16,),
+                const SizedBox(
+                  height: 20,
+                ),
+                CoreTextField(
+                  hintText: "Name",
+                  keyboardType: TextInputType.text,
+                  controller: controller.nameTextEditController,
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                CoreTextField(
+                  hintText: "Email",
+                  keyboardType: TextInputType.text,
+                  controller: controller.emailTextEditController,
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                CoreTextField(
+                  hintText: "Password",
+                  keyboardType: TextInputType.text,
+                  textInputAction: TextInputAction.done,
+                  controller: controller.passwordTextEditController,
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                CoreButton(
+                  onPressed: () => controller.alreadyHaveAnAccountOnPressedMethod(),
+                  child: const Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      Text(
+                        "Already have an account",
+                        style: TextStyle(color: primaryTextColor),
+                      ),
+                      Icon(
+                        Icons.arrow_right_alt,
+                        color: redAccentColor,
+                      )
+                    ],
+                  ),
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                CoreFlatButton(
+                  onPressed: ()=> controller.signUpOnPressedMethod(),
+                  text: "SIGN UP",
+                  isGradientBg: true,
+                ),
+                const SizedBox(
+                  height: 40,
+                ),
+                const Text("Or login with social account"),
+                const SizedBox(
+                  height: 10,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    const SizedBox(
-                      height: 60,
-                    ),
-                    const Icon(
-                      Icons.flutter_dash,
-                      size: 200,
-                    ),
-                    const SizedBox(
-                      height: 10,
-                    ),
-                    const Text("Sign Up"),
-                    const SizedBox(
-                      height: 20,
-                    ),
-                    CoreTextField(
-                      hintText: "Name",
-                      keyboardType: TextInputType.text,
-                      controller: controller.nameTextEditController,
-                    ),
-                    const SizedBox(
-                      height: 10,
-                    ),
-                    CoreTextField(
-                      hintText: "Email",
-                      keyboardType: TextInputType.text,
-                      controller: controller.emailTextEditController,
-                    ),
-                    const SizedBox(
-                      height: 10,
-                    ),
-                    CoreTextField(
-                      hintText: "Password",
-                      keyboardType: TextInputType.text,
-                      textInputAction: TextInputAction.done,
-                      controller: controller.passwordTextEditController,
-                    ),
-                    const SizedBox(
-                      height: 10,
-                    ),
                     CoreButton(
-                      onPressed: () => controller.alreadyHaveAnAccountOnPressedMethod(),
-                      child: const Row(
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        children: [
-                          Text(
-                            "Already have an account",
-                            style: TextStyle(color: primaryTextColor),
-                          ),
-                          Icon(
-                            Icons.arrow_right_alt,
-                            color: redAccentColor,
-                          )
-                        ],
+                      onPressed: (){},
+                      child: Container(
+                        height: 64,
+                        width: 92,
+                        decoration: BoxDecoration(
+                            color: whiteColor,
+                            borderRadius: BorderRadius.circular(15)),
+                        child: const Icon(
+                          Icons.facebook,
+                          size: 40,
+                          color: Colors.blueAccent,
+                        ),
                       ),
                     ),
                     const SizedBox(
-                      height: 10,
+                      width: 15,
                     ),
-                    CoreFlatButton(
-                      onPressed: ()=> controller.signUpOnPressedMethod(),
-                      text: "SIGN UP",
-                      isGradientBg: true,
-                    ),
-                    const SizedBox(
-                      height: 100,
-                    ),
-                    const Text("Or login with social account"),
-                    const SizedBox(
-                      height: 10,
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        CoreButton(
-                          onPressed: (){},
-                          child: Container(
-                            height: 64,
-                            width: 92,
-                            decoration: BoxDecoration(
-                                color: whiteColor,
-                                borderRadius: BorderRadius.circular(15)),
-                            child: const Icon(
-                              Icons.facebook,
-                              size: 40,
-                              color: Colors.blueAccent,
-                            ),
-                          ),
+                    CoreButton(
+                      onPressed: (){},
+                      child: Container(
+                        height: 64,
+                        width: 92,
+                        decoration: BoxDecoration(
+                            color: whiteColor,
+                            borderRadius: BorderRadius.circular(15)),
+                        child: const Icon(
+                          Icons.facebook,
+                          size: 40,
+                          color: Colors.blueAccent,
                         ),
-                        const SizedBox(
-                          width: 15,
-                        ),
-                        CoreButton(
-                          onPressed: (){},
-                          child: Container(
-                            height: 64,
-                            width: 92,
-                            decoration: BoxDecoration(
-                                color: whiteColor,
-                                borderRadius: BorderRadius.circular(15)),
-                            child: const Icon(
-                              Icons.facebook,
-                              size: 40,
-                              color: Colors.blueAccent,
-                            ),
-                          ),
-                        ),
-                      ],
+                      ),
                     ),
                   ],
                 ),
-              ),
+              ],
             );
           },
         ),

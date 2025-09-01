@@ -12,8 +12,8 @@ class CoreButton extends CupertinoButton {
     super.borderRadius =
         const BorderRadius.all(Radius.circular(10.0)),
   }) : super(
-          minSize: 0,
-          disabledColor: transparentColor,
-          pressedOpacity: 0.6,
-        );
+    minimumSize: Size.zero,
+    disabledColor: transparentColor,
+    pressedOpacity: 0.6,
+  );
 }

@@ -92,9 +92,8 @@ class ShopCatalogScreenItemCardWidgetForGridView extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        RatingStarCustomWidget(rating: item.rating ?? 0.0),
-                        SizedBox(
-                          width: 40,
+                        RatingStarCustomWidget(rating: item.rating ?? 0.0,width: 60,iconSize: 12,),
+                        Flexible(
                           child: Text(
                               "(${item.rating ?? 0.0})",
                               style: AppTextTheme.text12.copyWith(

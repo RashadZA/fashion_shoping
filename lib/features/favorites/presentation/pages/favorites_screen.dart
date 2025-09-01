@@ -135,7 +135,7 @@ class _FavoritesScreenState extends State<FavoritesScreen> {
                                           padding: EdgeInsets.only(left: 5,top: 5,right: 0,bottom: 0,),
                                           child: Text(
                                             "Filters",
-                                            style: AppTextTheme.text16.copyWith(
+                                            style: AppTextTheme.text12.copyWith(
                                               fontWeight: FontWeight.normal,
                                             ),
                                           ),
@@ -144,7 +144,7 @@ class _FavoritesScreenState extends State<FavoritesScreen> {
                                     ),
                                   ),
                                   SizedBox(
-                                    width: 220,
+                                    width: 205,
                                     height: 50,
                                     // color: Colors.green,
                                     child: Row(
@@ -160,14 +160,14 @@ class _FavoritesScreenState extends State<FavoritesScreen> {
                                           ),
                                         ),
                                         Container(
-                                          width: 185,
+                                          width: 170,
                                           height: 50,
                                           // color: Colors.green,
                                           padding: EdgeInsets.only(left: 5,top: 5,right: 0,bottom: 0,),
                                           child: Text(
                                             "Price: ${controller.itemShowAccordingToPriceType.value}",
                                             textAlign: TextAlign.center,
-                                            style: AppTextTheme.text16.copyWith(
+                                            style: AppTextTheme.text12.copyWith(
                                               fontWeight: FontWeight.normal,
                                             ),
                                           ),

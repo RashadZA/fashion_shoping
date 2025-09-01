@@ -11,7 +11,7 @@ class ShopCatalogScreenItemCardWidgetForListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  Container(
-      height: 146,
+      height: 156,
       width: Get.width,
       decoration: BoxDecoration(
         boxShadow: containerShadow,
@@ -29,14 +29,14 @@ class ShopCatalogScreenItemCardWidgetForListView extends StatelessWidget {
               Stack(
                 children: [
                   Container(
-                    height: 120,
+                    height: 130,
                     width: 126,
                     decoration: const BoxDecoration(
                       color: greyColor,
                       shape: BoxShape.circle,
                     ),
                     child: ImageErrorHandle(
-                      height: 120,
+                      height: 130,
                       width: 126,
                       borderRadius: const BorderRadiusDirectional.only(
                         topStart: Radius.circular(defaultBorderRadius),
@@ -110,7 +110,7 @@ class ShopCatalogScreenItemCardWidgetForListView extends StatelessWidget {
             ],
           ),
           Container(
-            height: 146,
+            height: 156,
             width: Get.width - 156,
             padding: const EdgeInsets.symmetric(horizontal: 10.0),
             child: Column(

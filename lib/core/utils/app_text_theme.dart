@@ -16,6 +16,15 @@ class AppTextTheme {
     decoration: TextDecoration.none,
     fontFamily: getDefaultFontFamily,
   );
+  static final text13 = TextStyle(
+    color: primaryTextColor,
+    fontSize: 13,
+    letterSpacing: -.24,
+    overflow: defaultOverflow,
+    fontWeight: FontWeight.w500,
+    decoration: TextDecoration.none,
+    fontFamily: getDefaultFontFamily,
+  );
   static final text14 = TextStyle(
     color: primaryTextColor,
     fontSize: 14,

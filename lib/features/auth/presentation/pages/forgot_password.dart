@@ -31,7 +31,7 @@ class ForgotPasswordScreen extends GetWidget<ForgotPasswordScreenController> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   const SizedBox(
-                    height: 60,
+                    height: 20,
                   ),
                   const Icon(
                     Icons.flutter_dash,

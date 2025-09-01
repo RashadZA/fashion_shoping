@@ -68,28 +68,28 @@ class PaymentMethodScreenCardWidget extends GetWidget<PaymentMethodScreenControl
                     height: 40,
                   ),
                   SizedBox(
-                    height: 45,
+                    height: 50,
                     width: Get.width,
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         SizedBox(
-                          height: 45,
+                          height: 50,
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.start,
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
                                 "Card Holder Name",
-                                style: AppTextTheme.text14.copyWith(
+                                style: AppTextTheme.text13.copyWith(
                                   color: whiteColor,
                                   // fontWeight: FontWeight.w400,
                                 ),
                               ),
                               Text(
                                 card.cardName ?? "",
-                                style: AppTextTheme.text15.copyWith(
+                                style: AppTextTheme.text12.copyWith(
                                   color: whiteColor,
                                   // fontWeight: FontWeight.w400,
                                 ),
@@ -98,21 +98,21 @@ class PaymentMethodScreenCardWidget extends GetWidget<PaymentMethodScreenControl
                           ),
                         ),
                         SizedBox(
-                          height: 45,
+                          height: 50,
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.start,
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
                                 "Expire Date",
-                                style: AppTextTheme.text14.copyWith(
+                                style: AppTextTheme.text13.copyWith(
                                   color: whiteColor,
                                   // fontWeight: FontWeight.w400,
                                 ),
                               ),
                               Text(
                                 card.cardExpiredDate ?? "",
-                                style: AppTextTheme.text15.copyWith(
+                                style: AppTextTheme.text12.copyWith(
                                   color: whiteColor,
                                   // fontWeight: FontWeight.w400,
                                 ),

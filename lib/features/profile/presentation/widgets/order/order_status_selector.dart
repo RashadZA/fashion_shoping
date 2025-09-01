@@ -9,8 +9,9 @@ class OrderStatusSelector extends GetWidget<MyOrdersScreenController> {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    return Container(
       height: 30,
+      padding: const EdgeInsets.only(left: 15,right: 15),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -28,28 +29,25 @@ class OrderStatusSelectorCardWidget extends GetWidget<MyOrdersScreenController> 
 
   @override
   Widget build(BuildContext context) {
-    return Obx(()=> Tooltip(
-      message: "",
-      child: AnimatedContainer(
-        margin: const EdgeInsets.only(left: 15,right: 15),
-        duration: const Duration(milliseconds: 500),
-        width: 100,
-        height: 30,
-        decoration: BoxDecoration(
-          color: controller.selectedTypeOfOrder.value != orderStatusModel
-              ? null
-              :  primaryTextColor,
-          borderRadius: BorderRadius.circular(25),
-        ),
-        child: CoreButton(
-          onPressed: () => controller.onOrderStatusPressedFunction(orderStatusModel:orderStatusModel),
-          child: Center(
-            child: Text(
-              orderStatusModel,
-              style: AppTextTheme.text16.copyWith(
-                color: controller.selectedTypeOfOrder.value != orderStatusModel ? primaryTextColor :  whiteColor,
-            ),
-            ),
+    return Obx(()=> AnimatedContainer(
+      // margin: const EdgeInsets.only(left: 15,right: 15),
+      duration: const Duration(milliseconds: 500),
+      width: 105,
+      height: 30,
+      decoration: BoxDecoration(
+        color: controller.selectedTypeOfOrder.value != orderStatusModel
+            ? null
+            :  primaryTextColor,
+        borderRadius: BorderRadius.circular(25),
+      ),
+      child: CoreButton(
+        onPressed: () => controller.onOrderStatusPressedFunction(orderStatusModel:orderStatusModel),
+        child: Center(
+          child: Text(
+            orderStatusModel,
+            style: AppTextTheme.text14.copyWith(
+              color: controller.selectedTypeOfOrder.value != orderStatusModel ? primaryTextColor :  whiteColor,
+          ),
           ),
         ),
       ),

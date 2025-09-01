@@ -111,7 +111,7 @@ class ShopCatalogScreen extends GetWidget<ShopCatalogScreenController> {
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
                                   SizedBox(
-                                    width: 85,
+                                    width: 90,
                                     height: 50,
                                     // color: Colors.green,
                                     child: Row(
@@ -127,13 +127,13 @@ class ShopCatalogScreen extends GetWidget<ShopCatalogScreenController> {
                                           ),
                                         ),
                                         Container(
-                                          width: 50,
+                                          width: 55,
                                           height: 50,
                                           // color: Colors.green,
                                           padding: EdgeInsets.only(left: 5,top: 5,right: 0,bottom: 0,),
                                           child: Text(
                                             "Filters",
-                                            style: AppTextTheme.text16.copyWith(
+                                            style: AppTextTheme.text15.copyWith(
                                               fontWeight: FontWeight.normal,
                                             ),
                                           ),
@@ -144,7 +144,7 @@ class ShopCatalogScreen extends GetWidget<ShopCatalogScreenController> {
                                   CoreButton(
                                     onPressed: ()=> controller.showByItemOnPressedMethod(),
                                     child: SizedBox(
-                                      width: 220,
+                                      width: 205,
                                       height: 50,
                                       // color: Colors.green,
                                       child: Row(
@@ -157,14 +157,14 @@ class ShopCatalogScreen extends GetWidget<ShopCatalogScreenController> {
                                             color: iconColor,
                                           ),
                                           Container(
-                                            width: 185,
+                                            width: 170,
                                             height: 50,
                                             // color: Colors.green,
-                                            padding: EdgeInsets.only(left: 5,top: 5,right: 0,bottom: 0,),
+                                            padding: EdgeInsets.only(left: 0,top: 5,right: 0,bottom: 0,),
                                             child: Text(
                                               controller.selectedShortByItem.value.name ?? "",
                                               textAlign: TextAlign.center,
-                                              style: AppTextTheme.text16.copyWith(
+                                              style: AppTextTheme.text15.copyWith(
                                                 fontWeight: FontWeight.normal,
                                               ),
                                             ),
