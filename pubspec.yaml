@@ -47,6 +47,10 @@ dependencies:
   # For App Bar
   sliver_tools: ^0.2.12
 
+  # Firebase related packages
+  firebase_core: ^4.1.0
+  firebase_auth: ^6.0.2
+
 dev_dependencies:
   flutter_native_splash: "^2.4.3"
   flutter_launcher_icons: "^0.13.1"

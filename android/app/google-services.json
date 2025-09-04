@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "278184573009",
+    "project_id": "fasion-shopping",
+    "storage_bucket": "fasion-shopping.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:278184573009:android:72d36f5a5251797b7ca070",
+        "android_client_info": {
+          "package_name": "com.example.fashion_shoping"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBmMSApX0_b3BkN2CX74Pi60ymMhlecPdM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
