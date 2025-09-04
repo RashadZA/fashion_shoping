@@ -6,9 +6,14 @@ import 'package:get/get.dart';
 
 class SignInScreenController extends GetxController {
 
+  final GlobalKey<FormState> fromStateKey = GlobalKey<FormState>();
+
   final TextEditingController nameTextEditController = TextEditingController();
   final TextEditingController emailTextEditController = TextEditingController();
   final TextEditingController passwordTextEditController = TextEditingController();
+
+  RxBool obscureTextForPassword = true.obs;
+  RxBool singInButtonIsTapped = false.obs;
 
   @override
   void onInit() {
@@ -17,6 +22,11 @@ class SignInScreenController extends GetxController {
   }
 
   Future<void> init() async {}
+
+  Future<void> changePasswordFieldObscuredStatus() async {
+    obscureTextForPassword.value = !obscureTextForPassword.value;
+    update();
+  }
 
   /// Sign In  button on pressed method
   Future<void> signInOnPressedMethod() async {

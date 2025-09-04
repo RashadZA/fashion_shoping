@@ -17,7 +17,7 @@ class SignInScreen extends GetWidget<SignInScreenController> {
         backgroundColor: scaffoldBackgroundColor,
         body: OrientationBuilder(
           builder: (context, orientation) {
-            return ListView(
+            return Obx(()=> ListView(
               padding: const EdgeInsets.all(defaultPadding),
               children: [
                 const SizedBox(
@@ -49,6 +49,14 @@ class SignInScreen extends GetWidget<SignInScreenController> {
                   textInputAction: TextInputAction.done,
                   controller: controller.passwordTextEditController,
                   prefixIcon: Icons.password_outlined,
+                  obscureText: controller.obscureTextForPassword.value,
+                  suffixIcon: CoreButton(
+                    onPressed: ()=> controller.changePasswordFieldObscuredStatus(),
+                    child: Icon(
+                      controller.obscureTextForPassword.value ? Icons.visibility_off : Icons.visibility,
+                      size: 25,
+                    ),
+                  ),
                 ),
                 const SizedBox(
                   height: 10,
@@ -75,6 +83,7 @@ class SignInScreen extends GetWidget<SignInScreenController> {
                 CoreFlatButton(
                   onPressed: () => controller.signInOnPressedMethod(),
                   text: "SIGN IN",
+                  isLoading: controller.singInButtonIsTapped.value,
                   isGradientBg: true,
                 ),
                 const SizedBox(
@@ -140,6 +149,7 @@ class SignInScreen extends GetWidget<SignInScreenController> {
                   ],
                 ),
               ],
+            ),
             );
           },
         ),
